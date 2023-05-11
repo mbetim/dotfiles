@@ -98,16 +98,74 @@ source $ZSH/oh-my-zsh.sh
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
-# alias="gpl git pull"
-# alias="gpl git pull"
 alias gpl="git pull"
+alias gco="git checkout"
+alias gcod="git checkout develop"
 alias="gst git status"
 alias="g git"
+
+NOTES_DIR="$HOME/dev/notes"
+alias zn='vim $NOTES_DIR/$(date +"%Y%m%d%H%M.md")'
 alias vim="nvim"
+
+alias c="clear"
+
+alias rm="trash"
+function take() {
+  mkdir -p $1
+  cd $1
+}
 
 # Key binding
 bindkey '^ ' autosuggest-accept
+bindkey -r '^J'
+bindkey -r '^j'
 
+# Loads nvm
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+
+autoload -U add-zsh-hook
+load-nvmrc() {
+  local node_version="$(nvm version)"
+  local nvmrc_path="$(nvm_find_nvmrc)"
+
+  if [ -n "$nvmrc_path" ]; then
+    local nvmrc_node_version=$(nvm version "$(cat "${nvmrc_path}")")
+
+    if [ "$nvmrc_node_version" = "N/A" ]; then
+      nvm install
+    elif [ "$nvmrc_node_version" != "$node_version" ]; then
+      nvm use
+    fi
+  elif [ "$node_version" != "$(nvm version default)" ]; then
+    echo "Reverting to nvm default version"
+    nvm use default
+  fi
+}
+add-zsh-hook chpwd load-nvmrc
+load-nvmrc
+
+# The next line updates PATH for the Google Cloud SDK.
+if [ -f '/Users/matheus.betim/google-cloud-sdk/path.zsh.inc' ]; then . '/Users/matheus.betim/google-cloud-sdk/path.zsh.inc'; fi
+
+# The next line enables shell command completion for gcloud.
+if [ -f '/Users/matheus.betim/google-cloud-sdk/completion.zsh.inc' ]; then . '/Users/matheus.betim/google-cloud-sdk/completion.zsh.inc'; fi
+
+test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
+
+export PATH="/opt/homebrew/opt/mysql-client/bin:$PATH"
+
+export PATH=/Users/matheus.betim/.local/bin:$PATH
+
+# Settings for fzf
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+
+# pnpm
+export PNPM_HOME="/Users/matheus.betim/Library/pnpm"
+case ":$PATH:" in
+  *":$PNPM_HOME:"*) ;;
+  *) export PATH="$PNPM_HOME:$PATH" ;;
+esac
+# pnpm end

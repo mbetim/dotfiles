@@ -138,22 +138,23 @@ add-zsh-hook chpwd load-nvmrc
 load-nvmrc
 
 # The next line updates PATH for the Google Cloud SDK.
-if [ -f '/Users/matheus.betim/google-cloud-sdk/path.zsh.inc' ]; then . '/Users/matheus.betim/google-cloud-sdk/path.zsh.inc'; fi
+if [ -f '${HOME}/google-cloud-sdk/path.zsh.inc' ]; then . '${HOME}/google-cloud-sdk/path.zsh.inc'; fi
 
 # The next line enables shell command completion for gcloud.
-if [ -f '/Users/matheus.betim/google-cloud-sdk/completion.zsh.inc' ]; then . '/Users/matheus.betim/google-cloud-sdk/completion.zsh.inc'; fi
+if [ -f '${HOME}/google-cloud-sdk/completion.zsh.inc' ]; then . '${HOME}/google-cloud-sdk/completion.zsh.inc'; fi
 
 # test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
 
 export PATH="/opt/homebrew/opt/mysql-client/bin:$PATH"
 
-export PATH=/Users/matheus.betim/.local/bin:$PATH
+export PATH=$HOME/.local/bin:$PATH
+export PATH=$HOME/dev/sonar-scanner/bin/:$PATH
 
 # Settings for fzf
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
 # pnpm
-export PNPM_HOME="/Users/matheus.betim/Library/pnpm"
+export PNPM_HOME="${HOME}/Library/pnpm"
 case ":$PATH:" in
   *":$PNPM_HOME:"*) ;;
   *) export PATH="$PNPM_HOME:$PATH" ;;
@@ -161,4 +162,3 @@ esac
 # pnpm end
 
 eval "$(starship init zsh)"
-

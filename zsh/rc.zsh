@@ -143,7 +143,7 @@ if [ -f '/Users/matheus.betim/google-cloud-sdk/path.zsh.inc' ]; then . '/Users/m
 # The next line enables shell command completion for gcloud.
 if [ -f '/Users/matheus.betim/google-cloud-sdk/completion.zsh.inc' ]; then . '/Users/matheus.betim/google-cloud-sdk/completion.zsh.inc'; fi
 
-test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
+# test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
 
 export PATH="/opt/homebrew/opt/mysql-client/bin:$PATH"
 

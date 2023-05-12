@@ -110,8 +110,6 @@ function take() {
 
 # Key binding
 bindkey '^ ' autosuggest-accept
-bindkey -r '^J'
-bindkey -r '^j'
 
 # Loads nvm
 export NVM_DIR="$HOME/.nvm"

@@ -28,5 +28,17 @@
   "ClassName with classes (Material UI)": {
     "prefix": "cnc",
     "body": "className={classes.$1}"
+  },
+  "Import default": {
+    "prefix": "imp",
+    "body": ["import $2 from '$1'"]
+  },
+  "Import destructed": {
+    "prefix": "imd",
+    "body": ["import { $2 } from '$1'"]
+  },
+  "Import everything": {
+    "prefix": "ime",
+    "body": ["import * as $2 from '$1'"]
   }
 }

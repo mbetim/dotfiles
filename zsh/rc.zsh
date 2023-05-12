@@ -108,6 +108,17 @@ function take() {
   cd $1
 }
 
+# Alias to switch user on git
+function switch-git-user() {
+  if [[ $1 == "personal" ]]; then
+    git config user.email "mbetim47@gmail.com"
+  fi
+
+  if [[ $1 == "synvia" ]]; then
+    git config user.email "matheus.betim@synvia.com"
+  fi
+}
+
 # Key binding
 bindkey '^ ' autosuggest-accept
 

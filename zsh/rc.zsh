@@ -109,13 +109,13 @@ function take() {
 }
 
 # Alias to switch user on git
-function switch-git-user() {
+function g-user() {
   if [[ $1 == "personal" ]]; then
-    git config user.email "mbetim47@gmail.com"
+    git config user.email "mbetim47@gmail.com" "${@:2}"
   fi
 
   if [[ $1 == "synvia" ]]; then
-    git config user.email "matheus.betim@synvia.com"
+    git config user.email "matheus.betim@synvia.com" "${@:2}"
   fi
 }
 

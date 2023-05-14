@@ -101,8 +101,13 @@ alias zn='vim $NOTES_DIR/$(date +"%Y%m%d%H%M.md")'
 alias vim="nvim"
 
 alias c="clear"
-
+alias l="exa -lah"
+alias ls=exa
 alias rm="trash"
+
+alias tn="tmux new -s"
+alias ta="tmux a"
+
 function take() {
   mkdir -p $1
   cd $1

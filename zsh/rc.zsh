@@ -95,6 +95,7 @@ alias gco="git checkout"
 alias gcod="git checkout develop"
 alias="gst git status"
 alias="g git"
+alias lg="lazygit"
 
 NOTES_DIR="$HOME/dev/notes"
 alias zn='vim $NOTES_DIR/$(date +"%Y%m%d%H%M.md")'

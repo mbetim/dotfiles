@@ -76,7 +76,7 @@ source $ZSH/oh-my-zsh.sh
 # User configuration
 
 # Set vim as default editor
-export VISUAL=vim
+export VISUAL=nvim
 export EDITOR="$VISUAL"
 
 # Compilation flags

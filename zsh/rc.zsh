@@ -97,8 +97,7 @@ alias="gst git status"
 alias="g git"
 alias lg="lazygit"
 
-NOTES_DIR="$HOME/dev/notes"
-alias zn='vim $NOTES_DIR/$(date +"%Y%m%d%H%M.md")'
+alias zn='nvim ~/Documents/vimwiki/index.md'
 alias vim="nvim"
 
 alias c="clear"

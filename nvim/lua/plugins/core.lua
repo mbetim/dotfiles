@@ -1,3 +1,5 @@
+vim.o.spelllang = "en,pt_br"
+
 return {
 	{
 		"LazyVim/LazyVim",

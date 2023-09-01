@@ -30,5 +30,14 @@ return {
 			"<cmd>lua require('harpoon.ui').toggle_quick_menu()<cr>",
 			{ desc = "Open harpoon quick menu" }
 		)
+
+		for i = 1, 4, 1 do
+			keymap.set(
+				"n",
+				string.format("<leader>%s", i),
+				string.format("<cmd>lua require('harpoon.ui').nav_file(%s)<cr>", i),
+				{ desc = string.format("Go to harpoon %s", i) }
+			)
+		end
 	end,
 }

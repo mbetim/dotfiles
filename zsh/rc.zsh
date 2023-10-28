@@ -108,6 +108,9 @@ alias rm="trash"
 alias tn="tmux new -s"
 alias ta="tmux a"
 
+alias nvmu="nvm use"
+alias nvml="nvm use --lts"
+
 function take() {
   mkdir -p $1
   cd $1

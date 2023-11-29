@@ -1,0 +1,4 @@
+$DOTFILES/doom/init.el=$HOME/.config/doom/init.el
+$DOTFILES/doom/config.el=$HOME/.config/doom/config.el
+$DOTFILES/doom/custom.el=$HOME/.config/doom/custom.el
+$DOTFILES/doom/packages.el=$HOME/.config/doom/packages.el

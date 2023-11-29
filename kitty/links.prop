@@ -1,0 +1,3 @@
+$DOTFILES/kitty/kitty.conf=$HOME/.config/kitty/kitty.conf
+$DOTFILES/kitty/symbol-map.conf=$HOME/.config/kitty/symbol-map.conf
+$DOTFILES/kitty/current-theme.conf=$HOME/.config/kitty/current-theme.conf

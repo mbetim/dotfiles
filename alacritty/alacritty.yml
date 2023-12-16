@@ -38,48 +38,11 @@ font:
 
 draw_bold_text_with_bright_colors: true
 
-# TokyoNight Alacritty Colors
-# colors:
-#   # Default colors
-#   primary:
-#     background: "0x1a1b26"
-#     foreground: "0xc0caf5"
-#
-#   # Normal colors
-#   normal:
-#     black: "0x15161E"
-#     red: "0xf7768e"
-#     green: "0x9ece6a"
-#     yellow: "0xe0af68"
-#     blue: "0x7aa2f7"
-#     magenta: "0xbb9af7"
-#     cyan: "0x7dcfff"
-#     white: "0xa9b1d6"
-#
-#   # Bright colors
-#   bright:
-#     black: "0x414868"
-#     red: "0xf7768e"
-#     green: "0x9ece6a"
-#     yellow: "0xe0af68"
-#     blue: "0x7aa2f7"
-#     magenta: "0xbb9af7"
-#     cyan: "0x7dcfff"
-#     white: "0xc0caf5"
-#
-#   indexed_colors:
-#     - { index: 16, color: "0xff9e64" }
-#     - { index: 17, color: "0xdb4b4b" }
-
 cursor:
   style: Block
   unfocused_hollow: true
 
 key_bindings:
-  - { key: T, mods: Command, action: CreateNewWindow }
-  - { key: N, mods: Command, action: SpawnNewInstance }
-  - { key: Q, mods: Command, action: Quit }
-  - { key: W, mods: Command, action: Quit }
   - { key: F, mods: Command|Control, action: ToggleFullscreen }
   - { key: Left, mods: Alt, chars: "\x1bb" } # Skip word left
   - { key: Right, mods: Alt, chars: "\x1bf" } # Skip word right
@@ -87,3 +50,24 @@ key_bindings:
   - { key: Right, mods: Command, chars: "\x1bOF", mode: AppCursor } # End
   - { key: Back, mods: Command, chars: "\x15" } # Delete line
   - { key: Back, mods: Alt, chars: "\x1b\x7f" } # Delete word
+
+  - { key: K, mods: Command, chars: "\x01j" } # open the session manager with omerxx/tmux-sessionx
+  - { key: L, mods: Command, chars: "\x01L" } # switch to the last tmux session
+  - { key: U, mods: Command, chars: "\x01u" } # open URLs 'joshmedeski/tmux-fzf-url'
+  - { key: T, mods: Command, chars: "\x01c" } # create a new tmux window
+  - { key: M, mods: Command, chars: "\x01m" } # toggle zoom state of the current tmux pane
+  - { key: Comma, mods: Command, chars: "\x01," } # rename the current tmux window
+  - { key: LBracket, mods: Command|Shift, chars: "\x01p" } # switch to next tmux window
+  - { key: RBracket, mods: Command|Shift, chars: "\x01n" } # switch to previous tmux window
+  - { key: Semicolon, mods: Command, chars: "\x01:" } # enter the tmux command prompt
+  - { key: Key1, mods: Command, chars: "\x011" } # select tmux window 1
+  - { key: Key2, mods: Command, chars: "\x012" } #                ... 2
+  - { key: Key3, mods: Command, chars: "\x013" } #                ... 3
+  - { key: Key4, mods: Command, chars: "\x014" } #                ... 4
+  - { key: Key5, mods: Command, chars: "\x015" } #                ... 5
+  - { key: Key6, mods: Command, chars: "\x016" } #                ... 6
+  - { key: Key7, mods: Command, chars: "\x017" } #                ... 7
+  - { key: Key8, mods: Command, chars: "\x018" } #                ... 8
+  - { key: Key9, mods: Command, chars: "\x019" } #                ... 9
+  - { key: Key0, mods: Command, chars: "\x010" } #                ... 0
+

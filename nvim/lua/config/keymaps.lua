@@ -8,6 +8,8 @@ local Util = require("lazyvim.util")
 vim.keymap.set("n", "<C-y>", '"+y')
 vim.keymap.set("v", "<C-y>", '"+y')
 
+vim.keymap.set("n", "Y", "y$", { desc = "Yank to the end of the line" })
+
 -- Keep cursor in the middle of the screen
 vim.keymap.set("n", "<C-d>", "<C-d>zz")
 vim.keymap.set("n", "<C-u>", "<C-u>zz")

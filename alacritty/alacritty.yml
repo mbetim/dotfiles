@@ -51,7 +51,7 @@ key_bindings:
   - { key: Back, mods: Command, chars: "\x15" } # Delete line
   - { key: Back, mods: Alt, chars: "\x1b\x7f" } # Delete word
 
-  - { key: K, mods: Command, chars: "\x01j" } # open the session manager with omerxx/tmux-sessionx
+  - { key: K, mods: Command, chars: "\x01o" } # open the session manager with omerxx/tmux-sessionx
   - { key: L, mods: Command, chars: "\x01L" } # switch to the last tmux session
   - { key: U, mods: Command, chars: "\x01u" } # open URLs 'joshmedeski/tmux-fzf-url'
   - { key: T, mods: Command, chars: "\x01c" } # create a new tmux window

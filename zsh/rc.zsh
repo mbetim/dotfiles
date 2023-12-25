@@ -110,7 +110,7 @@ alias ta="tmux a"
 alias nvmu="nvm use"
 alias nvml="nvm use --lts"
 
-alias nd='terminal-notifier -title "Terminal" -message "Done with task! Exit status: $?"'
+alias nd='terminal-notifier -title "Task finished" -message "Done with task! Exit status: $?"'
 
 function take() {
   mkdir -p $1

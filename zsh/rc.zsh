@@ -118,6 +118,11 @@ function take() {
   cd $1
 }
 
+function len() {
+  str=$1
+  echo ${#str}
+}
+
 # Alias to switch user on git
 function g-user() {
   if [[ $1 == "personal" ]]; then

@@ -97,7 +97,6 @@ alias="gst git status"
 alias="g git"
 alias lg="lazygit"
 
-alias zn='nvim ~/Documents/vimwiki/index.md'
 alias vim="nvim"
 
 alias c="clear"

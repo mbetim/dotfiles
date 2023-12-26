@@ -171,6 +171,7 @@ if [ -f '${HOME}/google-cloud-sdk/completion.zsh.inc' ]; then . '${HOME}/google-
 # test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
 
 export PATH="/opt/homebrew/opt/mysql-client/bin:$PATH"
+export PATH="$HOME/go/bin:$PATH"
 
 export PATH=$HOME/.local/bin:$PATH
 export PATH=$HOME/dev/sonar-scanner/bin/:$PATH

@@ -56,6 +56,8 @@ key_bindings:
   - { key: U, mods: Command, chars: "\x01u" } # open URLs 'joshmedeski/tmux-fzf-url'
   - { key: T, mods: Command, chars: "\x01c" } # create a new tmux window
   - { key: M, mods: Command, chars: "\x01m" } # toggle zoom state of the current tmux pane
+  - { key: E, mods: Command, chars: "\x01-" } # split window vertically
+  - { key: E, mods: Command|Shift, chars: "\x01|" } # split window horizontally
   - { key: Comma, mods: Command, chars: "\x01," } # rename the current tmux window
   - { key: LBracket, mods: Command|Shift, chars: "\x01p" } # switch to next tmux window
   - { key: RBracket, mods: Command|Shift, chars: "\x01n" } # switch to previous tmux window

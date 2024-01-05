@@ -14,7 +14,7 @@
 				<array>
 					<dict>
 						<key>ActionUID</key>
-						<integer>795</integer>
+						<integer>1581</integer>
 						<key>AllWindows</key>
 						<false/>
 						<key>AlreadyActivatedActionType</key>
@@ -22,77 +22,11 @@
 						<key>Application</key>
 						<dict>
 							<key>BundleIdentifier</key>
-							<string>com.microsoft.teams2</string>
+							<string>com.gdotdesign.devbox</string>
 							<key>Name</key>
-							<string>Microsoft Teams (work or school)</string>
+							<string>DevBox</string>
 							<key>NewFile</key>
-							<string>/Applications/Microsoft Teams (work or school).app</string>
-						</dict>
-						<key>IsDisclosed</key>
-						<false/>
-						<key>MacroActionType</key>
-						<string>ActivateApplication</string>
-						<key>ReopenWindows</key>
-						<true/>
-						<key>TimeOutAbortsMacro</key>
-						<true/>
-					</dict>
-				</array>
-				<key>CreationDate</key>
-				<real>716259150.43594694</real>
-				<key>ModificationDate</key>
-				<real>722909769.61830294</real>
-				<key>Name</key>
-				<string>Open Teams</string>
-				<key>Triggers</key>
-				<array>
-					<dict>
-						<key>FireType</key>
-						<string>Pressed</string>
-						<key>KeyCode</key>
-						<integer>17</integer>
-						<key>MacroTriggerType</key>
-						<string>HotKey</string>
-						<key>Modifiers</key>
-						<integer>6656</integer>
-					</dict>
-				</array>
-				<key>UID</key>
-				<string>AAD7802C-2829-4F10-BDF8-1E60CD18B185</string>
-			</dict>
-		</array>
-		<key>Name</key>
-		<string>Global Macro Group</string>
-		<key>ToggleMacroUID</key>
-		<string>11425963-0C6C-489F-8F80-1D30D50FCCE0</string>
-		<key>UID</key>
-		<string>804D32AF-0B39-439F-8EF3-493A833B14CA</string>
-	</dict>
-	<dict>
-		<key>Activate</key>
-		<string>Normal</string>
-		<key>CreationDate</key>
-		<real>716257775.85827994</real>
-		<key>Macros</key>
-		<array>
-			<dict>
-				<key>Actions</key>
-				<array>
-					<dict>
-						<key>ActionUID</key>
-						<integer>793</integer>
-						<key>AllWindows</key>
-						<false/>
-						<key>AlreadyActivatedActionType</key>
-						<string>Normal</string>
-						<key>Application</key>
-						<dict>
-							<key>BundleIdentifier</key>
-							<string>notion.id</string>
-							<key>Name</key>
-							<string>Notion</string>
-							<key>NewFile</key>
-							<string>/Applications/Notion.app</string>
+							<string>/Applications/DevBox.app</string>
 						</dict>
 						<key>MacroActionType</key>
 						<string>ActivateApplication</string>
@@ -103,18 +37,18 @@
 					</dict>
 				</array>
 				<key>CreationDate</key>
-				<real>716258992.94990003</real>
+				<real>725898407.93103802</real>
 				<key>ModificationDate</key>
-				<real>716259024.79638398</real>
+				<real>725898430.05673897</real>
 				<key>Name</key>
-				<string>Open Notion</string>
+				<string>Open DevBox</string>
 				<key>Triggers</key>
 				<array>
 					<dict>
 						<key>FireType</key>
 						<string>Pressed</string>
 						<key>KeyCode</key>
-						<integer>45</integer>
+						<integer>11</integer>
 						<key>MacroTriggerType</key>
 						<string>HotKey</string>
 						<key>Modifiers</key>
@@ -122,71 +56,7 @@
 					</dict>
 				</array>
 				<key>UID</key>
-				<string>9D489619-02D9-4A03-8F41-9F9C232A66BC</string>
-			</dict>
-		</array>
-		<key>Name</key>
-		<string>Global Macro Group</string>
-		<key>ToggleMacroUID</key>
-		<string>11425963-0C6C-489F-8F80-1D30D50FCCE0</string>
-		<key>UID</key>
-		<string>804D32AF-0B39-439F-8EF3-493A833B14CA</string>
-	</dict>
-	<dict>
-		<key>Activate</key>
-		<string>Normal</string>
-		<key>CreationDate</key>
-		<real>716257775.85827994</real>
-		<key>Macros</key>
-		<array>
-			<dict>
-				<key>Actions</key>
-				<array>
-					<dict>
-						<key>ActionUID</key>
-						<integer>1188</integer>
-						<key>AllWindows</key>
-						<false/>
-						<key>AlreadyActivatedActionType</key>
-						<string>Normal</string>
-						<key>Application</key>
-						<dict>
-							<key>BundleIdentifier</key>
-							<string>org.gnu.Emacs</string>
-							<key>Name</key>
-							<string>Emacs</string>
-							<key>NewFile</key>
-							<string>/Applications/Emacs.app</string>
-						</dict>
-						<key>MacroActionType</key>
-						<string>ActivateApplication</string>
-						<key>ReopenWindows</key>
-						<true/>
-						<key>TimeOutAbortsMacro</key>
-						<true/>
-					</dict>
-				</array>
-				<key>CreationDate</key>
-				<real>721974415.18760598</real>
-				<key>ModificationDate</key>
-				<real>721974503.65391302</real>
-				<key>Name</key>
-				<string>Open Emacs</string>
-				<key>Triggers</key>
-				<array>
-					<dict>
-						<key>FireType</key>
-						<string>Pressed</string>
-						<key>KeyCode</key>
-						<integer>14</integer>
-						<key>MacroTriggerType</key>
-						<string>HotKey</string>
-						<key>Modifiers</key>
-						<integer>6656</integer>
-					</dict>
-				</array>
-				<key>UID</key>
-				<string>E1777117-0BBA-425E-A016-57205DA6F62C</string>
+				<string>7D4E8245-561C-44A0-B872-0569E0DC60E3</string>
 			</dict>
 		</array>
 		<key>Name</key>
@@ -272,6 +142,72 @@
 				<array>
 					<dict>
 						<key>ActionUID</key>
+						<integer>795</integer>
+						<key>AllWindows</key>
+						<false/>
+						<key>AlreadyActivatedActionType</key>
+						<string>Normal</string>
+						<key>Application</key>
+						<dict>
+							<key>BundleIdentifier</key>
+							<string>com.microsoft.teams2</string>
+							<key>Name</key>
+							<string>Microsoft Teams (work or school)</string>
+							<key>NewFile</key>
+							<string>/Applications/Microsoft Teams (work or school).app</string>
+						</dict>
+						<key>IsDisclosed</key>
+						<false/>
+						<key>MacroActionType</key>
+						<string>ActivateApplication</string>
+						<key>ReopenWindows</key>
+						<true/>
+						<key>TimeOutAbortsMacro</key>
+						<true/>
+					</dict>
+				</array>
+				<key>CreationDate</key>
+				<real>716259150.43594694</real>
+				<key>ModificationDate</key>
+				<real>722909769.61830294</real>
+				<key>Name</key>
+				<string>Open Teams</string>
+				<key>Triggers</key>
+				<array>
+					<dict>
+						<key>FireType</key>
+						<string>Pressed</string>
+						<key>KeyCode</key>
+						<integer>17</integer>
+						<key>MacroTriggerType</key>
+						<string>HotKey</string>
+						<key>Modifiers</key>
+						<integer>6656</integer>
+					</dict>
+				</array>
+				<key>UID</key>
+				<string>AAD7802C-2829-4F10-BDF8-1E60CD18B185</string>
+			</dict>
+		</array>
+		<key>Name</key>
+		<string>Global Macro Group</string>
+		<key>ToggleMacroUID</key>
+		<string>11425963-0C6C-489F-8F80-1D30D50FCCE0</string>
+		<key>UID</key>
+		<string>804D32AF-0B39-439F-8EF3-493A833B14CA</string>
+	</dict>
+	<dict>
+		<key>Activate</key>
+		<string>Normal</string>
+		<key>CreationDate</key>
+		<real>716257775.85827994</real>
+		<key>Macros</key>
+		<array>
+			<dict>
+				<key>Actions</key>
+				<array>
+					<dict>
+						<key>ActionUID</key>
 						<integer>794</integer>
 						<key>AllWindows</key>
 						<false/>
@@ -315,6 +251,70 @@
 				</array>
 				<key>UID</key>
 				<string>F1BF10A4-D6F4-4ADD-AB3B-D1177A8BBEE1</string>
+			</dict>
+		</array>
+		<key>Name</key>
+		<string>Global Macro Group</string>
+		<key>ToggleMacroUID</key>
+		<string>11425963-0C6C-489F-8F80-1D30D50FCCE0</string>
+		<key>UID</key>
+		<string>804D32AF-0B39-439F-8EF3-493A833B14CA</string>
+	</dict>
+	<dict>
+		<key>Activate</key>
+		<string>Normal</string>
+		<key>CreationDate</key>
+		<real>716257775.85827994</real>
+		<key>Macros</key>
+		<array>
+			<dict>
+				<key>Actions</key>
+				<array>
+					<dict>
+						<key>ActionUID</key>
+						<integer>1188</integer>
+						<key>AllWindows</key>
+						<false/>
+						<key>AlreadyActivatedActionType</key>
+						<string>Normal</string>
+						<key>Application</key>
+						<dict>
+							<key>BundleIdentifier</key>
+							<string>com.microsoft.edgemac</string>
+							<key>Name</key>
+							<string>Microsoft Edge</string>
+							<key>NewFile</key>
+							<string>/Applications/Microsoft Edge.app</string>
+						</dict>
+						<key>MacroActionType</key>
+						<string>ActivateApplication</string>
+						<key>ReopenWindows</key>
+						<true/>
+						<key>TimeOutAbortsMacro</key>
+						<true/>
+					</dict>
+				</array>
+				<key>CreationDate</key>
+				<real>721974415.18760598</real>
+				<key>ModificationDate</key>
+				<real>724104123.90885603</real>
+				<key>Name</key>
+				<string>Open Emacs</string>
+				<key>Triggers</key>
+				<array>
+					<dict>
+						<key>FireType</key>
+						<string>Pressed</string>
+						<key>KeyCode</key>
+						<integer>14</integer>
+						<key>MacroTriggerType</key>
+						<string>HotKey</string>
+						<key>Modifiers</key>
+						<integer>6656</integer>
+					</dict>
+				</array>
+				<key>UID</key>
+				<string>E1777117-0BBA-425E-A016-57205DA6F62C</string>
 			</dict>
 		</array>
 		<key>Name</key>
@@ -400,7 +400,7 @@
 				<array>
 					<dict>
 						<key>ActionUID</key>
-						<integer>791</integer>
+						<integer>1579</integer>
 						<key>AllWindows</key>
 						<false/>
 						<key>AlreadyActivatedActionType</key>
@@ -408,11 +408,11 @@
 						<key>Application</key>
 						<dict>
 							<key>BundleIdentifier</key>
-							<string></string>
+							<string>com.electron.asana</string>
 							<key>Name</key>
-							<string>Vial</string>
+							<string>Asana</string>
 							<key>NewFile</key>
-							<string>/Applications/Vial.app</string>
+							<string>/Applications/Asana.app</string>
 						</dict>
 						<key>MacroActionType</key>
 						<string>ActivateApplication</string>
@@ -423,18 +423,18 @@
 					</dict>
 				</array>
 				<key>CreationDate</key>
-				<real>716258930.11888099</real>
+				<real>724333483.55380499</real>
 				<key>ModificationDate</key>
-				<real>716258947.76896405</real>
+				<real>724333498.11226702</real>
 				<key>Name</key>
-				<string>Open Vial</string>
+				<string>Open Asana</string>
 				<key>Triggers</key>
 				<array>
 					<dict>
 						<key>FireType</key>
 						<string>Pressed</string>
 						<key>KeyCode</key>
-						<integer>40</integer>
+						<integer>0</integer>
 						<key>MacroTriggerType</key>
 						<string>HotKey</string>
 						<key>Modifiers</key>
@@ -442,7 +442,7 @@
 					</dict>
 				</array>
 				<key>UID</key>
-				<string>347A17F2-E57D-4DA8-8E57-4AB15A063195</string>
+				<string>0BEF13AD-42DF-4C01-8959-BF4D70A8CDF4</string>
 			</dict>
 		</array>
 		<key>Name</key>
@@ -464,7 +464,7 @@
 				<array>
 					<dict>
 						<key>ActionUID</key>
-						<integer>789</integer>
+						<integer>793</integer>
 						<key>AllWindows</key>
 						<false/>
 						<key>AlreadyActivatedActionType</key>
@@ -472,11 +472,11 @@
 						<key>Application</key>
 						<dict>
 							<key>BundleIdentifier</key>
-							<string>com.microsoft.VSCode</string>
+							<string>notion.id</string>
 							<key>Name</key>
-							<string>Visual Studio Code</string>
+							<string>Notion</string>
 							<key>NewFile</key>
-							<string>/Applications/Visual Studio Code.app</string>
+							<string>/Applications/Notion.app</string>
 						</dict>
 						<key>MacroActionType</key>
 						<string>ActivateApplication</string>
@@ -487,18 +487,18 @@
 					</dict>
 				</array>
 				<key>CreationDate</key>
-				<real>716258806.82053196</real>
+				<real>716258992.94990003</real>
 				<key>ModificationDate</key>
-				<real>716258856.80553305</real>
+				<real>716259024.79638398</real>
 				<key>Name</key>
-				<string>Open VSCode</string>
+				<string>Open Notion</string>
 				<key>Triggers</key>
 				<array>
 					<dict>
 						<key>FireType</key>
 						<string>Pressed</string>
 						<key>KeyCode</key>
-						<integer>8</integer>
+						<integer>45</integer>
 						<key>MacroTriggerType</key>
 						<string>HotKey</string>
 						<key>Modifiers</key>
@@ -506,7 +506,7 @@
 					</dict>
 				</array>
 				<key>UID</key>
-				<string>94A289CB-EAC9-4C42-B128-700EA7AEF4C8</string>
+				<string>9D489619-02D9-4A03-8F41-9F9C232A66BC</string>
 			</dict>
 		</array>
 		<key>Name</key>
@@ -656,7 +656,7 @@
 				<array>
 					<dict>
 						<key>ActionUID</key>
-						<integer>787</integer>
+						<integer>791</integer>
 						<key>AllWindows</key>
 						<false/>
 						<key>AlreadyActivatedActionType</key>
@@ -664,11 +664,11 @@
 						<key>Application</key>
 						<dict>
 							<key>BundleIdentifier</key>
-							<string>com.spotify.client</string>
+							<string></string>
 							<key>Name</key>
-							<string>Spotify</string>
+							<string>Vial</string>
 							<key>NewFile</key>
-							<string>/Applications/Spotify.app</string>
+							<string>/Applications/Vial.app</string>
 						</dict>
 						<key>MacroActionType</key>
 						<string>ActivateApplication</string>
@@ -679,18 +679,18 @@
 					</dict>
 				</array>
 				<key>CreationDate</key>
-				<real>716258499.63918102</real>
+				<real>716258930.11888099</real>
 				<key>ModificationDate</key>
-				<real>716258521.91624701</real>
+				<real>716258947.76896405</real>
 				<key>Name</key>
-				<string>Open Spotify</string>
+				<string>Open Vial</string>
 				<key>Triggers</key>
 				<array>
 					<dict>
 						<key>FireType</key>
 						<string>Pressed</string>
 						<key>KeyCode</key>
-						<integer>1</integer>
+						<integer>40</integer>
 						<key>MacroTriggerType</key>
 						<string>HotKey</string>
 						<key>Modifiers</key>
@@ -698,179 +698,7 @@
 					</dict>
 				</array>
 				<key>UID</key>
-				<string>0C43553F-A325-4CC1-9102-1B969DA8B2D2</string>
-			</dict>
-		</array>
-		<key>Name</key>
-		<string>Global Macro Group</string>
-		<key>ToggleMacroUID</key>
-		<string>11425963-0C6C-489F-8F80-1D30D50FCCE0</string>
-		<key>UID</key>
-		<string>804D32AF-0B39-439F-8EF3-493A833B14CA</string>
-	</dict>
-	<dict>
-		<key>Activate</key>
-		<string>Normal</string>
-		<key>CreationDate</key>
-		<real>716257775.85827994</real>
-		<key>Macros</key>
-		<array>
-			<dict>
-				<key>Actions</key>
-				<array>
-					<dict>
-						<key>ActionUID</key>
-						<integer>1578</integer>
-						<key>AllWindows</key>
-						<false/>
-						<key>AlreadyActivatedActionType</key>
-						<string>Normal</string>
-						<key>Application</key>
-						<dict>
-							<key>BundleIdentifier</key>
-							<string>io.hoppscotch.desktop</string>
-							<key>Name</key>
-							<string>Hoppscotch</string>
-						</dict>
-						<key>MacroActionType</key>
-						<string>ActivateApplication</string>
-						<key>ReopenWindows</key>
-						<true/>
-						<key>TimeOutAbortsMacro</key>
-						<true/>
-					</dict>
-				</array>
-				<key>CreationDate</key>
-				<real>722308855.69818997</real>
-				<key>ModificationDate</key>
-				<real>722308910.35134304</real>
-				<key>Name</key>
-				<string>Open Hoppscotch</string>
-				<key>Triggers</key>
-				<array>
-					<dict>
-						<key>FireType</key>
-						<string>Pressed</string>
-						<key>KeyCode</key>
-						<integer>4</integer>
-						<key>MacroTriggerType</key>
-						<string>HotKey</string>
-						<key>Modifiers</key>
-						<integer>6656</integer>
-					</dict>
-				</array>
-				<key>UID</key>
-				<string>682B4994-642D-442D-BE43-2511C862B687</string>
-			</dict>
-		</array>
-		<key>Name</key>
-		<string>Global Macro Group</string>
-		<key>ToggleMacroUID</key>
-		<string>11425963-0C6C-489F-8F80-1D30D50FCCE0</string>
-		<key>UID</key>
-		<string>804D32AF-0B39-439F-8EF3-493A833B14CA</string>
-	</dict>
-	<dict>
-		<key>Activate</key>
-		<string>Normal</string>
-		<key>CreationDate</key>
-		<real>716257775.85827994</real>
-		<key>Macros</key>
-		<array>
-			<dict>
-				<key>Actions</key>
-				<array>
-					<dict>
-						<key>ActionUID</key>
-						<integer>1</integer>
-						<key>Default</key>
-						<string></string>
-						<key>IsDisclosed</key>
-						<false/>
-						<key>MacroActionType</key>
-						<string>Search</string>
-						<key>TimeOutAbortsMacro</key>
-						<true/>
-						<key>Title</key>
-						<string>Search the web with Google</string>
-						<key>URL</key>
-						<string>http://www.google.com/search?q=%Search%</string>
-					</dict>
-				</array>
-				<key>CreationDate</key>
-				<real>716257775.84799194</real>
-				<key>IsActive</key>
-				<false/>
-				<key>ModificationDate</key>
-				<real>716257775.84799194</real>
-				<key>Triggers</key>
-				<array>
-					<dict>
-						<key>FireType</key>
-						<string>Pressed</string>
-						<key>KeyCode</key>
-						<integer>5</integer>
-						<key>MacroTriggerType</key>
-						<string>HotKey</string>
-						<key>Modifiers</key>
-						<integer>4608</integer>
-					</dict>
-				</array>
-				<key>UID</key>
-				<string>D45A29FC-1764-4A51-9028-666C2CB443E9</string>
-			</dict>
-		</array>
-		<key>Name</key>
-		<string>Global Macro Group</string>
-		<key>ToggleMacroUID</key>
-		<string>11425963-0C6C-489F-8F80-1D30D50FCCE0</string>
-		<key>UID</key>
-		<string>804D32AF-0B39-439F-8EF3-493A833B14CA</string>
-	</dict>
-	<dict>
-		<key>Activate</key>
-		<string>Normal</string>
-		<key>CreationDate</key>
-		<real>716257775.85827994</real>
-		<key>Macros</key>
-		<array>
-			<dict>
-				<key>Actions</key>
-				<array>
-					<dict>
-						<key>ActionUID</key>
-						<integer>4</integer>
-						<key>MacroActionType</key>
-						<string>TriggerByName</string>
-						<key>TimeOutAbortsMacro</key>
-						<true/>
-					</dict>
-				</array>
-				<key>CreationDate</key>
-				<real>716257775.84883106</real>
-				<key>IsActive</key>
-				<false/>
-				<key>ModificationDate</key>
-				<real>716257775.84883106</real>
-				<key>Triggers</key>
-				<array>
-					<dict>
-						<key>FireType</key>
-						<string>Pressed</string>
-						<key>KeyCode</key>
-						<integer>17</integer>
-						<key>MacroTriggerType</key>
-						<string>HotKey</string>
-						<key>Modifiers</key>
-						<integer>6400</integer>
-					</dict>
-					<dict>
-						<key>MacroTriggerType</key>
-						<string>StatusMenu</string>
-					</dict>
-				</array>
-				<key>UID</key>
-				<string>2C8D85F6-D8AF-41AB-A60E-1A83F98DAF48</string>
+				<string>347A17F2-E57D-4DA8-8E57-4AB15A063195</string>
 			</dict>
 		</array>
 		<key>Name</key>
@@ -1019,6 +847,249 @@
 				<array>
 					<dict>
 						<key>ActionUID</key>
+						<integer>1578</integer>
+						<key>AllWindows</key>
+						<false/>
+						<key>AlreadyActivatedActionType</key>
+						<string>Normal</string>
+						<key>Application</key>
+						<dict>
+							<key>BundleIdentifier</key>
+							<string>io.hoppscotch.desktop</string>
+							<key>Name</key>
+							<string>Hoppscotch</string>
+						</dict>
+						<key>MacroActionType</key>
+						<string>ActivateApplication</string>
+						<key>ReopenWindows</key>
+						<true/>
+						<key>TimeOutAbortsMacro</key>
+						<true/>
+					</dict>
+				</array>
+				<key>CreationDate</key>
+				<real>722308855.69818997</real>
+				<key>ModificationDate</key>
+				<real>722308910.35134304</real>
+				<key>Name</key>
+				<string>Open Hoppscotch</string>
+				<key>Triggers</key>
+				<array>
+					<dict>
+						<key>FireType</key>
+						<string>Pressed</string>
+						<key>KeyCode</key>
+						<integer>4</integer>
+						<key>MacroTriggerType</key>
+						<string>HotKey</string>
+						<key>Modifiers</key>
+						<integer>6656</integer>
+					</dict>
+				</array>
+				<key>UID</key>
+				<string>682B4994-642D-442D-BE43-2511C862B687</string>
+			</dict>
+		</array>
+		<key>Name</key>
+		<string>Global Macro Group</string>
+		<key>ToggleMacroUID</key>
+		<string>11425963-0C6C-489F-8F80-1D30D50FCCE0</string>
+		<key>UID</key>
+		<string>804D32AF-0B39-439F-8EF3-493A833B14CA</string>
+	</dict>
+	<dict>
+		<key>Activate</key>
+		<string>Normal</string>
+		<key>CreationDate</key>
+		<real>716257775.85827994</real>
+		<key>Macros</key>
+		<array>
+			<dict>
+				<key>Actions</key>
+				<array>
+					<dict>
+						<key>ActionUID</key>
+						<integer>4</integer>
+						<key>MacroActionType</key>
+						<string>TriggerByName</string>
+						<key>TimeOutAbortsMacro</key>
+						<true/>
+					</dict>
+				</array>
+				<key>CreationDate</key>
+				<real>716257775.84883106</real>
+				<key>IsActive</key>
+				<false/>
+				<key>ModificationDate</key>
+				<real>716257775.84883106</real>
+				<key>Triggers</key>
+				<array>
+					<dict>
+						<key>FireType</key>
+						<string>Pressed</string>
+						<key>KeyCode</key>
+						<integer>17</integer>
+						<key>MacroTriggerType</key>
+						<string>HotKey</string>
+						<key>Modifiers</key>
+						<integer>6400</integer>
+					</dict>
+					<dict>
+						<key>MacroTriggerType</key>
+						<string>StatusMenu</string>
+					</dict>
+				</array>
+				<key>UID</key>
+				<string>2C8D85F6-D8AF-41AB-A60E-1A83F98DAF48</string>
+			</dict>
+		</array>
+		<key>Name</key>
+		<string>Global Macro Group</string>
+		<key>ToggleMacroUID</key>
+		<string>11425963-0C6C-489F-8F80-1D30D50FCCE0</string>
+		<key>UID</key>
+		<string>804D32AF-0B39-439F-8EF3-493A833B14CA</string>
+	</dict>
+	<dict>
+		<key>Activate</key>
+		<string>Normal</string>
+		<key>CreationDate</key>
+		<real>716257775.85827994</real>
+		<key>Macros</key>
+		<array>
+			<dict>
+				<key>Actions</key>
+				<array>
+					<dict>
+						<key>ActionUID</key>
+						<integer>789</integer>
+						<key>AllWindows</key>
+						<false/>
+						<key>AlreadyActivatedActionType</key>
+						<string>Normal</string>
+						<key>Application</key>
+						<dict>
+							<key>BundleIdentifier</key>
+							<string>com.microsoft.VSCode</string>
+							<key>Name</key>
+							<string>Visual Studio Code</string>
+							<key>NewFile</key>
+							<string>/Applications/Visual Studio Code.app</string>
+						</dict>
+						<key>MacroActionType</key>
+						<string>ActivateApplication</string>
+						<key>ReopenWindows</key>
+						<true/>
+						<key>TimeOutAbortsMacro</key>
+						<true/>
+					</dict>
+				</array>
+				<key>CreationDate</key>
+				<real>716258806.82053196</real>
+				<key>ModificationDate</key>
+				<real>716258856.80553305</real>
+				<key>Name</key>
+				<string>Open VSCode</string>
+				<key>Triggers</key>
+				<array>
+					<dict>
+						<key>FireType</key>
+						<string>Pressed</string>
+						<key>KeyCode</key>
+						<integer>8</integer>
+						<key>MacroTriggerType</key>
+						<string>HotKey</string>
+						<key>Modifiers</key>
+						<integer>6656</integer>
+					</dict>
+				</array>
+				<key>UID</key>
+				<string>94A289CB-EAC9-4C42-B128-700EA7AEF4C8</string>
+			</dict>
+		</array>
+		<key>Name</key>
+		<string>Global Macro Group</string>
+		<key>ToggleMacroUID</key>
+		<string>11425963-0C6C-489F-8F80-1D30D50FCCE0</string>
+		<key>UID</key>
+		<string>804D32AF-0B39-439F-8EF3-493A833B14CA</string>
+	</dict>
+	<dict>
+		<key>Activate</key>
+		<string>Normal</string>
+		<key>CreationDate</key>
+		<real>716257775.85827994</real>
+		<key>Macros</key>
+		<array>
+			<dict>
+				<key>Actions</key>
+				<array>
+					<dict>
+						<key>ActionUID</key>
+						<integer>1580</integer>
+						<key>AllWindows</key>
+						<false/>
+						<key>AlreadyActivatedActionType</key>
+						<string>Normal</string>
+						<key>Application</key>
+						<dict>
+							<key>BundleIdentifier</key>
+							<string>md.obsidian</string>
+							<key>Name</key>
+							<string>Obsidian</string>
+							<key>NewFile</key>
+							<string>/Applications/Obsidian.app</string>
+						</dict>
+						<key>MacroActionType</key>
+						<string>ActivateApplication</string>
+						<key>ReopenWindows</key>
+						<true/>
+						<key>TimeOutAbortsMacro</key>
+						<true/>
+					</dict>
+				</array>
+				<key>CreationDate</key>
+				<real>725855419.76568902</real>
+				<key>ModificationDate</key>
+				<real>725855435.51950705</real>
+				<key>Name</key>
+				<string>Open Obsidian</string>
+				<key>Triggers</key>
+				<array>
+					<dict>
+						<key>FireType</key>
+						<string>Pressed</string>
+						<key>KeyCode</key>
+						<integer>31</integer>
+						<key>MacroTriggerType</key>
+						<string>HotKey</string>
+						<key>Modifiers</key>
+						<integer>6656</integer>
+					</dict>
+				</array>
+				<key>UID</key>
+				<string>48F524ED-6A89-4B46-AE6F-3198F915435A</string>
+			</dict>
+		</array>
+		<key>Name</key>
+		<string>Global Macro Group</string>
+		<key>ToggleMacroUID</key>
+		<string>11425963-0C6C-489F-8F80-1D30D50FCCE0</string>
+		<key>UID</key>
+		<string>804D32AF-0B39-439F-8EF3-493A833B14CA</string>
+	</dict>
+	<dict>
+		<key>Activate</key>
+		<string>Normal</string>
+		<key>CreationDate</key>
+		<real>716257775.85827994</real>
+		<key>Macros</key>
+		<array>
+			<dict>
+				<key>Actions</key>
+				<array>
+					<dict>
+						<key>ActionUID</key>
 						<integer>786</integer>
 						<key>AllWindows</key>
 						<false/>
@@ -1044,7 +1115,7 @@
 				<key>CreationDate</key>
 				<real>716258436.09772396</real>
 				<key>ModificationDate</key>
-				<real>716258473.31119394</real>
+				<real>724705909.83795702</real>
 				<key>Name</key>
 				<string>Open Browser</string>
 				<key>Triggers</key>
@@ -1062,6 +1133,127 @@
 				</array>
 				<key>UID</key>
 				<string>B29B3438-B70D-46F5-971C-A5518AD52DAB</string>
+			</dict>
+		</array>
+		<key>Name</key>
+		<string>Global Macro Group</string>
+		<key>ToggleMacroUID</key>
+		<string>11425963-0C6C-489F-8F80-1D30D50FCCE0</string>
+		<key>UID</key>
+		<string>804D32AF-0B39-439F-8EF3-493A833B14CA</string>
+	</dict>
+	<dict>
+		<key>Activate</key>
+		<string>Normal</string>
+		<key>CreationDate</key>
+		<real>716257775.85827994</real>
+		<key>Macros</key>
+		<array>
+			<dict>
+				<key>Actions</key>
+				<array>
+					<dict>
+						<key>ActionUID</key>
+						<integer>787</integer>
+						<key>AllWindows</key>
+						<false/>
+						<key>AlreadyActivatedActionType</key>
+						<string>Normal</string>
+						<key>Application</key>
+						<dict>
+							<key>BundleIdentifier</key>
+							<string>com.spotify.client</string>
+							<key>Name</key>
+							<string>Spotify</string>
+							<key>NewFile</key>
+							<string>/Applications/Spotify.app</string>
+						</dict>
+						<key>MacroActionType</key>
+						<string>ActivateApplication</string>
+						<key>ReopenWindows</key>
+						<true/>
+						<key>TimeOutAbortsMacro</key>
+						<true/>
+					</dict>
+				</array>
+				<key>CreationDate</key>
+				<real>716258499.63918102</real>
+				<key>ModificationDate</key>
+				<real>716258521.91624701</real>
+				<key>Name</key>
+				<string>Open Spotify</string>
+				<key>Triggers</key>
+				<array>
+					<dict>
+						<key>FireType</key>
+						<string>Pressed</string>
+						<key>KeyCode</key>
+						<integer>1</integer>
+						<key>MacroTriggerType</key>
+						<string>HotKey</string>
+						<key>Modifiers</key>
+						<integer>6656</integer>
+					</dict>
+				</array>
+				<key>UID</key>
+				<string>0C43553F-A325-4CC1-9102-1B969DA8B2D2</string>
+			</dict>
+		</array>
+		<key>Name</key>
+		<string>Global Macro Group</string>
+		<key>ToggleMacroUID</key>
+		<string>11425963-0C6C-489F-8F80-1D30D50FCCE0</string>
+		<key>UID</key>
+		<string>804D32AF-0B39-439F-8EF3-493A833B14CA</string>
+	</dict>
+	<dict>
+		<key>Activate</key>
+		<string>Normal</string>
+		<key>CreationDate</key>
+		<real>716257775.85827994</real>
+		<key>Macros</key>
+		<array>
+			<dict>
+				<key>Actions</key>
+				<array>
+					<dict>
+						<key>ActionUID</key>
+						<integer>1</integer>
+						<key>Default</key>
+						<string></string>
+						<key>IsDisclosed</key>
+						<false/>
+						<key>MacroActionType</key>
+						<string>Search</string>
+						<key>TimeOutAbortsMacro</key>
+						<true/>
+						<key>Title</key>
+						<string>Search the web with Google</string>
+						<key>URL</key>
+						<string>http://www.google.com/search?q=%Search%</string>
+					</dict>
+				</array>
+				<key>CreationDate</key>
+				<real>716257775.84799194</real>
+				<key>IsActive</key>
+				<false/>
+				<key>ModificationDate</key>
+				<real>716257775.84799194</real>
+				<key>Triggers</key>
+				<array>
+					<dict>
+						<key>FireType</key>
+						<string>Pressed</string>
+						<key>KeyCode</key>
+						<integer>5</integer>
+						<key>MacroTriggerType</key>
+						<string>HotKey</string>
+						<key>Modifiers</key>
+						<integer>4608</integer>
+					</dict>
+				</array>
+				<key>UID</key>
+				<string>D45A29FC-1764-4A51-9028-666C2CB443E9</string>
 			</dict>
 		</array>
 		<key>Name</key>

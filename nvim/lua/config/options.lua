@@ -4,7 +4,7 @@
 
 -- TODO: try to make this use the $HOME path and fetch the latest lts version automatically
 local node_bin = "/Users/matheus.betim/.nvm/versions/node/v20.10.0/bin"
-vim.g.node_host_prog = node_bin .. "/node"
+vim.g.node_host_prog = "/Users/matheus.betim/.nvm/versions/node/v20.10.0/bin/neovim-node-host"
 vim.cmd("let $PATH = '" .. node_bin .. ":' . $PATH")
 
 vim.opt.clipboard = nil

@@ -1,3 +1,2 @@
 $DOTFILES/tmux/tmux.conf=$HOME/.tmux.conf
-$DOTFILES/tmux/plugins=$HOME/.tmux/plugins
 $DOTFILES/tmux/tmux-nerd-font-window-name.yml=$HOME/.config/tmux/tmux-nerd-font-window-name.yml

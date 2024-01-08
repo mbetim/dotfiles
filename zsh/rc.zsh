@@ -100,8 +100,8 @@ alias lg="lazygit"
 alias vim="nvim"
 
 alias c="clear"
-alias l="exa -lah"
-alias ls=exa
+alias l="eza -lah"
+alias ls=eza
 alias rm="trash"
 
 alias tn="tmux new -s"

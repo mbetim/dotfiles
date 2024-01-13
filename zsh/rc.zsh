@@ -177,6 +177,7 @@ if [ -f '${HOME}/google-cloud-sdk/completion.zsh.inc' ]; then . '${HOME}/google-
 
 export PATH="/opt/homebrew/opt/mysql-client/bin:$PATH"
 export PATH="$HOME/go/bin:$PATH"
+export PATH="/opt/homebrew/opt/postgresql@15/libexec/bin:$PATH"
 
 export PATH=$HOME/.local/bin:$PATH
 export PATH=$HOME/dev/sonar-scanner/bin/:$PATH

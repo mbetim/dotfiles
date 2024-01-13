@@ -123,6 +123,10 @@ function len() {
   echo ${#str}
 }
 
+function copy-file() {
+  cat $1 | pbcopy
+}
+
 # Alias to switch user on git
 function g-user() {
   if [[ $1 == "personal" ]]; then

@@ -11,3 +11,5 @@ vim.opt.clipboard = nil
 
 vim.opt.spelllang = "en_us"
 vim.opt.spell = true
+
+vim.o.termguicolors = true

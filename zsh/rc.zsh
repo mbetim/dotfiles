@@ -113,6 +113,7 @@ alias nvml="nvm use --lts"
 alias nd='terminal-notifier -title "Task finished" -message "Done with task! Exit status: $?"'
 
 alias db="vim +DBUIToggle"
+
 function take() {
   mkdir -p $1
   cd $1
@@ -136,6 +137,28 @@ function g-user() {
   if [[ $1 == "synvia" ]]; then
     git config user.email "matheus.betim@synvia.com" "${@:2}"
   fi
+}
+
+function d() {
+  if [ ! -f package.json ]; then
+    echo "No package.json found"
+    return
+  fi
+
+  chosen_script=$(cat package.json | jq -r '.scripts | keys | .[]' | fzf  --height 20% --layout=reverse --preview "cat package.json | jq -r '.scripts | .[\"{}\"]'")
+
+  if [[ ${#chosen_script} == 0 ]]; then
+    return
+  fi
+
+  node_pkg_manger="npm"
+
+  if [ -f yarn.lock ]; then node_pkg_manger="yarn"
+  elif [ -f pnpm-lock.yaml ]; then node_pkg_manger="pnpm"
+  fi
+
+  print -s  "$node_pkg_manger run $chosen_script"
+  eval $node_pkg_manger run $chosen_script
 }
 
 # Key binding

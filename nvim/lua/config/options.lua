@@ -9,7 +9,8 @@ vim.cmd("let $PATH = '" .. node_bin .. ":' . $PATH")
 
 vim.opt.clipboard = nil
 
-vim.opt.spelllang = "en_us"
+vim.opt.spelllang = "en,pt_br"
 vim.opt.spell = true
+vim.opt.spelloptions = "camel"
 
 vim.o.termguicolors = true

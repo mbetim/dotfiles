@@ -220,3 +220,7 @@ eval "$(starship init zsh)"
 eval "$(zoxide init zsh)"
 
 source ~/.config/bit/bit-completion.zsh
+
+# bun
+export BUN_INSTALL="$HOME/.bun"
+export PATH="$BUN_INSTALL/bin:$PATH"

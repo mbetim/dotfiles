@@ -222,6 +222,9 @@ eval "$(zoxide init zsh)"
 
 source ~/.config/bit/bit-completion.zsh
 
+# bun completions
+[ -s "/Users/matheus.betim/.bun/_bun" ] && source "/Users/matheus.betim/.bun/_bun"
+
 # bun
 export BUN_INSTALL="$HOME/.bun"
 export PATH="$BUN_INSTALL/bin:$PATH"

@@ -98,6 +98,7 @@ alias="g git"
 alias lg="lazygit"
 
 alias vim="nvim"
+alias v="nvim"
 
 alias c="clear"
 alias l="eza -lah"

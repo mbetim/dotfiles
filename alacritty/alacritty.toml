@@ -118,6 +118,11 @@ key = "}"
 mods = "Command|Shift"
 
 [[keyboard.bindings]]
+chars = "\u0001["
+key = "o"
+mods = "Command"
+
+[[keyboard.bindings]]
 chars = "\u0001:"
 key = "Semicolon"
 mods = "Command"

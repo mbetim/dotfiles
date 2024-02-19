@@ -1,0 +1,25 @@
+# Open applications
+ctrl + alt + shift - v : open -a Alacritty.app
+ctrl + alt + shift - g : open -a Arc.app
+ctrl + alt + shift - o : open -a Obsidian.app
+ctrl + alt + shift - a : open -a Asana.app
+ctrl + alt + shift - s : open -a Spotify.app
+ctrl + alt + shift - b : open -a DevBox
+ctrl + alt + shift - d : open -a Discord
+ctrl + alt + shift - m : open -a MongoDB\ Compass
+ctrl + alt + shift - n : open -a Notion
+ctrl + alt + shift - p : open -a Postman
+ctrl + alt + shift - e : open -a Spark\ Desktop
+ctrl + alt + shift - t : open -a Microsoft\ Teams\ \(work\ or\ school\)
+ctrl + alt + shift - k : open -a Vial
+ctrl + alt + shift - c : open -a Visual\ Studio\ Code
+ctrl + alt + shift - f : open -a Figma
+ctrl + alt + shift - i : open -a TickTick
+
+ctrl + alt + shift - w : open "https://web.whatsapp.com"
+alt - f : open -a Finder
+alt - d : open ~/Downloads
+
+cmd - w [
+  "alacritty" : tmux kill-pane
+]

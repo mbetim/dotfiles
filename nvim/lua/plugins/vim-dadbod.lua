@@ -1,5 +1,6 @@
 return {
 	"tpope/vim-dadbod",
+	lazy = true,
 	config = function()
 		local function db_completion()
 			require("cmp").setup.buffer({ sources = { { name = "vim-dadbod-completion" } } })
@@ -27,7 +28,13 @@ return {
 	end,
 	cmd = { "DBUIToggle", "DBUI", "DBUIAddConnection", "DBUIFindBuffer", "DBUIRenameBuffer", "DBUILastQueryInfo" },
 	dependencies = {
-		"kristijanhusak/vim-dadbod-ui",
-		"kristijanhusak/vim-dadbod-completion",
+		{
+			"kristijanhusak/vim-dadbod-ui",
+			lazy = true,
+			init = function()
+				vim.g.db_ui_use_nerd_fonts = 1
+			end,
+		},
+		{ "kristijanhusak/vim-dadbod-completion", lazy = true },
 	},
 }

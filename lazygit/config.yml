@@ -4,3 +4,7 @@ git:
   paging:
     colorArg: always
     pager: delta --dark --paging=never --24-bit-color=never
+customCommands:
+  - key: "<c-y>"
+    context: "files"
+    command: "git diff --staged | pbcopy"

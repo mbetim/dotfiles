@@ -113,7 +113,7 @@ alias nvml="nvm use --lts"
 
 alias nd='terminal-notifier -title "Task finished" -message "Done with task! Exit status: $?"'
 
-alias db="vim +DBUIToggle"
+alias db="nvim +DBUIToggle"
 
 function take() {
   mkdir -p $1

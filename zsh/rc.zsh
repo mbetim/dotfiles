@@ -207,6 +207,7 @@ export PATH=$HOME/.local/bin:$PATH
 export PATH=$HOME/dev/sonar-scanner/bin/:$PATH
 
 # Settings for fzf
+export FZF_DEFAULT_COMMAND='fd --type f --strip-cwd-prefix --hidden --exclude .git --exclude Library --exclude node_modules'
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
 # pnpm

@@ -37,8 +37,32 @@ return {
 					{
 						type = "pwa-node",
 						request = "attach",
-						name = "Attach",
+						name = "Attach by process ID",
 						processId = require("dap.utils").pick_process,
+						cwd = vim.fn.getcwd(),
+						sourceMaps = true,
+					},
+					{
+						type = "pwa-node",
+						request = "attach",
+						name = "Attach by port",
+						port = function()
+							local co = coroutine.running()
+							local default_port = 9229
+
+							return coroutine.create(function()
+								vim.ui.input({
+									prompt = "Enter Port: ",
+									default = tostring(default_port),
+								}, function(url)
+									if url == nil or url == "" then
+										return
+									else
+										coroutine.resume(co, url)
+									end
+								end)
+							end)
+						end,
 						cwd = vim.fn.getcwd(),
 						sourceMaps = true,
 					},

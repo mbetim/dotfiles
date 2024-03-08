@@ -99,6 +99,8 @@ alias lg="lazygit"
 
 alias vim="nvim"
 alias v="nvim"
+alias vs="nvim -c \"lua require('persistence').load()\""
+alias db="nvim +DBUIToggle"
 
 alias c="clear"
 alias l="eza -lah"
@@ -112,8 +114,6 @@ alias nvmu="nvm use"
 alias nvml="nvm use --lts"
 
 alias nd='terminal-notifier -title "Task finished" -message "Done with task! Exit status: $?"'
-
-alias db="nvim +DBUIToggle"
 
 function take() {
   mkdir -p $1

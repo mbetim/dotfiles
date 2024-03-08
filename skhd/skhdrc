@@ -16,6 +16,7 @@ ctrl + alt + shift - c : open -a Visual\ Studio\ Code
 ctrl + alt + shift - f : open -a Figma
 ctrl + alt + shift - i : open -a TickTick
 ctrl + alt + shift - j : open -a IntelliJ\ IDEA\ CE
+ctrl + alt + shift - h : open -a HTTPie
 
 ctrl + alt + shift - w : open "https://web.whatsapp.com"
 alt - f : open -a Finder

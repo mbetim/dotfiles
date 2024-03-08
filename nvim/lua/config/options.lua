@@ -14,3 +14,5 @@ vim.opt.spell = true
 vim.opt.spelloptions = "camel"
 
 vim.o.termguicolors = true
+
+vim.o.conceallevel = 2

@@ -17,8 +17,10 @@ ctrl + alt + shift - f : open -a Figma
 ctrl + alt + shift - i : open -a TickTick
 ctrl + alt + shift - j : open -a IntelliJ\ IDEA\ CE
 ctrl + alt + shift - h : open -a HTTPie
+ctrl + alt + shift - h : open -a HTTPie
+ctrl + alt + shift - l : open -a Toggl\ Track
 
-ctrl + alt + shift - w : open "https://web.whatsapp.com"
+ctrl + alt + shift - w : open -a WhatsApp
 alt - f : open -a Finder
 alt - d : open ~/Downloads
 

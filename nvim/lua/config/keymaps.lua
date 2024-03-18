@@ -9,6 +9,7 @@ vim.keymap.set("n", "<C-y>", '"+y')
 vim.keymap.set("v", "<C-y>", '"+y')
 
 vim.keymap.set("n", "Y", "y$", { desc = "Yank to the end of the line" })
+vim.keymap.set("n", "vv", "v$", { desc = "Select to the end of the line" })
 
 -- Keep cursor in the middle of the screen
 vim.keymap.set("n", "<C-d>", "<C-d>zz")

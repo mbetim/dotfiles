@@ -97,6 +97,9 @@ alias="gst git status"
 alias="g git"
 alias lg="lazygit"
 
+alias bpl="bit pr list"
+alias bpc="bit pr checkout"
+
 alias vim="nvim"
 alias v="nvim"
 alias vs="nvim -c \"lua require('persistence').load()\""

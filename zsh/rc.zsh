@@ -100,6 +100,8 @@ alias lg="lazygit"
 alias bpl="bit pr list"
 alias bpc="bit pr checkout"
 
+alias dps="docker ps"
+
 alias vim="nvim"
 alias v="nvim"
 alias vs="nvim -c \"lua require('persistence').load()\""

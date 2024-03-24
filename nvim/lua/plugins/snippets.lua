@@ -44,5 +44,57 @@ return {
 				},
 			}
 		end,
+		opts = function(_, opts)
+			opts.updateevents = "TextChanged,TextChangedI"
+
+			local ls = require("luasnip")
+
+			local fmt = require("luasnip.extras.fmt").fmt
+			local rep = require("luasnip.extras").rep
+
+			local snippet = ls.s
+			local t = ls.text_node
+			local i = ls.insert_node
+			local f = ls.function_node
+			local d = ls.dynamic_node
+			local sn = ls.snippet_node
+
+			ls.add_snippets("all", {
+				snippet(
+					"curtime",
+					f(function()
+						return os.date("%Y-%m-%d %H:%M")
+					end)
+				),
+				snippet("me", t("Betim")),
+			})
+
+			ls.add_snippets("lua", {
+				snippet(
+					"req",
+					fmt("local {} = require('{}')", {
+						d(2, function(args)
+							local parts = vim.split(args[1][1], ".", { plain = true })
+							return sn(nil, {
+								i(1, parts[#parts] or ""),
+							})
+						end, { 1 }),
+						i(1),
+					})
+				),
+
+				snippet(
+					"func",
+					fmt(
+						[[
+        function {}({})
+            {}
+        end
+        ]],
+						{ i(1), i(2), i(0) }
+					)
+				),
+			})
+		end,
 	},
 }

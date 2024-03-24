@@ -1,3 +1,29 @@
+local concatTables = function(t1, t2)
+	for _, v in ipairs(t2) do
+		table.insert(t1, v)
+	end
+
+	return t1
+end
+
+local pascalize = function(str)
+	str = str:gsub("[-_.]", " ")
+
+	-- Capitalize first letter of each word
+	str = str:gsub("(%a)([%w_]*%s*)", function(first, rest)
+		return first:upper() .. rest:lower()
+	end)
+
+	return str:gsub("%s", "")
+end
+
+local pascalize_filename = function(filename)
+	local parts = vim.split(filename, ".", { plain = true })
+	filename = filename:sub(1, #filename - #parts[#parts])
+
+	return pascalize(filename)
+end
+
 return {
 	{
 		"rafamadriz/friendly-snippets",
@@ -18,9 +44,19 @@ return {
 							ls.expand_or_jump()
 						end
 					end,
-					-- expr = true,
 					silent = true,
 					mode = { "i", "s" },
+				},
+				{
+					"<c-j>",
+					function()
+						if ls.expand_or_jumpable() then
+							ls.expand_or_jump()
+						end
+					end,
+					expr = true,
+					silent = true,
+					mode = { "s" },
 				},
 				{
 					"<c-k>",
@@ -57,6 +93,7 @@ return {
 			local i = ls.insert_node
 			local f = ls.function_node
 			local d = ls.dynamic_node
+			local c = ls.choice_node
 			local sn = ls.snippet_node
 
 			ls.add_snippets("all", {
@@ -108,6 +145,46 @@ return {
 
 			ls.add_snippets("javascript", shared_ts_snippets)
 			ls.add_snippets("typescript", shared_ts_snippets)
+
+			ls.add_snippets(
+				"typescriptreact",
+				concatTables(shared_ts_snippets, {
+					snippet(
+						"rhp",
+						fmt(
+							[[
+          interface {}Props {{
+            {}
+          }}
+
+          const {} = ({}: {}Props) => {{
+            return <div>{}</div>;
+          }};
+          ]],
+							{
+								d(1, function(_, parent)
+									local filename = parent.snippet.env.TM_FILENAME or ""
+
+									filename = pascalize_filename(filename)
+
+									return sn(nil, {
+										i(1, filename),
+									})
+								end),
+								i(2),
+								rep(1),
+								c(3, {
+									t("props"),
+									sn(nil, fmt("{{ {} }}", { i(1) })),
+									sn(nil, fmt("{{ {}, ...props }}", { i(1) })),
+								}),
+								rep(1),
+								i(0),
+							}
+						)
+					),
+				})
+			)
 		end,
 	},
 }

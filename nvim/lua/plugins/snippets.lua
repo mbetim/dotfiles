@@ -95,6 +95,19 @@ return {
 					)
 				),
 			})
+
+			local shared_ts_snippets = {
+				snippet("cod", {
+					i(3, "const"),
+					t(" { "),
+					i(2),
+					t(" } = "),
+					i(1),
+				}),
+			}
+
+			ls.add_snippets("javascript", shared_ts_snippets)
+			ls.add_snippets("typescript", shared_ts_snippets)
 		end,
 	},
 }

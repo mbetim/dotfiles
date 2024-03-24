@@ -86,6 +86,7 @@ return {
 			local ls = require("luasnip")
 
 			local fmt = require("luasnip.extras.fmt").fmt
+			local fmta = require("luasnip.extras.fmt").fmta
 			local rep = require("luasnip.extras").rep
 
 			local snippet = ls.s
@@ -103,7 +104,6 @@ return {
 						return os.date("%Y-%m-%d %H:%M")
 					end)
 				),
-				snippet("me", t("Betim")),
 			})
 
 			ls.add_snippets("lua", {
@@ -141,6 +141,42 @@ return {
 					t(" } = "),
 					i(1),
 				}),
+				snippet(
+					"trc",
+					fmta(
+						[[
+        try {
+          <try>
+        } catch (<err_name>) {
+          <err>
+        }<finish>
+        ]],
+						{
+							try = i(3),
+							err_name = i(1, "err"),
+							err = c(2, {
+								t(""),
+								f(function(args)
+									return string.format("console.error(%s);", args[1][1])
+								end, { 1 }),
+							}),
+							finish = c(4, {
+								t(""),
+								sn(
+									nil,
+									fmta(
+										[[
+                 finally {
+                  <finally>
+                }
+                ]],
+										{ finally = i(1) }
+									)
+								),
+							}),
+						}
+					)
+				),
 			}
 
 			ls.add_snippets("javascript", shared_ts_snippets)

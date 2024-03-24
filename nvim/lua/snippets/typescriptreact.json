@@ -1,15 +1,4 @@
 {
-  "Typescript React Function Component": {
-    "prefix": "rh",
-    "body": [
-      "import React from 'react'",
-      "",
-      "export const $TM_FILENAME_BASE: React.FC = () => {",
-      "\treturn ($1);",
-      "}"
-    ],
-    "description": "Typescript React Function Component"
-  },
   "ClassName with classes (Material UI)": {
     "prefix": "cnc",
     "body": "className={classes.$1}"

@@ -150,6 +150,28 @@ return {
 				"typescriptreact",
 				concatTables(shared_ts_snippets, {
 					snippet(
+						"rh",
+						fmt(
+							[[
+          const {} = () => {{
+            return <div>{}</div>;
+          }};
+            ]],
+							{
+								d(1, function(_, parent)
+									local filename = parent.snippet.env.TM_FILENAME or ""
+
+									filename = pascalize_filename(filename)
+
+									return sn(nil, {
+										i(1, filename),
+									})
+								end),
+								i(0),
+							}
+						)
+					),
+					snippet(
 						"rhp",
 						fmt(
 							[[

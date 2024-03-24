@@ -84,11 +84,11 @@ return {
 				),
 
 				snippet(
-					"func",
+					"lf",
 					fmt(
 						[[
-        function {}({})
-            {}
+        local {} = function({})
+          {}
         end
         ]],
 						{ i(1), i(2), i(0) }

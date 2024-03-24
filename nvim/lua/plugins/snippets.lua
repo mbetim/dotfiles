@@ -232,9 +232,9 @@ return {
 								i(2),
 								rep(1),
 								c(3, {
+									sn(nil, fmta("{ <props> }", { props = i(1) })),
 									t("props"),
-									sn(nil, fmt("{{ {} }}", { i(1) })),
-									sn(nil, fmt("{{ {}, ...props }}", { i(1) })),
+									sn(nil, fmta("{ <first_props>, ...props }", { first_props = i(1) })),
 								}),
 								rep(1),
 								i(0),

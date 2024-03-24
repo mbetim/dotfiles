@@ -33,6 +33,25 @@ return {
 			lazy = true,
 			init = function()
 				vim.g.db_ui_use_nerd_fonts = 1
+				vim.g.db_ui_execute_on_save = false
+			end,
+			keys = function()
+				return {
+					{
+						"<leader>rq",
+						":normal vip<CR><PLUG>(DBUI_ExecuteQuery)<CR>",
+						desc = "Execute query under cursor",
+						mode = "n",
+						silent = true,
+					},
+					{
+						"<leader>re",
+						"<CMD>DBUIToggle<CR>",
+						desc = "Toggle DBUI",
+						mode = "n",
+						silent = true,
+					},
+				}
 			end,
 		},
 		{ "kristijanhusak/vim-dadbod-completion", lazy = true },

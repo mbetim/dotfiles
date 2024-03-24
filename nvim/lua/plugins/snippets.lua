@@ -46,17 +46,7 @@ return {
 					end,
 					silent = true,
 					mode = { "i", "s" },
-				},
-				{
-					"<c-j>",
-					function()
-						if ls.expand_or_jumpable() then
-							ls.expand_or_jump()
-						end
-					end,
-					expr = true,
-					silent = true,
-					mode = { "s" },
+					desc = "Expand or jump snippet",
 				},
 				{
 					"<c-k>",
@@ -76,7 +66,8 @@ return {
 							ls.change_choice(1)
 						end
 					end,
-					mode = { "i" },
+					mode = { "i", "s" },
+					desc = "Next snippet choice",
 				},
 			}
 		end,

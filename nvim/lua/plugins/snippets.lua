@@ -182,6 +182,7 @@ return {
 					)
 				),
 				snippet("req", fmt("const {} = require('{}');", { i(2), i(1) })),
+				snippet("intr", fmt("interface {} {{\n\t{}\n}}", { i(1), i(0) })),
 			}
 
 			ls.add_snippets("javascript", shared_ts_snippets)

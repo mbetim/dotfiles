@@ -168,6 +168,20 @@ return {
 						}
 					)
 				),
+				snippet("expc", fmt("export const {} = {};", { i(1), i(2) })),
+				snippet("expd", fmt("export default {};", { i(1) })),
+				snippet(
+					"expcl",
+					fmta(
+						[[
+        export class <name> {
+          <finish>
+        }
+        ]],
+						{ name = i(1), finish = i(0) }
+					)
+				),
+				snippet("req", fmt("const {} = require('{}');", { i(2), i(1) })),
 			}
 
 			ls.add_snippets("javascript", shared_ts_snippets)

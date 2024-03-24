@@ -19,8 +19,8 @@ ctrl + alt + shift - j : open -a IntelliJ\ IDEA\ CE
 ctrl + alt + shift - h : open -a HTTPie
 ctrl + alt + shift - h : open -a HTTPie
 ctrl + alt + shift - l : open -a Toggl\ Track
-
 ctrl + alt + shift - w : open -a WhatsApp
+ctrl + alt + shift - 1 : open -a 1Password
 alt - f : open -a Finder
 alt - d : open ~/Downloads
 

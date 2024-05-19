@@ -170,6 +170,19 @@ return {
 				),
 				snippet("expc", fmt("export const {} = {};", { i(1), i(2) })),
 				snippet("expd", fmt("export default {};", { i(1) })),
+				snippet("expt", fmt("export type {} = {};", { i(1), i(2) })),
+				snippet(
+					"expi",
+					fmta(
+						[[
+        export interface <name> {
+          <finish>
+        };
+        ]],
+						{ name = i(1), finish = i(0) }
+					)
+				),
+
 				snippet(
 					"expcl",
 					fmta(
@@ -244,6 +257,29 @@ return {
 								}),
 								rep(1),
 								i(0),
+							}
+						)
+					),
+					snippet(
+						"useEffect",
+						fmta(
+							[[
+              useEffect(() =>> {
+                <effect>
+                <cleanup>
+              }<deps>);
+              ]],
+							{
+								deps = c(2, {
+									t(", []"),
+									sn(nil, fmta(", [<deps>]", { deps = i(1) })),
+									t(""),
+								}),
+								effect = i(1),
+								cleanup = c(3, {
+									t(""),
+									sn(nil, fmta("return <func>;", { func = i(1) })),
+								}),
 							}
 						)
 					),

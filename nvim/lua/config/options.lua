@@ -7,7 +7,7 @@ local node_bin = home_dir .. "/.nvm/versions/node/v20.10.0/bin"
 vim.g.node_host_prog = home_dir .. "/.nvm/versions/node/v20.10.0/bin/neovim-node-host"
 vim.cmd("let $PATH = '" .. node_bin .. ":' . $PATH")
 
-vim.opt.clipboard = nil
+vim.opt.clipboard = ""
 
 vim.opt.spelllang = "en,pt_br"
 vim.opt.spell = true

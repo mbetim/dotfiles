@@ -131,7 +131,19 @@ return {
 					i(2),
 					t(" } = "),
 					i(1),
+					t(";"),
 				}),
+				snippet(
+					"fp",
+					fmta("<name>: <type>", {
+						type = i(1),
+						name = c(2, {
+							i(1, "params"),
+							sn(nil, fmta("{ <params> }", { params = i(1) })),
+							sn(nil, fmta("{ <params>, ...rest }", { params = i(1) })),
+						}),
+					})
+				),
 				snippet(
 					"trc",
 					fmta(
@@ -261,7 +273,7 @@ return {
 						)
 					),
 					snippet(
-						"useEffect",
+						"uef",
 						fmta(
 							[[
               useEffect(() =>> {

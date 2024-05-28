@@ -108,7 +108,7 @@ alias vs="nvim -c \"lua require('persistence').load()\""
 alias db="nvim +DBUIToggle"
 
 alias c="clear"
-alias l="eza -lah"
+alias l="eza -lah --icons --git --no-user"
 alias ls=eza
 alias rm="trash"
 

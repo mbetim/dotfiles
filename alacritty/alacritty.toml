@@ -127,6 +127,12 @@ chars = "\u0001:"
 key = "Semicolon"
 mods = "Command"
 
+# Close tmux pane
+[[keyboard.bindings]]
+chars = "\u0001x"
+key = "w"
+mods = "Command"
+
 [[keyboard.bindings]]
 chars = "\u00011"
 key = "Key1"

@@ -27,7 +27,3 @@ alt - o : open -a Wezterm
 alt - f : open -a Finder
 alt - d : open ~/Downloads
 
-cmd - w [
-  "alacritty" : tmux kill-pane
-  "wezterm" : tmux kill-pane
-]

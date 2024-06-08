@@ -120,6 +120,8 @@ alias nvml="nvm use --lts"
 
 alias nd='terminal-notifier -title "Task finished" -message "Done with task! Exit status: $?"'
 
+alias oo='cd ~/dev/obsidian/flat && nvim'
+
 function take() {
   mkdir -p $1
   cd $1

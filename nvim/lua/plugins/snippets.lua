@@ -124,6 +124,13 @@ return {
 				),
 			})
 
+			local funcTypeChoiceNode = function(index)
+				return c(index, {
+					sn(nil, fmta("(<args>)", { args = i(1) })),
+					sn(nil, fmta("async (<args>)", { args = i(1) })),
+				})
+			end
+
 			local shared_ts_snippets = {
 				snippet("cod", {
 					i(3, "const"),
@@ -208,6 +215,12 @@ return {
 				),
 				snippet("req", fmt("const {} = require('{}');", { i(2), i(1) })),
 				snippet("intr", fmt("interface {} {{\n\t{}\n}}", { i(1), i(0) })),
+
+				-- Functions
+				snippet("anfn", fmt("{} => {}", { funcTypeChoiceNode(1), i(0) })),
+				snippet("cnfn", fmt("const {} = {} => {{\n\t{}\n}}", { i(1), funcTypeChoiceNode(2), i(0) })),
+				snippet("ecnfn", fmt("export const {} = {} => {{\n\t{}\n}}", { i(1), funcTypeChoiceNode(2), i(0) })),
+				snippet("nfn", fmt("{} = {} => {{\n\t{}\n}}", { i(1), funcTypeChoiceNode(2), i(0) })),
 			}
 
 			ls.add_snippets("javascript", shared_ts_snippets)

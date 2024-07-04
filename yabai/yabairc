@@ -1,5 +1,5 @@
 # default layout (can be bsp, stack or float)
-yabai -m config layout bsp
+yabai -m config layout float
 
 yabai -m config auto_balance on
 
@@ -16,7 +16,7 @@ yabai -m config window_gap 10
 # -- mouse settings --
 
 # center mouse on window with focus
-yabai -m config mouse_follows_focus on
+# yabai -m config mouse_follows_focus on
 
 # modifier for clicking and dragging with mouse
 yabai -m config mouse_modifier alt

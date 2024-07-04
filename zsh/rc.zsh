@@ -124,6 +124,8 @@ alias nd='terminal-notifier -title "Task finished" -message "Done with task! Exi
 
 alias oo='cd ~/dev/obsidian/flat && nvim'
 
+alias yy='yazi'
+
 function take() {
   mkdir -p $1
   cd $1

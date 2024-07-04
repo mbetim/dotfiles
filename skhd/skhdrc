@@ -1,8 +1,12 @@
+# Open applications with kitty
+ctrl + alt + shift - v : if ! yabai -m window --focus "$(yabai -m query --windows | jq '[. [] | select(.app=="kitty" and .title=="dev").id] | .[0]')"; then kitty --title dev ~ &; fi
+ctrl + alt + shift - o : if ! yabai -m window --focus "$(yabai -m query --windows | jq '[. [] | select(.app=="kitty" and .title=="notes").id] | .[0]')"; then kitty --title notes ~ &; fi
+alt - d : if ! yabai -m window --focus "$(yabai -m query --windows | jq '[. [] | select(.app=="kitty" and .title=="files").id] | .[0]')"; then kitty --title files ~/Downloads &; fi
+ctrl + alt + shift - a : if ! yabai -m window --focus "$(yabai -m query --windows | jq '[. [] | select(.app=="kitty" and .title=="files").id] | .[0]')"; then kitty --title files ~/Downloads &; fi
+
 # Open applications
-ctrl + alt + shift - v : open -a Alacritty
-# ctrl + alt + shift - g : open -a Arc.app
-ctrl + alt + shift - g : open -a Brave\ Browser
-ctrl + alt + shift - a : open -a Asana.app
+ctrl + alt + shift - g : open -a Arc.app
+
 ctrl + alt + shift - s : open -a Spotify.app
 ctrl + alt + shift - b : open -a DBeaver
 ctrl + alt + shift - d : open -a Discord
@@ -21,10 +25,10 @@ ctrl + alt + shift - h : open -a HTTPie
 ctrl + alt + shift - l : open -a Toggl\ Track
 ctrl + alt + shift - w : open -a WhatsApp
 ctrl + alt + shift - 1 : open -a 1Password
+ctrl + alt + shift - x : open -a DevBox
 
-ctrl + alt + shift - o : open -a Obsidian
-alt - o : open -a Wezterm
+# ctrl + alt + shift - o : open -a Obsidian
+alt - o : open -a Obsidian
 
 alt - f : open -a Finder
-alt - d : open ~/Downloads
 

@@ -3,8 +3,8 @@
 -- Add any additional keymaps here
 
 -- Copy from vim
-vim.keymap.set("n", "<C-y>", '"+y')
-vim.keymap.set("v", "<C-y>", '"+y')
+vim.keymap.set({ "n", "v" }, "<C-y>", '"+y', { desc = "Yank to clipboard" })
+vim.keymap.set({ "n", "v" }, "<leader>y", '"+y', { desc = "Yank to clipboard" })
 
 vim.keymap.set("n", "Y", "y$", { desc = "Yank to the end of the line" })
 vim.keymap.set("n", "vv", "v$", { desc = "Select to the end of the line" })

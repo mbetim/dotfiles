@@ -101,6 +101,8 @@ alias bpl="bit pr list"
 alias bpc="bit pr checkout"
 
 alias dps="docker ps"
+alias dcu="docker compose up"
+alias dcd="docker compose down"
 
 alias vim="nvim"
 alias v="nvim"

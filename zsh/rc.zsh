@@ -126,6 +126,8 @@ alias oo='cd ~/dev/obsidian/flat && nvim'
 
 alias yy='yazi'
 
+alias pn=pnpm
+
 function take() {
   mkdir -p $1
   cd $1

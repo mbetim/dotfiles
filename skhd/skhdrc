@@ -14,7 +14,7 @@ ctrl + alt + shift - m : open -a MongoDB\ Compass
 ctrl + alt + shift - n : open -a Notion
 ctrl + alt + shift - p : open -a Postman
 ctrl + alt + shift - e : open -a Spark\ Desktop
-ctrl + alt + shift - t : open -a Microsoft\ Teams\ \(work\ or\ school\)
+ctrl + alt + shift - t : open -a Microsoft\ Teams
 ctrl + alt + shift - k : open -a Vial
 ctrl + alt + shift - c : open -a Visual\ Studio\ Code
 ctrl + alt + shift - f : open -a Figma

@@ -53,6 +53,9 @@ return {
 				["x"] = { char = "", hl_group = "ObsidianDone" },
 			},
 		},
+		attachments = {
+			img_folder = "assets",
+		},
 	},
 	keys = {
 		{ "<leader>on", "<cmd>ObsidianNew<CR>", desc = "New note" },

@@ -62,5 +62,6 @@ return {
 		{ "<leader>od", "<cmd>ObsidianDailies<CR>", desc = "Search journal notes" },
 		{ "<leader>os", "<cmd>ObsidianSearch<CR>", desc = "Search notes" },
 		{ "<leader>ot", "<cmd>ObsidianTemplate<CR>", desc = "Templates" },
+		{ "<leader>oO", "<cmd>ObsidianOpen<CR>", desc = "Open on Obsidian app" },
 	},
 }

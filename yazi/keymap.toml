@@ -6,5 +6,6 @@ prepend_keymap = [
 
 { on = ["c", "v"], run = '''
     shell '~/copyfile.sh "$0"' --confirm
-    ''', desc = "Copy file to system clipboard"}
+    ''', desc = "Copy file to system clipboard"},
+{ on = ["g", "f"], run = "cd ~/Documents", desc = "Go to the documents directory"}
 ]

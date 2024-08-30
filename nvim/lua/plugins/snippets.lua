@@ -308,6 +308,25 @@ return {
 							}
 						)
 					),
+					snippet("jx", {
+						-- Component name
+						t("<"),
+						i(1, "ElementName"),
+						-- Optional props
+						c(2, {
+							sn(nil, fmt(" {}", { i(1) })),
+							t(""),
+						}),
+						t(">"),
+						-- New line and indentation
+						t({ "", "\t" }),
+						-- Cursor position for content
+						i(3),
+						-- New line and closing tag
+						f(function(args)
+							return { "", "</" .. args[1][1] .. ">" }
+						end, { 1 }),
+					}),
 				})
 			)
 		end,

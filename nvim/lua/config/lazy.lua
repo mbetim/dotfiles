@@ -35,6 +35,8 @@ require("lazy").setup({
 		{ import = "lazyvim.plugins.extras.test.core" },
 		{ import = "lazyvim.plugins.extras.editor.mini-diff" },
 		{ import = "lazyvim.plugins.extras.editor.harpoon2" },
+		{ import = "lazyvim.plugins.extras.editor.refactoring" },
+		{ import = "lazyvim.plugins.extras.editor.mini-files" },
 
 		-- import/override with your plugins
 		{ import = "plugins" },

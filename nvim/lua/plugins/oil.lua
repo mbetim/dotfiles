@@ -17,12 +17,7 @@ return {
 			["<leader>e"] = "actions.close",
 		},
 	},
-	keys = function()
-		local cwd = vim.uv.cwd()
-
-		return {
-			{ "-", "<cmd>Oil<cr>", desc = "Open oil", mode = "n" },
-			{ "<leader>e", "<cmd>Oil " .. cwd .. "<cr>", desc = "Open oil", mode = "n" },
-		}
-	end,
+	keys = {
+		{ "-", "<cmd>Oil<cr>", desc = "Open oil", mode = "n" },
+	},
 }

@@ -75,3 +75,10 @@ vim.keymap.set("i", "<C-g>", function()
 	-- Leave me in normal mode or command mode
 	vim.cmd("stopinsert")
 end, { desc = "Paste Github link" })
+
+-- Copy current filepath to the clipboard
+vim.keymap.set("n", "<leader>fp", function()
+	local filepath = vim.fn.expand("%:~")
+	vim.fn.setreg("+", filepath)
+	print("File path copied to clipboard: " .. filepath)
+end, { desc = "Copy file path to clipboard" })

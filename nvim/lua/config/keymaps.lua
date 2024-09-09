@@ -65,3 +65,13 @@ vim.keymap.set("n", "<leader>fD", function()
 end, {
 	desc = "Delete file",
 })
+
+-- Paste a github link and add it in this format
+-- [folke/noice.nvim](https://github.com/folke/noice.nvim){:target="\_blank"}
+vim.keymap.set("i", "<C-g>", function()
+	-- Insert the text in the desired format
+	vim.cmd("normal! a[]()")
+	vim.cmd("normal! F(pv2F/lyF[p")
+	-- Leave me in normal mode or command mode
+	vim.cmd("stopinsert")
+end, { desc = "Paste Github link" })

@@ -20,3 +20,48 @@ vim.keymap.set(
 	require("telescope.builtin").resume,
 	{ desc = "Resume", silent = true, noremap = true }
 )
+
+vim.keymap.set("n", "<leader>fD", function()
+	local current_file = vim.fn.expand("%:p")
+	if current_file and current_file ~= "" then
+		if vim.fn.executable("trash") == 0 then
+			vim.api.nvim_echo({
+				{ "- Trash utility is not installed", "ErrorMsg" },
+			}, false, {})
+			return
+		end
+
+		vim.ui.input({
+			prompt = "Type 'yes' to delete the file '" .. current_file .. "': ",
+		}, function(input)
+			if input == "yes" then
+				local success, _ = pcall(function()
+					vim.fn.system({ "trash", vim.fn.fnameescape(current_file) })
+				end)
+
+				if success then
+					vim.api.nvim_echo({
+						{ "File delete from disk", "Normal" },
+						{ current_file, "Normal" },
+					}, false, {})
+					vim.cmd("bd!")
+				else
+					vim.api.nvim_echo({
+						{ "Failed to delete file", "ErrorMsg" },
+						{ current_file, "ErrorMsg" },
+					}, false, {})
+				end
+			else
+				vim.api.nvim_echo({
+					{ "File deletion canceled", "Normal" },
+				}, false, {})
+			end
+		end)
+	else
+		vim.api.nvim_echo({
+			{ "No file to delete", "WarningMsg" },
+		}, false, {})
+	end
+end, {
+	desc = "Delete file",
+})

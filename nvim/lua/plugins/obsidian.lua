@@ -20,6 +20,7 @@ return {
 		daily_notes = {
 			-- Optional, if you keep daily notes in a separate directory.
 			folder = "journal/daily",
+			template = "templates/daily.md",
 		},
 
 		completion = {

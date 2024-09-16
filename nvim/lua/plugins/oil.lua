@@ -17,7 +17,7 @@ return {
 			["<leader>e"] = "actions.close",
 		},
 	},
-	keys = {
-		{ "-", "<cmd>Oil<cr>", desc = "Open oil", mode = "n" },
-	},
+	-- keys = {
+	-- 	{ "-", "<cmd>Oil<cr>", desc = "Open oil", mode = "n" },
+	-- },
 }

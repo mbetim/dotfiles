@@ -32,9 +32,9 @@ vim.keymap.set("n", "<leader>fD", function()
 		end
 
 		vim.ui.input({
-			prompt = "Type 'yes' to delete the file '" .. current_file .. "': ",
+			prompt = "Delete file '" .. current_file .. "'? (y/n)",
 		}, function(input)
-			if input == "yes" then
+			if string.lower(input) == "y" then
 				local success, _ = pcall(function()
 					vim.fn.system({ "trash", vim.fn.fnameescape(current_file) })
 				end)

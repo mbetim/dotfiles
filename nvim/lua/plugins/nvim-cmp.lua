@@ -16,4 +16,7 @@ return {
 		removeItem(sources, { name = "buffer" })
 		opts.sources = cmp.config.sources(sources)
 	end,
+	keys = function()
+		return {}
+	end,
 }

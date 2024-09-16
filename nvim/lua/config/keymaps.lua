@@ -21,6 +21,7 @@ vim.keymap.set(
 	{ desc = "Resume", silent = true, noremap = true }
 )
 
+-- Delete current file
 vim.keymap.set("n", "<leader>fD", function()
 	local current_file = vim.fn.expand("%:p")
 	if current_file and current_file ~= "" then
@@ -82,3 +83,14 @@ vim.keymap.set("n", "<leader>fp", function()
 	vim.fn.setreg("+", filepath)
 	print("File path copied to clipboard: " .. filepath)
 end, { desc = "Copy file path to clipboard" })
+
+-- Remove brackets from a checkbox item
+vim.keymap.set("n", "<leader>cH", function()
+	local target_line = vim.api.nvim_win_get_cursor(0)[1]
+	local line_content = vim.api.nvim_buf_get_lines(0, target_line - 1, target_line, false)[1]
+
+	if line_content then
+		local new_content = line_content:gsub("%[[ x]%]%s?", "")
+		vim.api.nvim_buf_set_lines(0, target_line - 1, target_line, false, { new_content })
+	end
+end, { desc = "Remove Checkbox Below" })

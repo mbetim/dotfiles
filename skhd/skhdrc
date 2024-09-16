@@ -1,17 +1,16 @@
 # Open applications with kitty
-ctrl + alt + shift - v : if ! yabai -m window --focus "$(yabai -m query --windows | jq '[. [] | select(.app=="kitty" and .title=="dev").id] | .[0]')"; then kitty --title dev ~ &; fi
-ctrl + alt + shift - o : if ! yabai -m window --focus "$(yabai -m query --windows | jq '[. [] | select(.app=="kitty" and .title=="notes").id] | .[0]')"; then kitty --title notes ~ &; fi
-alt - d : if ! yabai -m window --focus "$(yabai -m query --windows | jq '[. [] | select(.app=="kitty" and .title=="files").id] | .[0]')"; then kitty --title files ~/Downloads &; fi
-ctrl + alt + shift - a : if ! yabai -m window --focus "$(yabai -m query --windows | jq '[. [] | select(.app=="kitty" and .title=="files").id] | .[0]')"; then kitty --title files ~/Downloads &; fi
+# ctrl + alt + shift - v : if ! yabai -m window --focus "$(yabai -m query --windows | jq '[. [] | select(.app=="kitty" and .title=="dev").id] | .[0]')"; then kitty --title dev ~ &; fi
+# ctrl + alt + shift - o : if ! yabai -m window --focus "$(yabai -m query --windows | jq '[. [] | select(.app=="kitty" and .title=="notes").id] | .[0]')"; then kitty --title notes ~ &; fi
+# alt - d : if ! yabai -m window --focus "$(yabai -m query --windows | jq '[. [] | select(.app=="kitty" and .title=="files").id] | .[0]')"; then kitty --title files ~/Downloads &; fi
+# ctrl + alt + shift - a : if ! yabai -m window --focus "$(yabai -m query --windows | jq '[. [] | select(.app=="kitty" and .title=="files").id] | .[0]')"; then kitty --title files ~/Downloads &; fi
 
 # Open applications
+ctrl + alt + shift - v : open -a Kitty.app
 ctrl + alt + shift - g : open -a Arc.app
-
 ctrl + alt + shift - s : open -a Spotify.app
 ctrl + alt + shift - b : open -a DBeaver
 ctrl + alt + shift - d : open -a Discord
 ctrl + alt + shift - m : open -a MongoDB\ Compass
-ctrl + alt + shift - n : open -a Notion
 ctrl + alt + shift - p : open -a Postman
 ctrl + alt + shift - e : open -a Spark\ Desktop
 ctrl + alt + shift - t : open -a Microsoft\ Teams
@@ -26,9 +25,8 @@ ctrl + alt + shift - l : open -a Toggl\ Track
 ctrl + alt + shift - w : open -a WhatsApp
 ctrl + alt + shift - 1 : open -a 1Password
 ctrl + alt + shift - x : open -a DevBox
-
-# ctrl + alt + shift - o : open -a Obsidian
-alt - o : open -a Obsidian
+ctrl + alt + shift - o : open -a Obsidian
+ctrl + alt + shift - r : open -a Shottr
 
 alt - f : open -a Finder
 

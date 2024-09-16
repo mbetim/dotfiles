@@ -94,3 +94,15 @@ vim.keymap.set("n", "<leader>cH", function()
 		vim.api.nvim_buf_set_lines(0, target_line - 1, target_line, false, { new_content })
 	end
 end, { desc = "Remove Checkbox Below" })
+
+-- Open current file in Finder
+vim.keymap.set("n", "<leader>fO", function()
+	local file_path = vim.fn.expand("%:p")
+	if file_path ~= "" then
+		local command = "open -R " .. vim.fn.shellescape(file_path)
+		vim.fn.system(command)
+		print("Opened file in Finder: " .. file_path)
+	else
+		print("No file to open")
+	end
+end, { desc = "Open current file in Finder" })

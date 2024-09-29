@@ -21,6 +21,11 @@ vim.keymap.set(
 	{ desc = "Resume", silent = true, noremap = true }
 )
 
+-- Buffer navigation
+local telescope_buffer = "<cmd>Telescope buffers sort_mru=true sort_lastused=true initial_mode=normal theme=ivy<cr>"
+vim.keymap.set("n", "<S-h>", telescope_buffer, { desc = "Open telescope buffers" })
+vim.keymap.set("n", "<S-l>", telescope_buffer, { desc = "Open telescope buffers" })
+
 -- Delete current file
 vim.keymap.set("n", "<leader>fD", function()
 	local current_file = vim.fn.expand("%:p")

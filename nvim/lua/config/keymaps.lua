@@ -90,12 +90,19 @@ vim.keymap.set("i", "<C-g>", function()
 	vim.cmd("stopinsert")
 end, { desc = "Paste Github link" })
 
--- Copy current filepath to the clipboard
+-- Copy current full file path to the clipboard
 vim.keymap.set("n", "<leader>fp", function()
 	local filepath = vim.fn.expand("%:~")
 	vim.fn.setreg("+", filepath)
 	print("File path copied to clipboard: " .. filepath)
-end, { desc = "Copy file path to clipboard" })
+end, { desc = "Copy full file path to clipboard" })
+
+-- Copy current relative file path to the clipboard
+vim.keymap.set("n", "<leader>fP", function()
+	local filepath = vim.fn.expand("%:.")
+	vim.fn.setreg("+", filepath)
+	print("Relative file path copied to clipboard: " .. filepath)
+end, { desc = "Copy relative file path to clipboard" })
 
 -- Remove brackets from a checkbox item
 vim.keymap.set("n", "<leader>cH", function()

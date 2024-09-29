@@ -31,6 +31,9 @@ vim.keymap.set({ "n", "v" }, "gh", "^", { desc = "Go to the beginning of the lin
 -- use gl to move to the end of the line
 vim.keymap.set({ "n", "v" }, "gl", "$", { desc = "Go to the end of the line" })
 
+-- Restart LSP
+vim.keymap.set("n", "<leader>cL", "<cmd>LspRestart<cr>", { desc = "Restart LSP" })
+
 -- Delete current file
 vim.keymap.set("n", "<leader>fD", function()
 	local current_file = vim.fn.expand("%:p")

@@ -28,6 +28,18 @@ local config = {
 
 	keys = {
 		{
+			-- Delete entire line
+			key = "Backspace",
+			mods = "CMD",
+			action = act({ SendString = "\x15" }),
+		},
+		{
+			-- Delete word
+			key = "Backspace",
+			mods = "ALT",
+			action = act({ SendString = "\x17" }),
+		},
+		{
 			-- Open sessionx
 			key = "k",
 			mods = "CMD",

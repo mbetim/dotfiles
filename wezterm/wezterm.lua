@@ -2,7 +2,9 @@ local wezterm = require("wezterm")
 local act = wezterm.action
 
 local config = {
-	color_scheme = "tokyonight",
+	term = "wezterm",
+
+	color_scheme = "tokyonight_night",
 	enable_tab_bar = false,
 	font_size = 13,
 
@@ -17,7 +19,6 @@ local config = {
 	macos_window_background_blur = 30,
 
 	set_environment_variables = {
-		TERM = "xterm-256color",
 		LC_ALL = "en_US.UTF-8",
 	},
 	native_macos_fullscreen_mode = false,

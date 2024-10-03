@@ -59,6 +59,24 @@ return {
 		attachments = {
 			img_folder = "assets",
 		},
+		mappings = {
+			["gf"] = {
+				action = function()
+					return require("obsidian").util.gf_passthrough()
+				end,
+				opts = { noremap = false, expr = true, buffer = true },
+			},
+			-- Toggle check-boxes.
+			["<leader>ch"] = {
+				action = function()
+					return require("obsidian").util.toggle_checkbox()
+				end,
+				opts = { buffer = true },
+			},
+		},
+		pickers = {
+			name = "telescope.nvim",
+		},
 	},
 	keys = {
 		{ "<leader>on", "<cmd>ObsidianNew<CR>", desc = "New note" },

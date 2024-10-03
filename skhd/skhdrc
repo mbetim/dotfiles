@@ -26,5 +26,5 @@ ctrl + alt + shift - x : open -a DevBox
 ctrl + alt + shift - o : open -a Obsidian
 ctrl + alt + shift - r : open -a Shottr
 
-alt - f : open -a Finder
+ctrl + alt + shift + hyper - f : open -a Finder
 

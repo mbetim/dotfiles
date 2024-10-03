@@ -26,6 +26,7 @@ return {
 		completion = {
 			nvim_cmp = true,
 		},
+		preferred_link_style = "wiki",
 
 		templates = {
 			folder = "templates",
@@ -36,16 +37,16 @@ return {
 		default_template = "templates/default.md",
 
 		note_id_func = function(title)
-			local suffix = ""
+			local filename = ""
 			if title ~= nil then
-				suffix = title:gsub(" ", "-"):gsub("[^A-Za-z0-9-]", ""):lower()
+				filename = title:gsub(" ", "-"):gsub("[^A-Za-z0-9-]", ""):lower()
 			else
 				for _ = 1, 4 do
-					suffix = suffix .. string.char(math.random(65, 90))
+					filename = filename .. string.char(math.random(65, 90))
 				end
 			end
 
-			return tostring(os.time()) .. "-" .. suffix
+			return filename
 		end,
 
 		ui = {

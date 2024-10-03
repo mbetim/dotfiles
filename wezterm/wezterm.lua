@@ -6,11 +6,15 @@ local config = {
 
 	color_scheme = "tokyonight_night",
 	enable_tab_bar = false,
-	font_size = 13,
+
+	font_size = 12,
+	line_height = 1.2,
+	-- cell_width = 1.0,
 
 	font = wezterm.font_with_fallback({
 		{
 			family = "Fira Code",
+			weight = "Medium",
 			harfbuzz_features = { "zero", "ss01", "cv05" },
 		},
 	}),

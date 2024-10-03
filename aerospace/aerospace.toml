@@ -202,13 +202,13 @@ V = "secondary"
 # Main apps
 [[on-window-detected]]
 if.app-id = "company.thebrowser.Browser"
-run = "move-node-to-workspace F"
+run = "move-node-to-workspace G"
 [[on-window-detected]]
 if.app-id = "net.kovidgoyal.kitty"
-run = "move-node-to-workspace F"
+run = "move-node-to-workspace G"
 [[on-window-detected]]
 if.app-id = "com.TickTick.task.mac"
-run = "move-node-to-workspace F"
+run = "move-node-to-workspace G"
 
 # Message apps
 [[on-window-detected]]

@@ -32,11 +32,11 @@ local config = {
 
 	disable_default_key_bindings = true,
 	keys = {
-		{
-			key = "q",
-			mods = "CMD",
-			action = act.QuitApplication,
-		},
+		-- Default commands
+		{ key = "q", mods = "CMD", action = act.QuitApplication },
+		{ key = "v", mods = "CMD", action = act.PasteFrom("Clipboard") },
+
+		-- Custom commands
 		{
 			-- Delete entire line
 			key = "Backspace",

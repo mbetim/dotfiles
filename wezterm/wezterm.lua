@@ -30,7 +30,13 @@ local config = {
 	window_close_confirmation = "NeverPrompt",
 	window_decorations = "RESIZE",
 
+	disable_default_key_bindings = true,
 	keys = {
+		{
+			key = "q",
+			mods = "CMD",
+			action = act.QuitApplication,
+		},
 		{
 			-- Delete entire line
 			key = "Backspace",
@@ -146,6 +152,24 @@ local config = {
 			-- Previous window
 			key = "[",
 			mods = "CMD",
+			action = act.Multiple({
+				act.SendKey({ mods = "CTRL", key = "a" }),
+				act.SendKey({ key = "p" }),
+			}),
+		},
+		{
+			-- Next window
+			key = "}",
+			mods = "CMD|SHIFT",
+			action = act.Multiple({
+				act.SendKey({ mods = "CTRL", key = "a" }),
+				act.SendKey({ key = "n" }),
+			}),
+		},
+		{
+			-- Previous window
+			key = "{",
+			mods = "CMD|SHIFT",
 			action = act.Multiple({
 				act.SendKey({ mods = "CTRL", key = "a" }),
 				act.SendKey({ key = "p" }),

@@ -5,30 +5,9 @@
 # You can use this file to define the base matches (aka snippets)
 # that will be available in every application when using espanso.
 
-# Some possible ones
-# - ;bit -> Bitbucket
-# - ;gcp -> Google Cloud Platform
-
 # Matches are substitution rules: when you type the "trigger" string
 # it gets replaced by the "replace" string.
 matches:
-  # Print the current date
-  - trigger: ":date"
-    replace: "{{mydate}}"
-    vars:
-      - name: mydate
-        type: date
-        params:
-          format: "%m/%d/%Y"
-
-  - trigger: ";now"
-    replace: "{{currentTime}}"
-    vars:
-      - name: currentTime
-        type: date
-        params:
-          format: "%H:%M"
-
   - trigger: "clg"
     replace: "console.log($|$)"
 
@@ -38,27 +17,26 @@ matches:
   - trigger: ";gcp"
     replace: "Google Cloud Platform"
 
-  - trigger: ";dup"
-    replace: "docker compose up"
-
-  - trigger: ";ddown"
-    replace: "docker compose down"
-
-  - trigger: ";co"
-    replace: "code ."
-
   - trigger: ":pray"
     replace: "🙏🏼"
 
-  - trigger: ":v"
+  - trigger: ":peace:"
     replace: "✌🏼"
 
   - trigger: ":grimacing"
     replace: "😬"
 
-  # This one could detect the .env file using the current directory
-  - trigger: ";v.e"
-    replace: "vim .env"
+  - trigger: ";high"
+    replace: "highlights::"
 
-  - trigger: ";shrug"
-    replace: " ̄\\_(ツ)_/ ̄"
+  - trigger: ";a"
+    replace: "ã"
+    propagate_case: true
+
+  - trigger: ";o"
+    replace: "õ"
+    propagate_case: true
+
+  - trigger: ";c"
+    replace: "ç"
+    propagate_case: true

@@ -30,6 +30,7 @@
 
 # Enable/disable the config auto-reload after a file change is detected.
 auto_restart: true
+show_icon: false
 # --- Clipboard threshold
 
 # Because injecting long texts char-by-char is a slow operation, espanso automatically
@@ -38,3 +39,5 @@ auto_restart: true
 
 # For a list of all the available options, visit the official docs at: https://espanso.org/docs/
 
+key_delay: 0
+inject_delay: 0

@@ -5,7 +5,7 @@
 # ctrl + alt + shift - a : if ! yabai -m window --focus "$(yabai -m query --windows | jq '[. [] | select(.app=="kitty" and .title=="files").id] | .[0]')"; then kitty --title files ~/Downloads &; fi
 
 # Open applications
-ctrl + alt + shift - v : open -a Kitty.app
+ctrl + alt + shift - v : open -a WezTerm.app
 ctrl + alt + shift - g : open -a Arc.app
 ctrl + alt + shift - s : open -a Spotify.app
 ctrl + alt + shift - b : open -a DBeaver

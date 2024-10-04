@@ -126,3 +126,34 @@ vim.keymap.set("n", "<leader>fO", function()
 		print("No file to open")
 	end
 end, { desc = "Open current file in Finder" })
+
+-- Copy markdown content without line length rule
+vim.keymap.set("v", "<leader>Y", function()
+	local line_start = vim.fn.line("v")
+	local line_end = vim.fn.line(".")
+
+	-- Swap the values if the selection started from the bottom up
+	if line_start > line_end then
+		local temp = line_start
+		line_start = line_end
+		line_end = temp
+	end
+
+	local lines = vim.fn.getline(line_start, line_end)
+
+	local paragraphs = vim.split(table.concat(lines, "\n"), "\n\n")
+	local new_paragraphs = {}
+
+	for _, paragraph in ipairs(paragraphs) do
+		table.insert(new_paragraphs, paragraph:gsub("\n", " "))
+	end
+
+	-- Join paragraphs with double newlines
+	local content = table.concat(new_paragraphs, "\n\n")
+
+	-- Copy to clipboard
+	vim.fn.setreg("+", content)
+
+	-- Display a message
+	vim.api.nvim_echo({ { "Content copied to clipboard with paragraphs preserved!", "Normal" } }, false, {})
+end, { desc = "Copy markdown content" })

@@ -72,6 +72,15 @@ local config = {
 			}),
 		},
 		{
+			-- Switch to previous window
+			key = "j",
+			mods = "CMD",
+			action = act.Multiple({
+				act.SendKey({ mods = "CTRL", key = "a" }),
+				act.SendKey({ key = "J" }),
+			}),
+		},
+		{
 			-- Find the urls on the pane
 			key = "u",
 			mods = "CMD",

@@ -204,7 +204,7 @@ V = "secondary"
 if.app-id = "company.thebrowser.Browser"
 run = "move-node-to-workspace G"
 [[on-window-detected]]
-if.app-id = "net.kovidgoyal.kitty"
+if.app-id = "com.github.wez.wezterm"
 run = "move-node-to-workspace G"
 [[on-window-detected]]
 if.app-id = "com.TickTick.task.mac"

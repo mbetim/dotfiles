@@ -31,6 +31,10 @@ local config = {
 	window_decorations = "RESIZE",
 
 	disable_default_key_bindings = true,
+
+	-- Use left option to add accent
+	send_composed_key_when_left_alt_is_pressed = true,
+
 	keys = {
 		-- Default commands
 		{ key = "q", mods = "CMD", action = act.QuitApplication },

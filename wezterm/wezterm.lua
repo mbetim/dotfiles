@@ -2,7 +2,7 @@ local wezterm = require("wezterm")
 local act = wezterm.action
 
 local config = {
-	term = "wezterm",
+	term = "xterm-256color",
 
 	color_scheme = "tokyonight_night",
 	enable_tab_bar = false,

@@ -25,6 +25,9 @@ local telescope_buffer = "<cmd>Telescope buffers sort_mru=true sort_lastused=tru
 vim.keymap.set("n", "<S-h>", telescope_buffer, { desc = "Open telescope buffers" })
 vim.keymap.set("n", "<S-l>", telescope_buffer, { desc = "Open telescope buffers" })
 
+-- Switch back to the previous buffer
+vim.keymap.set("n", "<leader>j", "<cmd>e #<cr>", { desc = "Switch to Other Buffer" })
+
 -- use gh to move to the beginning of the line
 vim.keymap.set({ "n", "v" }, "gh", "^", { desc = "Go to the beginning of the line" })
 -- use gl to move to the end of the line

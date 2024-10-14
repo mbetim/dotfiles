@@ -4,7 +4,6 @@
 
 -- Copy from vim
 vim.keymap.set({ "n", "v" }, "<C-y>", '"+y', { desc = "Yank to clipboard" })
-vim.keymap.set({ "n", "v" }, "<leader>y", '"+y', { desc = "Yank to clipboard" })
 
 vim.keymap.set("n", "Y", "y$", { desc = "Yank to the end of the line" })
 vim.keymap.set("n", "vv", "v$", { desc = "Select to the end of the line" })
@@ -128,32 +127,55 @@ vim.keymap.set("n", "<leader>fO", function()
 end, { desc = "Open current file in Finder" })
 
 -- Copy markdown content without line length rule
-vim.keymap.set("v", "<leader>Y", function()
-	local line_start = vim.fn.line("v")
-	local line_end = vim.fn.line(".")
-
-	-- Swap the values if the selection started from the bottom up
-	if line_start > line_end then
-		local temp = line_start
-		line_start = line_end
-		line_end = temp
+vim.keymap.set("v", "<leader>y", function()
+	-- Check if the current buffer's filetype is markdown
+	if vim.bo.filetype ~= "markdown" then
+		-- Not a Markdown file, copy the selection to the system clipboard
+		vim.cmd('normal! "+y')
+		-- -- Optionally, notify the user
+		-- vim.notify("Yanked to system clipboard", vim.log.levels.INFO)
+		return
 	end
 
-	local lines = vim.fn.getline(line_start, line_end)
-
-	local paragraphs = vim.split(table.concat(lines, "\n"), "\n\n")
-	local new_paragraphs = {}
-
-	for _, paragraph in ipairs(paragraphs) do
-		table.insert(new_paragraphs, paragraph:gsub("\n", " "))
+	-- Yank the selected text into register 'z' without affecting the unnamed register
+	vim.cmd('silent! normal! "zy')
+	-- Get the yanked text from register 'z'
+	local text = vim.fn.getreg("z")
+	-- Path to a temporary file (uses a unique temporary file name)
+	local temp_file = vim.fn.tempname() .. ".md"
+	-- Write the selected text to the temporary file
+	local file = io.open(temp_file, "w")
+	if file == nil then
+		vim.notify("Error: Cannot write to temporary file.", vim.log.levels.ERROR)
+		return
 	end
 
-	-- Join paragraphs with double newlines
-	local content = table.concat(new_paragraphs, "\n\n")
+	file:write(text)
+	file:close()
 
-	-- Copy to clipboard
-	vim.fn.setreg("+", content)
+	-- Run Prettier on the temporary file to format it
+	local cmd = 'prettier --prose-wrap never --write "' .. temp_file .. '"'
+	local result = os.execute(cmd)
 
-	-- Display a message
-	vim.api.nvim_echo({ { "Content copied to clipboard with paragraphs preserved!", "Normal" } }, false, {})
+	if result ~= 0 then
+		vim.notify("Error: Prettier formatting failed.", vim.log.levels.ERROR)
+		os.remove(temp_file)
+		return
+	end
+
+	-- Read the formatted text from the temporary file
+	file = io.open(temp_file, "r")
+	if file == nil then
+		vim.notify("Error: Cannot read from temporary file.", vim.log.levels.ERROR)
+		os.remove(temp_file)
+		return
+	end
+
+	local formatted_text = file:read("*all")
+	file:close()
+
+	-- Copy the formatted text to the system clipboard
+	vim.fn.setreg("+", formatted_text)
+	-- Delete the temporary file
+	os.remove(temp_file)
 end, { desc = "Copy markdown content" })

@@ -1,100 +1,25 @@
-# If you come from bash you might have to change your $PATH.
-# export PATH=$HOME/bin:/usr/local/bin:$PATH
-
-# Path to your oh-my-zsh installation.
-export ZSH="$HOME/.oh-my-zsh"
-
-# Set name of the theme to load --- if set to "random", it will
-# load a random theme each time oh-my-zsh is loaded, in which case,
-# to know which specific one was loaded, run: echo $RANDOM_THEME
-# See https://github.com/ohmyzsh/ohmyzsh/wiki/Themes
-ZSH_THEME="robbyrussell"
-
-# Set list of themes to pick from when loading at random
-# Setting this variable when ZSH_THEME=random will cause zsh to load
-# a theme from this variable instead of looking in $ZSH/themes/
-# If set to an empty array, this variable will have no effect.
-# ZSH_THEME_RANDOM_CANDIDATES=( "robbyrussell" "agnoster" )
-
-# Uncomment the following line to use case-sensitive completion.
-# CASE_SENSITIVE="true"
-
-# Uncomment the following line to use hyphen-insensitive completion.
-# Case-sensitive completion must be off. _ and - will be interchangeable.
-# HYPHEN_INSENSITIVE="true"
-
-# Uncomment one of the following lines to change the auto-update behavior
-# zstyle ':omz:update' mode disabled  # disable automatic updates
-# zstyle ':omz:update' mode auto      # update automatically without asking
-# zstyle ':omz:update' mode reminder  # just remind me to update when it's time
-
-# Uncomment the following line to change how often to auto-update (in days).
-# zstyle ':omz:update' frequency 13
-
-# Uncomment the following line if pasting URLs and other text is messed up.
-# DISABLE_MAGIC_FUNCTIONS="true"
-
-# Uncomment the following line to disable colors in ls.
-# DISABLE_LS_COLORS="true"
-
-# Uncomment the following line to disable auto-setting terminal title.
-# DISABLE_AUTO_TITLE="true"
-
-# Uncomment the following line to enable command auto-correction.
-# ENABLE_CORRECTION="true"
-
-# Uncomment the following line to display red dots whilst waiting for completion.
-# You can also set it to another string to have that shown instead of the default red dots.
-# e.g. COMPLETION_WAITING_DOTS="%F{yellow}waiting...%f"
-# Caution: this setting can cause issues with multiline prompts in zsh < 5.7.1 (see #5765)
-# COMPLETION_WAITING_DOTS="true"
-
-# Uncomment the following line if you want to disable marking untracked files
-# under VCS as dirty. This makes repository status check for large repositories
-# much, much faster.
-# DISABLE_UNTRACKED_FILES_DIRTY="true"
-
-# Uncomment the following line if you want to change the command execution time
-# stamp shown in the history command output.
-# You can set one of the optional three formats:
-# "mm/dd/yyyy"|"dd.mm.yyyy"|"yyyy-mm-dd"
-# or set a custom format using the strftime function format specifications,
-# see 'man strftime' for details.
-# HIST_STAMPS="mm/dd/yyyy"
-
-# Would you like to use another custom folder than $ZSH/custom?
-# ZSH_CUSTOM=/path/to/new-custom-folder
-
-# Which plugins would you like to load?
-# Standard plugins can be found in $ZSH/plugins/
-# Custom plugins may be added to $ZSH_CUSTOM/plugins/
-# Example format: plugins=(rails git textmate ruby lighthouse)
-# Add wisely, as too many plugins slow down shell startup.
-plugins=(git zsh-autosuggestions zsh-syntax-highlighting) 
-source $ZSH/oh-my-zsh.sh
-
-# User configuration
-
 # Set vim as default editor
 export VISUAL=nvim
 export EDITOR="$VISUAL"
+export TERM="xterm-256color"
 
-# Compilation flags
-# export ARCHFLAGS="-arch x86_64"
-
-# Set personal aliases, overriding those provided by oh-my-zsh libs,
-# plugins, and themes. Aliases can be placed here, though oh-my-zsh
-# users are encouraged to define aliases within the ZSH_CUSTOM folder.
-# For a full list of active aliases, run `alias`.
-#
-# Example aliases
-# alias zshconfig="mate ~/.zshrc"
-# alias ohmyzsh="mate ~/.oh-my-zsh"
-alias gpl="git pull"
-alias gco="git checkout"
-alias gcod="git checkout develop"
-alias="gst git status"
+# alias
 alias="g git"
+alias ga="git add"
+alias gb="git branch"
+alias gcb='git checkout -b'
+alias gpl="git pull"
+alias gco='git checkout'
+alias gcm='git checkout $(git_main_branch)'
+alias gcd='git checkout $(git_develop_branch)'
+alias gcod="git checkout develop"
+alias gf='git fetch'
+alias gfo='git fetch origin'
+alias glo='git log --oneline --decorate'
+alias gp='git push'
+alias gpf='git push --force-with-lease --force-if-includes'
+alias grs='git restore'
+alias="gst git status"
 alias lg="lazygit"
 
 alias bpl="bit pr list"
@@ -110,8 +35,11 @@ alias vs="nvim -c \"lua require('persistence').load()\""
 alias db="nvim +DBUIToggle"
 
 alias c="clear"
+alias md='mkdir -p'
+
 alias l="eza -lah --icons --git --no-user"
 alias ls=eza
+
 alias rm="trash"
 
 alias tn="tmux new -s"
@@ -138,12 +66,20 @@ function len() {
   echo ${#str}
 }
 
-function copy-file() {
+function cpfile() {
   cat $1 | pbcopy
 }
 
+function copyfile() {
+  osascript \
+    -e 'on run args' \
+    -e 'set the clipboard to POSIX file (first item of args)' \
+    -e end \
+    "$(realpath $@)"
+}
+
 # Alias to switch user on git
-function g-user() {
+function gu() {
   if [[ $1 == "personal" ]]; then
     git config user.email "mbetim47@gmail.com" "${@:2}"
   fi
@@ -175,8 +111,13 @@ function d() {
   eval $node_pkg_manger run $chosen_script
 }
 
-# Key binding
+# Auto suggestions
+source $(brew --prefix)/share/zsh-autosuggestions/zsh-autosuggestions.zsh
 bindkey '^ ' autosuggest-accept
+bindkey '^w' vi-forward-word # accept the word
+
+# Syntax highlight
+source $(brew --prefix)/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
 # Loads nvm
 export NVM_DIR="$HOME/.nvm"
@@ -204,24 +145,15 @@ load-nvmrc() {
 add-zsh-hook chpwd load-nvmrc
 load-nvmrc
 
-# The next line updates PATH for the Google Cloud SDK.
-if [ -f '${HOME}/google-cloud-sdk/path.zsh.inc' ]; then . '${HOME}/google-cloud-sdk/path.zsh.inc'; fi
-
-# The next line enables shell command completion for gcloud.
-if [ -f '${HOME}/google-cloud-sdk/completion.zsh.inc' ]; then . '${HOME}/google-cloud-sdk/completion.zsh.inc'; fi
-
-# test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
-
+export PATH=$HOME/.local/bin:$PATH
 export PATH="/opt/homebrew/opt/mysql-client/bin:$PATH"
 export PATH="$HOME/go/bin:$PATH"
 export PATH="/opt/homebrew/opt/postgresql@15/libexec/bin:$PATH"
 
-export PATH=$HOME/.local/bin:$PATH
-export PATH=$HOME/dev/sonar-scanner/bin/:$PATH
-
 # Settings for fzf
 export FZF_DEFAULT_COMMAND='fd --type f --strip-cwd-prefix --hidden --exclude .git --exclude Library --exclude node_modules'
-[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+export FZF_CTRL_T_OPTS='--preview="bat -n --color=always {}"'
+# [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
 # pnpm
 export PNPM_HOME="${HOME}/Library/pnpm"
@@ -231,17 +163,21 @@ case ":$PATH:" in
 esac
 # pnpm end
 
-eval "$(starship init zsh)"
-eval "$(zoxide init zsh)"
+# TODO: try to move gcp cli to a different place
+# The next line updates PATH for the Google Cloud SDK.
+if [ -f '/Users/matheus.betim/Downloads/google-cloud-sdk/path.zsh.inc' ]; then . '/Users/matheus.betim/Downloads/google-cloud-sdk/path.zsh.inc'; fi
 
+# The next line enables shell command completion for gcloud.
+if [ -f '/Users/matheus.betim/Downloads/google-cloud-sdk/completion.zsh.inc' ]; then . '/Users/matheus.betim/Downloads/google-cloud-sdk/completion.zsh.inc'; fi
+
+# bit completions
 source ~/.config/bit/bit-completion.zsh
-
-# bun completions
-[ -s "/Users/matheus.betim/.bun/_bun" ] && source "/Users/matheus.betim/.bun/_bun"
 
 # bun
 export BUN_INSTALL="$HOME/.bun"
 export PATH="$BUN_INSTALL/bin:$PATH"
+# bun completions
+[ -s "/Users/matheus.betim/.bun/_bun" ] && source "/Users/matheus.betim/.bun/_bun"
 
 # zsh-vi-mode
 source $(brew --prefix)/opt/zsh-vi-mode/share/zsh-vi-mode/zsh-vi-mode.plugin.zsh
@@ -249,4 +185,19 @@ source $(brew --prefix)/opt/zsh-vi-mode/share/zsh-vi-mode/zsh-vi-mode.plugin.zsh
 # The plugin will auto execute this zvm_after_init function
 function zvm_after_init() {
   [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+
+  # Bindings for 
+  bindkey '^ ' autosuggest-accept
+  bindkey '^w' vi-forward-word # accept the word
 }
+
+# Not sure what this was doing
+# export DYLD_LIBRARY_PATH="$(brew --prefix)/lib:$DYLD_LIBRARY_PATH"
+
+# SDK
+export SDKMAN_DIR="$HOME/.sdkman"
+[[ -s "$HOME/.sdkman/bin/sdkman-init.sh" ]] && source "$HOME/.sdkman/bin/sdkman-init.sh"
+
+eval "$(starship init zsh)"
+eval "$(zoxide init zsh)"
+

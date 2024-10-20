@@ -17,6 +17,8 @@ vim.o.termguicolors = true
 
 vim.o.conceallevel = 2
 
+vim.o.scrolloff = 8
+
 vim.api.nvim_create_autocmd("BufWinEnter", {
 	pattern = { "*.md" },
 	callback = function()

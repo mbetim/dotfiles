@@ -179,10 +179,10 @@ j = 'move down'
 k = 'move up'
 l = 'move right'
 
-alt-h = 'join-with left'
-alt-j = 'join-with down'
-alt-k = 'join-with up'
-alt-l = 'join-with right'
+alt-h = ['join-with left', 'mode main']
+alt-j = ['join-with down', 'mode main']
+alt-k = ['join-with up', 'mode main']
+alt-l = ['join-with right', 'mode main']
 
 # 'service' binding mode declaration.
 # See: https://nikitabobko.github.io/AeroSpace/guide#binding-modes

@@ -1,1 +1,2 @@
 $DOTFILES/skhd/skhdrc=$HOME/.skhdrc
+$DOTFILES/skhd/switch-tmux-session.sh=$HOME/switch-tmux-session.sh

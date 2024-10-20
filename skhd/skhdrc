@@ -1,30 +1,33 @@
-# Open applications with kitty
-# ctrl + alt + shift - v : if ! yabai -m window --focus "$(yabai -m query --windows | jq '[. [] | select(.app=="kitty" and .title=="dev").id] | .[0]')"; then kitty --title dev ~ &; fi
-# ctrl + alt + shift - o : if ! yabai -m window --focus "$(yabai -m query --windows | jq '[. [] | select(.app=="kitty" and .title=="notes").id] | .[0]')"; then kitty --title notes ~ &; fi
-# alt - d : if ! yabai -m window --focus "$(yabai -m query --windows | jq '[. [] | select(.app=="kitty" and .title=="files").id] | .[0]')"; then kitty --title files ~/Downloads &; fi
-# ctrl + alt + shift - a : if ! yabai -m window --focus "$(yabai -m query --windows | jq '[. [] | select(.app=="kitty" and .title=="files").id] | .[0]')"; then kitty --title files ~/Downloads &; fi
-
 # Open applications
-ctrl + alt + shift - v : open -a WezTerm.app
-ctrl + alt + shift - g : open -a Arc.app
-ctrl + alt + shift - s : open -a Spotify.app
-ctrl + alt + shift - b : open -a DBeaver
-ctrl + alt + shift - d : open -a Discord
-ctrl + alt + shift - m : open -a MongoDB\ Compass
-ctrl + alt + shift - p : open -a Postman
-ctrl + alt + shift - e : open -a Spark\ Desktop
-ctrl + alt + shift - t : open -a Microsoft\ Teams
-ctrl + alt + shift - k : open -a Vial
-ctrl + alt + shift - c : open -a Visual\ Studio\ Code
-ctrl + alt + shift - f : open -a Figma
-ctrl + alt + shift - i : open -a TickTick
-ctrl + alt + shift - j : open -a IntelliJ\ IDEA\ CE
-ctrl + alt + shift - l : open -a Toggl\ Track
-ctrl + alt + shift - w : open -a WhatsApp
-ctrl + alt + shift - 1 : open -a 1Password
-ctrl + alt + shift - x : open -a DevBox
-ctrl + alt + shift - o : open -a Obsidian
-ctrl + alt + shift - r : open -a Shottr
+meh - v : open -a WezTerm.app
+meh - g : open -a Arc.app
+meh - s : open -a Spotify.app
+meh - b : open -a DBeaver
+meh - d : open -a Discord
+meh - m : open -a MongoDB\ Compass
+meh - p : open -a Postman
+meh - e : open -a Spark\ Desktop
+meh - t : open -a Microsoft\ Teams
+meh - c : open -a Visual\ Studio\ Code
+meh - u : open -a Figma
+meh - i : open -a TickTick
+meh - w : open -a WhatsApp
+meh - 1 : open -a 1Password
+meh - x : open -a DevBox
+meh - r : open -a Shottr
+# meh - k : open -a Vial
+# meh - j : open -a IntelliJ\ IDEA\ CE
+# meh - l : open -a Toggl\ Track
+# meh - o : open -a Obsidian
 
-ctrl + alt + shift + hyper - f : open -a Finder
+hyper - f : open -a Finder
+
+# Tmux sessions
+meh - h : ~/switch-tmux-session.sh configs
+meh - j : ~/switch-tmux-session.sh ctox
+meh - k : ~/switch-tmux-session.sh ctox-v2
+meh - l : ~/switch-tmux-session.sh lims
+meh - 0x29 : ~/switch-tmux-session.sh synova
+meh - o : ~/switch-tmux-session.sh notes
+meh - f : ~/switch-tmux-session.sh files
 

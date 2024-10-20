@@ -167,6 +167,9 @@ alt-shift-semicolon = 'mode service'
 alt-s = 'mode service'
 alt-r = "mode move"
 
+cmd-h = []
+cmd-alt-h = []
+
 [mode.move.binding]
 esc = "mode main"
 q = "mode main"

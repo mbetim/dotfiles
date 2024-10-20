@@ -207,9 +207,6 @@ run = "move-node-to-workspace G"
 [[on-window-detected]]
 if.app-id = "com.github.wez.wezterm"
 run = "move-node-to-workspace G"
-[[on-window-detected]]
-if.app-id = "com.TickTick.task.mac"
-run = "move-node-to-workspace G"
 
 # Message apps
 [[on-window-detected]]
@@ -228,7 +225,7 @@ run = "move-node-to-workspace M"
 # Notes?
 [[on-window-detected]]
 if.app-id = "md.obsidian"
-run = "move-node-to-workspace N"
+run = "move-node-to-workspace O"
 
 # Databases
 [[on-window-detected]]
@@ -244,5 +241,8 @@ if.app-id = "com.figma.Desktop"
 run = "move-node-to-workspace V"
 [[on-window-detected]]
 if.app-id = "com.spotify.client"
+run = "move-node-to-workspace V"
+[[on-window-detected]]
+if.app-id = "com.TickTick.task.mac"
 run = "move-node-to-workspace V"
 

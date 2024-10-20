@@ -4,15 +4,14 @@ export EDITOR="$VISUAL"
 export TERM="xterm-256color"
 
 # alias
-alias="g git"
+alias g="git"
 alias ga="git add"
 alias gb="git branch"
 alias gcb='git checkout -b'
 alias gpl="git pull"
 alias gco='git checkout'
-alias gcm='git checkout $(git_main_branch)'
-alias gcd='git checkout $(git_develop_branch)'
-alias gcod="git checkout develop"
+alias gcm='git checkout $(git symbolic-ref refs/remotes/origin/HEAD | sed "s@^refs/remotes/origin/@@")'
+alias gcd="git checkout develop"
 alias gf='git fetch'
 alias gfo='git fetch origin'
 alias glo='git log --oneline --decorate'

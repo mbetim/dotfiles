@@ -131,6 +131,13 @@ return {
 				})
 			end
 
+			local funcReturnTypeNode = function(index)
+				return c(index, {
+					sn(nil, fmta("{<finish>}", { finish = i(1) })),
+					sn(nil, fmt("{}", { i(1) })),
+				})
+			end
+
 			local shared_ts_snippets = {
 				snippet("cod", {
 					i(3, "const"),
@@ -217,9 +224,18 @@ return {
 				snippet("intr", fmt("interface {} {{\n\t{}\n}}", { i(1), i(0) })),
 
 				-- Functions
-				snippet("anfn", fmt("{} => {}", { funcTypeChoiceNode(1), i(0) })),
-				snippet("cnfn", fmt("const {} = {} => {{\n\t{}\n}}", { i(1), funcTypeChoiceNode(2), i(0) })),
-				snippet("ecnfn", fmt("export const {} = {} => {{\n\t{}\n}}", { i(1), funcTypeChoiceNode(2), i(0) })),
+				snippet(
+					"anfn",
+					fmt("{} => {}", {
+						funcTypeChoiceNode(1),
+						funcReturnTypeNode(2),
+					})
+				),
+				snippet("cnfn", fmt("const {} = {} => {}", { i(1), funcTypeChoiceNode(2), funcReturnTypeNode(3) })),
+				snippet(
+					"ecnfn",
+					fmt("export const {} = {} => {{\n\t{}\n}}", { i(1), funcTypeChoiceNode(2), funcReturnTypeNode(3) })
+				),
 				snippet("nfn", fmt("{} = {} => {{\n\t{}\n}}", { i(1), funcTypeChoiceNode(2), i(0) })),
 			}
 
@@ -311,7 +327,7 @@ return {
 					snippet("jx", {
 						-- Component name
 						t("<"),
-						i(1, "ElementName"),
+						i(1, "elementName"),
 						-- Optional props
 						c(2, {
 							sn(nil, fmt(" {}", { i(1) })),

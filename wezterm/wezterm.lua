@@ -20,6 +20,8 @@ local config = {
 	}),
 	-- harfbuzz_features = { "zero", "clig", "calt", "liga" },
 
+	max_fps = 120,
+
 	macos_window_background_blur = 30,
 
 	set_environment_variables = {

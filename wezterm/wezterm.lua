@@ -20,6 +20,8 @@ local config = {
 	}),
 	-- harfbuzz_features = { "zero", "clig", "calt", "liga" },
 
+	default_prog = { "tmux", "new-session", "-A", "-s", "configs" },
+
 	max_fps = 120,
 
 	macos_window_background_blur = 30,

@@ -18,7 +18,7 @@ alias glo='git log --oneline --decorate'
 alias gp='git push'
 alias gpf='git push --force-with-lease --force-if-includes'
 alias grs='git restore'
-alias="gst git status"
+alias gst='git status'
 alias lg="lazygit"
 
 alias bpl="bit pr list"

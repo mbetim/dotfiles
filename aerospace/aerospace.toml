@@ -203,6 +203,12 @@ V = "secondary"
 if.app-id = "company.thebrowser.Browser"
 run = "move-node-to-workspace G"
 [[on-window-detected]]
+if.app-id = "com.brave.Browser"
+run = "move-node-to-workspace G"
+[[on-window-detected]]
+if.app-id = "org.mozilla.com.zen.browser"
+run = "move-node-to-workspace G"
+[[on-window-detected]]
 if.app-id = "com.github.wez.wezterm"
 run = "move-node-to-workspace G"
 
@@ -218,6 +224,9 @@ if.app-id = "com.hnc.Discord"
 run = "move-node-to-workspace M"
 [[on-window-detected]]
 if.app-id = "com.readdle.SparkDesktop"
+run = "move-node-to-workspace M"
+[[on-window-detected]]
+if.app-id = "com.kishanbagaria.jack"
 run = "move-node-to-workspace M"
 
 # Notes?
@@ -243,4 +252,6 @@ run = "move-node-to-workspace V"
 [[on-window-detected]]
 if.app-id = "com.TickTick.task.mac"
 run = "move-node-to-workspace V"
-
+[[on-window-detected]]
+if.app-id = "com.toggl.daneel"
+run = "move-node-to-workspace V"

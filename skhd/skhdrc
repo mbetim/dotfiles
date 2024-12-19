@@ -27,4 +27,5 @@ meh - k : ~/switch-tmux-session.sh ctox-v2
 meh - l : ~/switch-tmux-session.sh lims
 meh - 0x29 : ~/switch-tmux-session.sh synova
 meh - f : ~/switch-tmux-session.sh files
+meh - 0x27 : ~/switch-tmux-session.sh techq
 

@@ -1,46 +1,40 @@
 return {
-	"nvimdev/dashboard-nvim",
+	"folke/snacks.nvim",
 	opts = {
-		config = {
-			center = {
-				{
-					action = "Telescope frecency",
-					desc = " Find File",
-					icon = " ",
-					key = "f",
+		scroll = { enabled = false },
+		dashboard = {
+			preset = {
+				keys = {
+					{ icon = " ", key = "f", desc = "Find File", action = ":Telescope frecency" },
+					{
+						icon = " ",
+						key = "r",
+						desc = "Recent Files",
+						action = ":lua Snacks.dashboard.pick('oldfiles')",
+					},
+					{ icon = " ", key = "s", desc = "Restore Session", section = "session" },
+					{
+						icon = "󰒲 ",
+						key = "L",
+						desc = "Lazy",
+						action = ":Lazy",
+						enabled = package.loaded.lazy ~= nil,
+					},
+					{ icon = " ", key = "q", desc = "Quit", action = ":qa" },
 				},
+			},
+			sections = {
+				{ section = "header" },
+				{ icon = " ", title = "Keymaps", section = "keys", indent = 2, padding = 1 },
 				{
-					action = 'lua LazyVim.pick("oldfiles")()',
-					desc = " Recent Files",
-					icon = " ",
-					key = "r",
-				},
-				{
-					action = "ene | startinsert",
-					desc = " New File",
 					icon = " ",
-					key = "n",
+					title = "Recent Files",
+					section = "recent_files",
+					cwd = true,
+					indent = 2,
+					padding = 1,
 				},
-				{
-					action = 'lua require("persistence").load()',
-					desc = " Restore Session",
-					icon = " ",
-					key = "s",
-				},
-				{
-					action = "Lazy",
-					desc = " Lazy",
-					icon = "󰒲 ",
-					key = "l",
-				},
-				{
-					action = function()
-						vim.api.nvim_input("<cmd>qa<cr>")
-					end,
-					desc = " Quit",
-					icon = " ",
-					key = "q",
-				},
+				{ section = "startup" },
 			},
 		},
 	},

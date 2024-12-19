@@ -15,10 +15,7 @@ meh - w : open -a Texts
 meh - 1 : open -a 1Password
 meh - x : open -a DevBox
 meh - r : open -a Shottr
-# meh - k : open -a Vial
-# meh - j : open -a IntelliJ\ IDEA\ CE
-# meh - l : open -a Toggl\ Track
-# meh - o : open -a Obsidian
+meh - n : open -a Toggl\ Track
 meh - o : open -a Obsidian
 
 hyper - f : open -a Finder

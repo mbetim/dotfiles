@@ -14,4 +14,11 @@ return {
 		})
 		require("telescope").load_extension("frecency")
 	end,
+	keys = {
+		{
+			"<leader>sv",
+			"<cmd>FrecencyValidate!<CR>",
+			desc = "Validate Frecency",
+		},
+	},
 }

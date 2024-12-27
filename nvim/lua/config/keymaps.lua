@@ -2,9 +2,6 @@
 -- Default keymaps that are always set: https://github.com/LazyVim/LazyVim/blob/main/lua/lazyvim/config/keymaps.lua
 -- Add any additional keymaps here
 
--- Copy from vim
-vim.keymap.set({ "n", "v" }, "<C-y>", '"+y', { desc = "Yank to clipboard" })
-
 vim.keymap.set("n", "Y", "y$", { desc = "Yank to the end of the line" })
 vim.keymap.set("n", "vv", "v$", { desc = "Select to the end of the line" })
 
@@ -128,6 +125,9 @@ vim.keymap.set("n", "<leader>fO", function()
 		print("No file to open")
 	end
 end, { desc = "Open current file in Finder" })
+
+-- Copy to system clipboard regardless of the file type
+vim.keymap.set("v", "<leader>Y", '"+y')
 
 -- Copy markdown content without line length rule
 vim.keymap.set("v", "<leader>y", function()

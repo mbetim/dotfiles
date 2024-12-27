@@ -1,5 +1,5 @@
 # Open applications
-meh - v : open -a WezTerm.app
+meh - v : open -a Ghostty
 meh - g : open -a Zen\ Browser
 meh - s : open -a Spotify.app
 meh - b : open -a DBeaver

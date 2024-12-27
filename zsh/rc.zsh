@@ -164,6 +164,7 @@ export PATH="/opt/homebrew/opt/postgresql@15/libexec/bin:$PATH"
 # Settings for fzf
 export FZF_DEFAULT_COMMAND='fd --type f --strip-cwd-prefix --hidden --exclude .git --exclude Library --exclude node_modules'
 export FZF_CTRL_T_OPTS='--preview="bat -n --color=always {}"'
+
 # [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
 # pnpm
@@ -197,6 +198,9 @@ source $(brew --prefix)/opt/zsh-vi-mode/share/zsh-vi-mode/zsh-vi-mode.plugin.zsh
 function zvm_after_init() {
   [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
+  # Disable fzf Ctrl-R binding
+  bindkey '^r' atuin-search
+
   # Bindings for 
   bindkey '^ ' autosuggest-accept
   bindkey '^w' vi-forward-word # accept the word
@@ -212,3 +216,7 @@ export SDKMAN_DIR="$HOME/.sdkman"
 eval "$(starship init zsh)"
 eval "$(zoxide init zsh)"
 
+
+. "$HOME/.atuin/bin/env"
+
+eval "$(atuin init zsh --disable-up-arrow)"

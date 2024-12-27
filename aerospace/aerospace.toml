@@ -211,6 +211,9 @@ run = "move-node-to-workspace G"
 [[on-window-detected]]
 if.app-id = "com.github.wez.wezterm"
 run = "move-node-to-workspace G"
+[[on-window-detected]]
+if.app-id = "com.mitchellh.ghostty"
+run = "move-node-to-workspace G"
 
 # Message apps
 [[on-window-detected]]

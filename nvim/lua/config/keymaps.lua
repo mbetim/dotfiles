@@ -18,9 +18,8 @@ vim.keymap.set(
 )
 
 -- Buffer navigation
-local telescope_buffer = "<cmd>Telescope buffers sort_mru=true sort_lastused=true initial_mode=normal theme=ivy<cr>"
-vim.keymap.set("n", "<S-h>", telescope_buffer, { desc = "Open telescope buffers" })
-vim.keymap.set("n", "<S-l>", telescope_buffer, { desc = "Open telescope buffers" })
+local telescope_buffer = "<cmd>Telescope buffers sort_mru=true sort_lastused=true theme=ivy<cr>"
+vim.keymap.set("n", "<leader>B", telescope_buffer, { desc = "Open telescope buffers" })
 
 -- Switch back to the previous buffer
 vim.keymap.set("n", "<leader>j", "<cmd>e #<cr>", { desc = "Switch to Other Buffer" })

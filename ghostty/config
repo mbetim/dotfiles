@@ -1,0 +1,58 @@
+theme = tokyonight
+window-decoration = false
+mouse-hide-while-typing = true
+
+keybind = super+s=toggle_quick_terminal
+keybind = global:super+alt+ctrl+shift+t=toggle_quick_terminal
+
+keybind = cmd+backspace=text:\x15
+keybind = opt+backspace=text:\x17
+
+# Sessionx
+keybind = super+k=text:\x01o
+
+# Previous session
+keybind = super+j=text:\x01J
+
+# Find URLs in the pane
+keybind = super+u=text:\x01u
+
+# New tmux window
+keybind = super+t=text:\x01c
+
+# Close current tmux pane
+keybind = super+w=text:\x01x
+
+# Split pane vertically
+keybind = super+shift+e=text:\x01|
+
+# Split pane horizontally
+keybind = super+e=text:\x01-
+
+# Maximize current pane
+# TODO: try to get this working with super
+keybind = ctrl+m=text:\x01m
+
+# Rename current tmux window
+keybind = super+comma=text:\x01,
+
+# Enter tmux command mode
+keybind = super+;=text:\x01:
+
+# Selection mode in tmux
+keybind = super+o=text:\x01[
+
+# Move between windows (ctrl+n and ctrl+p)
+keybind = super+shift+left_bracket=text:\x01p
+keybind = super+shift+right_bracket=text:\x01n
+
+# Selection mode in tmux
+keybind = super+one=text:\x011
+keybind = super+two=text:\x012
+keybind = super+three=text:\x013
+keybind = super+four=text:\x014
+keybind = super+five=text:\x015
+keybind = super+six=text:\x016
+keybind = super+seven=text:\x017
+keybind = super+eight=text:\x018
+keybind = super+nine=text:\x019

@@ -72,7 +72,21 @@ return {
 			}
 		end,
 		opts = function(_, opts)
+			local types = require("luasnip.util.types")
+
 			opts.updateevents = "TextChanged,TextChangedI"
+			opts.ext_opts = {
+				[types.choiceNode] = {
+					active = {
+						virt_text = { { "<- choices", "Comment" } },
+					},
+				},
+				[types.insertNode] = {
+					active = {
+						virt_text = { { "<- insert", "Comment" } },
+					},
+				},
+			}
 
 			local ls = require("luasnip")
 
@@ -169,7 +183,7 @@ return {
         }<finish>
         ]],
 						{
-							try = i(3),
+							try = i(0),
 							err_name = i(1, "err"),
 							err = c(2, {
 								t(""),
@@ -177,7 +191,7 @@ return {
 									return string.format("console.error(%s);", args[1][1])
 								end, { 1 }),
 							}),
-							finish = c(4, {
+							finish = c(3, {
 								t(""),
 								sn(
 									nil,

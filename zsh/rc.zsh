@@ -51,7 +51,14 @@ alias nd='terminal-notifier -title "Task finished" -message "Done with task! Exi
 
 alias oo='cd ~/dev/obsidian/flat && nvim'
 
-alias yy='yazi'
+function yy() {
+	local tmp="$(mktemp -t "yazi-cwd.XXXXXX")" cwd
+	yazi "$@" --cwd-file="$tmp"
+	if cwd="$(command cat -- "$tmp")" && [ -n "$cwd" ] && [ "$cwd" != "$PWD" ]; then
+		builtin cd -- "$cwd"
+	fi
+	rm -f -- "$tmp"
+}
 
 alias pn=pnpm
 

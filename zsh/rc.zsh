@@ -31,7 +31,7 @@ alias dcd="docker compose down"
 alias vim="nvim"
 alias v="nvim"
 alias vs="nvim -c \"lua require('persistence').load()\""
-alias db="nvim +DBUIToggle"
+alias db="nvim +DBUI"
 
 alias c="clear"
 alias md='mkdir -p'

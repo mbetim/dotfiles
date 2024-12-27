@@ -33,7 +33,7 @@ vim.keymap.set({ "n", "v" }, "gl", "$", { desc = "Go to the end of the line" })
 vim.keymap.set("n", "<leader>cL", "<cmd>LspRestart<cr>", { desc = "Restart LSP" })
 
 -- Delete current file
-vim.keymap.set("n", "<leader>fD", function()
+vim.keymap.set("n", "<leader>fd", function()
 	local current_file = vim.fn.expand("%:p")
 	if current_file and current_file ~= "" then
 		if vim.fn.executable("trash") == 0 then

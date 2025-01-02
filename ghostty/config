@@ -11,8 +11,11 @@ keybind = opt+backspace=text:\x17
 # Sessionx
 keybind = super+k=text:\x01o
 
-# Previous session
+# Previous window
 keybind = super+j=text:\x01J
+
+# Previous session
+keybind = super+l=text:\x01L
 
 # Find URLs in the pane
 keybind = super+u=text:\x01u

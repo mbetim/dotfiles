@@ -357,6 +357,7 @@ return {
 							return { "", "</" .. args[1][1] .. ">" }
 						end, { 1 }),
 					}),
+					snippet("uscl", t("'use client';")),
 				})
 			)
 		end,

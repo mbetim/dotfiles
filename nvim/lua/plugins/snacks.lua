@@ -3,6 +3,11 @@ return {
 	---@type snacks.Config
 	opts = {
 		scroll = { enabled = false },
+		image = {
+			doc = {
+				inline = false,
+			},
+		},
 		picker = {
 			hidden = true,
 			matcher = {

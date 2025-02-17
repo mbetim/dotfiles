@@ -21,6 +21,9 @@ alias grs='git restore'
 alias gst='git status'
 alias lg="lazygit"
 
+alias ld="lazydocker"
+alias lzn="lazynpm"
+
 alias bpl="bit pr list"
 alias bpc="bit pr checkout"
 

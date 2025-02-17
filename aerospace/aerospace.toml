@@ -262,5 +262,8 @@ run = "move-node-to-workspace V"
 if.app-id = "com.TickTick.task.mac"
 run = "move-node-to-workspace V"
 [[on-window-detected]]
+if.app-id = "com.todoist.mac.Todoist"
+run = "move-node-to-workspace V"
+[[on-window-detected]]
 if.app-id = "com.toggl.daneel"
 run = "move-node-to-workspace V"

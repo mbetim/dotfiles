@@ -19,7 +19,6 @@ vim.o.conceallevel = 2
 
 vim.o.scrolloff = 8
 
-vim.g.lazyvim_picker = "telescope"
 
 vim.api.nvim_create_autocmd("BufWinEnter", {
 	pattern = { "*.md" },
@@ -28,3 +27,4 @@ vim.api.nvim_create_autocmd("BufWinEnter", {
 		vim.opt.textwidth = 80
 	end,
 })
+vim.g.lazyvim_picker = "snacks"

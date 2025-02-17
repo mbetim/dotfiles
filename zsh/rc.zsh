@@ -75,7 +75,7 @@ function len() {
   echo ${#str}
 }
 
-function cpfile() {
+function pbfile() {
   cat $1 | pbcopy
 }
 

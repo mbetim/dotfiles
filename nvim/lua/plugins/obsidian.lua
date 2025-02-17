@@ -23,9 +23,6 @@ return {
 			template = "templates/daily.md",
 		},
 
-		completion = {
-			nvim_cmp = true,
-		},
 		preferred_link_style = "wiki",
 
 		templates = {
@@ -39,7 +36,7 @@ return {
 		note_id_func = function(title)
 			local filename = ""
 			if title ~= nil then
-				filename = title:gsub(" ", "-"):gsub("[^A-Za-z0-9-]", ""):lower()
+				filename = title
 			else
 				for _ = 1, 4 do
 					filename = filename .. string.char(math.random(65, 90))

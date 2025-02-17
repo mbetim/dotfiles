@@ -1,2 +1,6 @@
+hint2: f
 hint2_activation_key: C-A-x
 hint2_chars: uiojklm,.
+
+hint2_grid_size = 4
+hint2_size = 100

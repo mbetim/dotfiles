@@ -2,6 +2,7 @@ theme = tokyonight
 window-decoration = false
 mouse-hide-while-typing = true
 macos-option-as-alt = false
+command = zsh --login -c "if command -v tmux >/dev/null 2>&1; then tmux attach || tmux; else zsh; fi"
 
 keybind = super+s=toggle_quick_terminal
 keybind = global:super+alt+ctrl+shift+t=toggle_quick_terminal

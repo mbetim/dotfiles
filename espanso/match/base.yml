@@ -8,8 +8,29 @@
 # Matches are substitution rules: when you type the "trigger" string
 # it gets replaced by the "replace" string.
 matches:
-  - trigger: "clg"
-    replace: "console.log($|$)"
+  - trigger: ;hour
+    replace: "{{currentHour}}"
+    vars:
+      - name: currentHour
+        type: date
+        params:
+          format: "%H:%M"
+
+  - trigger: ";date"
+    replace: "{{currentDate}}"
+    vars:
+      - name: currentDate
+        type: date
+        params:
+          format: "%Y-%m-%d"
+
+  - trigger: ;time
+    replace: "{{currentTimestamps}}"
+    vars:
+      - name: currentTimestamps
+        type: date
+        params:
+          format: "%Y-%m-%d %H:%M"
 
   - trigger: ";bit"
     replace: "Bitbucket"
@@ -17,13 +38,13 @@ matches:
   - trigger: ";gcp"
     replace: "Google Cloud Platform"
 
-  - trigger: ":pray"
+  - trigger: ":pray:"
     replace: "🙏🏼"
 
   - trigger: ":peace:"
     replace: "✌🏼"
 
-  - trigger: ":grimacing"
+  - trigger: ":grimacing:"
     replace: "😬"
 
   - trigger: ";high"

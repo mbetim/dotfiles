@@ -103,6 +103,12 @@ cmd-alt-j = 'move down'
 cmd-alt-k = 'move up'
 cmd-alt-l = 'move right'
 
+# Join with ctrl-alt
+ctrl-alt-h = 'join-with left'
+ctrl-alt-j = 'join-with down'
+ctrl-alt-k = 'join-with up'
+ctrl-alt-l = 'join-with right'
+
 # See: https://nikitabobko.github.io/AeroSpace/commands#resize
 ctrl-alt-j = 'resize smart -50'
 ctrl-alt-k = 'resize smart +50'

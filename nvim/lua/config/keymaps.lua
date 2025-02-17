@@ -9,17 +9,11 @@ vim.keymap.set("n", "vv", "v$", { desc = "Select to the end of the line" })
 vim.keymap.set("n", "<C-d>", "<C-d>zz")
 vim.keymap.set("n", "<C-u>", "<C-u>zz")
 
--- Resume last telescope window
-vim.keymap.set(
-	"n",
-	"<leader>sx",
-	require("telescope.builtin").resume,
-	{ desc = "Resume", silent = true, noremap = true }
-)
-
 -- Buffer navigation
-local telescope_buffer = "<cmd>Telescope buffers sort_mru=true sort_lastused=true theme=ivy<cr>"
-vim.keymap.set("n", "<leader>B", telescope_buffer, { desc = "Open telescope buffers" })
+vim.keymap.set("n", "<leader><cr>", function()
+	local Snacks = require("snacks")
+	Snacks.picker.buffers()
+end, { desc = "Open telescope buffers" })
 
 -- Switch back to the previous buffer
 vim.keymap.set("n", "<leader>j", "<cmd>e #<cr>", { desc = "Switch to Other Buffer" })
@@ -78,16 +72,6 @@ end, {
 	desc = "Delete file",
 })
 
--- Paste a github link and add it in this format
--- [folke/noice.nvim](https://github.com/folke/noice.nvim){:target="\_blank"}
-vim.keymap.set("i", "<C-g>", function()
-	-- Insert the text in the desired format
-	vim.cmd("normal! a[]()")
-	vim.cmd("normal! F(pv2F/lyF[p")
-	-- Leave me in normal mode or command mode
-	vim.cmd("stopinsert")
-end, { desc = "Paste Github link" })
-
 -- Copy current full file path to the clipboard
 vim.keymap.set("n", "<leader>fp", function()
 	local filepath = vim.fn.expand("%:~")
@@ -101,17 +85,6 @@ vim.keymap.set("n", "<leader>fP", function()
 	vim.fn.setreg("+", filepath)
 	print("Relative file path copied to clipboard: " .. filepath)
 end, { desc = "Copy relative file path to clipboard" })
-
--- Remove brackets from a checkbox item
-vim.keymap.set("n", "<leader>cH", function()
-	local target_line = vim.api.nvim_win_get_cursor(0)[1]
-	local line_content = vim.api.nvim_buf_get_lines(0, target_line - 1, target_line, false)[1]
-
-	if line_content then
-		local new_content = line_content:gsub("%[[ x]%]%s?", "")
-		vim.api.nvim_buf_set_lines(0, target_line - 1, target_line, false, { new_content })
-	end
-end, { desc = "Remove Checkbox Below" })
 
 -- Open current file in Finder
 vim.keymap.set("n", "<leader>fO", function()

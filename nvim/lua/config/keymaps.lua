@@ -154,3 +154,14 @@ vim.keymap.set("v", "<leader>y", function()
 	-- Delete the temporary file
 	os.remove(temp_file)
 end, { desc = "Copy markdown content" })
+
+vim.api.nvim_create_autocmd("FileType", {
+	pattern = { "sql", "mysql", "dbui" },
+	callback = function()
+		if vim.fn.mapcheck("<leader>e") ~= "" then
+			vim.keymap.del("n", "<leader>e")
+		end
+
+		vim.keymap.set("n", "<leader>e", "<cmd>DBUIToggle<cr>", { buffer = true, desc = "Toggle DBUI" })
+	end,
+})

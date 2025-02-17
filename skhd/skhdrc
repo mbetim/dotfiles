@@ -2,25 +2,26 @@
 meh - v : open -a Ghostty
 meh - g : open -a Zen\ Browser
 meh - s : open -a Spotify.app
-meh - b : open -a DBeaver
+# meh - b : open -a DBeaver
 meh - d : open -a Discord
 meh - m : open -a MongoDB\ Compass
-meh - p : open -a Postman
+meh - p : open -a Apidog
 meh - e : open -a Spark\ Desktop
 meh - t : open -a Microsoft\ Teams
 meh - c : open -a Visual\ Studio\ Code
 meh - u : open -a Figma
-meh - i : open -a TickTick
+meh - i : open -a Todoist
 meh - w : open -a Texts
 meh - 1 : open -a 1Password
 meh - x : open -a DevBox
 meh - r : open -a Shottr
 meh - n : open -a Toggl\ Track
-meh - o : open -a Obsidian
+# meh - o : open -a Obsidian
 
 hyper - f : open -a Finder
 
 # Tmux sessions
+meh - o : ~/switch-tmux-session.sh notes
 meh - h : ~/switch-tmux-session.sh configs
 meh - j : ~/switch-tmux-session.sh ctox
 meh - k : ~/switch-tmux-session.sh ctox-v2

@@ -19,12 +19,4 @@ vim.o.conceallevel = 2
 
 vim.o.scrolloff = 8
 
-
-vim.api.nvim_create_autocmd("BufWinEnter", {
-	pattern = { "*.md" },
-	callback = function()
-		vim.opt.colorcolumn = "80"
-		vim.opt.textwidth = 80
-	end,
-})
 vim.g.lazyvim_picker = "snacks"

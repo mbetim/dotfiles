@@ -31,6 +31,7 @@ return {
 						["H"] = { "preview_scroll_left", mode = { "n" } },
 						["L"] = { "preview_scroll_right", mode = { "n" } },
 						["M"] = { "toggle_hidden", mode = { "n" } },
+						["d"] = { "bufdelete", mode = { "n" } },
 					},
 				},
 			},

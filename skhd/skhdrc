@@ -11,7 +11,7 @@ meh - t : open -a Microsoft\ Teams
 meh - c : open -a Visual\ Studio\ Code
 meh - u : open -a Figma
 meh - i : open -a Todoist
-meh - w : open -a Texts
+meh - w : open -a WhatsApp
 meh - 1 : open -a 1Password
 meh - x : open -a DevBox
 meh - r : open -a Shottr

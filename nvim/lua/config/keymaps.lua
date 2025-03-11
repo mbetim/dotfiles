@@ -99,10 +99,10 @@ vim.keymap.set("n", "<leader>fO", function()
 end, { desc = "Open current file in Finder" })
 
 -- Copy to system clipboard regardless of the file type
-vim.keymap.set("v", "<leader>Y", '"+y')
+vim.keymap.set("v", "<leader>y", '"+y', { desc = "Copy content to clipboard" })
 
 -- Copy markdown content without line length rule
-vim.keymap.set("v", "<leader>y", function()
+vim.keymap.set("v", "<leader>Y", function()
 	-- Check if the current buffer's filetype is markdown
 	if vim.bo.filetype ~= "markdown" then
 		-- Not a Markdown file, copy the selection to the system clipboard

@@ -19,6 +19,10 @@ alias gp='git push'
 alias gpf='git push --force-with-lease --force-if-includes'
 alias grs='git restore'
 alias gst='git status'
+alias gw='git worktree'
+alias gwl='git worktree list'
+alias gwa='git worktree add'
+alias gwp='git worktree prune'
 alias lg="lazygit"
 
 alias ld="lazydocker"

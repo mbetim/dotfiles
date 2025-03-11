@@ -23,10 +23,10 @@ hyper - f : open -a Finder
 # Tmux sessions
 meh - o : ~/switch-tmux-session.sh notes
 meh - h : ~/switch-tmux-session.sh configs
-meh - j : ~/switch-tmux-session.sh ctox
-meh - k : ~/switch-tmux-session.sh ctox-v2
-meh - l : ~/switch-tmux-session.sh lims
-meh - 0x29 : ~/switch-tmux-session.sh synova
 meh - f : ~/switch-tmux-session.sh files
-meh - 0x27 : ~/switch-tmux-session.sh techq
+meh - j : ~/switch-tmux-session.sh techq
+meh - k : ~/switch-tmux-session.sh synvia-forms
+meh - l : ~/switch-tmux-session.sh synvia-sites
+meh - 0x29 : ~/switch-tmux-session.sh synvia-ui
+meh - 0x27 : ~/switch-tmux-session.sh synova
 

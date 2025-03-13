@@ -26,6 +26,11 @@ vim.keymap.set({ "n", "v" }, "gl", "$", { desc = "Go to the end of the line" })
 -- Restart LSP
 vim.keymap.set("n", "<leader>cL", "<cmd>LspRestart<cr>", { desc = "Restart LSP" })
 
+vim.keymap.set("n", "<leader>gx", function()
+	local url = vim.fn.expand("<cfile>")
+	vim.fn.jobstart({ "open", url })
+end, { remap = true })
+
 -- Delete current file
 vim.keymap.set("n", "<leader>fd", function()
 	local current_file = vim.fn.expand("%:p")

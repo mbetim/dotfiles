@@ -22,6 +22,8 @@ symbol = " "
 
 [directory]
 style = "blue"
+truncation_length = 4
+truncate_to_repo = false
 
 [character]
 success_symbol = "[❯](purple)"

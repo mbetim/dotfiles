@@ -71,6 +71,12 @@ return {
 				{ section = "startup" },
 			},
 		},
+		styles = {
+			zen = {
+				relative = "editor",
+				backdrop = { transparent = false },
+			},
+		},
 	},
 	keys = {
 		{

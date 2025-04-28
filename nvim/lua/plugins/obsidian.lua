@@ -1,11 +1,13 @@
 return {
-	"epwalsh/obsidian.nvim",
+	-- "epwalsh/obsidian.nvim",
+	"obsidian-nvim/obsidian.nvim",
 	version = "*",
 	lazy = true,
 	event = {
 		"BufReadPre " .. vim.fn.expand("~") .. "/dev/obsidian/**.md",
 		"BufNewFile " .. vim.fn.expand("~") .. "/dev/obsidian/**.md",
 	},
+	ft = "markdown",
 	dependencies = {
 		"nvim-lua/plenary.nvim",
 	},
@@ -15,6 +17,10 @@ return {
 				name = "personal",
 				path = "~/dev/obsidian/flat",
 			},
+		},
+
+		completion = {
+			blink = true,
 		},
 
 		daily_notes = {
@@ -72,13 +78,24 @@ return {
 			},
 		},
 		pickers = {
-			name = "telescope.nvim",
+			name = "snacks",
 		},
 	},
 	keys = {
 		{ "<leader>on", "<cmd>ObsidianNew<CR>", desc = "New note" },
 		{ "<leader>od", "<cmd>ObsidianDailies<CR>", desc = "Search journal notes" },
-		{ "<leader>os", "<cmd>ObsidianSearch<CR>", desc = "Search notes" },
+		{
+			"<leader>oe",
+			":ObsidianExtractNote ",
+			desc = "Extract the highlighted text to a new note",
+			mode = { "v" },
+		},
+		{
+			"<leader>ol",
+			":ObsidianLink<CR>",
+			desc = "Turn the highlighted text into a link",
+			mode = { "v" },
+		},
 		{ "<leader>oT", "<cmd>ObsidianTemplate<CR>", desc = "Templates" },
 		{ "<leader>ot", "<cmd>ObsidianToday<CR>", desc = "Today daily note" },
 		{ "<leader>oO", "<cmd>ObsidianOpen<CR>", desc = "Open on Obsidian app" },

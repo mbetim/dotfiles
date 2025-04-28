@@ -10,8 +10,8 @@ keybind = global:super+alt+ctrl+shift+t=toggle_quick_terminal
 keybind = cmd+backspace=text:\x15
 keybind = opt+backspace=text:\x17
 
-# Sessionx
-keybind = super+k=text:\x01o
+# Session manager
+keybind = super+k=text:\x01K
 
 # Previous window
 keybind = super+j=text:\x01J

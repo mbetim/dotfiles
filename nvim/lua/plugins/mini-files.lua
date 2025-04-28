@@ -21,6 +21,10 @@ return {
 			trim_left = "<",
 			trim_right = ">",
 		},
+		windows = {
+			width_focus = 40,
+			width_preview = 60,
+		},
 	},
 	options = {
 		-- Whether to use for editing directories

@@ -147,6 +147,10 @@ return {
 				),
 			})
 
+			ls.add_snippets("markdown", {
+				snippet("ch", fmt("- [ ] {}", { i(0) })),
+			})
+
 			local funcTypeChoiceNode = function(index)
 				return c(index, {
 					sn(nil, fmta("(<args>)", { args = i(1) })),
@@ -158,6 +162,7 @@ return {
 				return c(index, {
 					sn(nil, fmta("{<finish>}", { finish = i(1) })),
 					sn(nil, fmt("{}", { i(1) })),
+					sn(nil, fmta("({<finish>})", { finish = i(1) })),
 				})
 			end
 
@@ -260,6 +265,33 @@ return {
 					fmt("export const {} = {} => {{\n\t{}\n}}", { i(1), funcTypeChoiceNode(2), funcReturnTypeNode(3) })
 				),
 				snippet("nfn", fmt("{} = {} => {{\n\t{}\n}}", { i(1), funcTypeChoiceNode(2), i(0) })),
+				snippet("vp", {
+					f(function(args)
+						return args[1][1]:gsub("^%u", string.lower)
+					end, { 1 }),
+					t(": "),
+					i(1, "InterfaceName"),
+				}),
+				snippet(
+					"uef",
+					fmta(
+						[[
+              useEffect(() =>> {
+                <effect>
+              }, []);
+              ]],
+						{
+							effect = i(0),
+						}
+					)
+				),
+				snippet("a", fmt("await {}", { i(0) })),
+				snippet("ca", fmt("const {} = await {}", { i(1), i(0) })),
+				snippet("rn", t("return null")),
+				snippet("iof", fmt("{} instanceof {}", { i(1), i(0) })),
+				snippet("jsonfy", fmt("JSON.stringfy({})", { i(0) })),
+				snippet("te", fmt("{} ? {} : {}", { i(1, "cond"), i(2, "true"), i(0, "false") })),
+				snippet("qrycli", t("const queryClient = useQueryClient()")),
 			}
 
 			ls.add_snippets("javascript", shared_ts_snippets)
@@ -324,43 +356,15 @@ return {
 							}
 						)
 					),
-					snippet(
-						"uef",
-						fmta(
-							[[
-              useEffect(() =>> {
-                <effect>
-                <cleanup>
-              }<deps>);
-              ]],
-							{
-								deps = c(2, {
-									t(", []"),
-									sn(nil, fmta(", [<deps>]", { deps = i(1) })),
-									t(""),
-								}),
-								effect = i(1),
-								cleanup = c(3, {
-									t(""),
-									sn(nil, fmta("return <func>;", { func = i(1) })),
-								}),
-							}
-						)
-					),
 					snippet("jx", {
 						-- Component name
 						t("<"),
 						i(1, "elementName"),
-						-- Optional props
-						c(2, {
-							sn(nil, fmt(" {}", { i(1) })),
-							t(""),
-						}),
 						t(">"),
 						-- New line and indentation
 						t({ "", "\t" }),
 						-- Cursor position for content
-						i(3),
+						i(0),
 						-- New line and closing tag
 						f(function(args)
 							return { "", "</" .. args[1][1] .. ">" }

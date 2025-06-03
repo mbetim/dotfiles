@@ -12,9 +12,9 @@ return {
 			-- go_out_plus: when you go out, it shows you only 1 item to the right
 			go_out_plus = "h",
 			-- Default <BS>
-			-- reset = ",",
+			reset = ",",
 			-- Default @
-			reveal_cwd = ".",
+			reveal_cwd = "@",
 			show_help = "g?",
 			-- Default =
 			synchronize = "s",
@@ -34,13 +34,6 @@ return {
 	keys = {
 		{
 			"<leader>e",
-			function()
-				require("mini.files").open(vim.api.nvim_buf_get_name(0), true)
-			end,
-			desc = "Open mini.files (Directory of Current File)",
-		},
-		{
-			"-",
 			function()
 				require("mini.files").open(vim.api.nvim_buf_get_name(0), true)
 			end,

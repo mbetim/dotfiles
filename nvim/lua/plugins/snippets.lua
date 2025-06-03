@@ -38,10 +38,19 @@ return {
 
 			return {
 				{
+					"<c-h>",
+					function()
+						ls.expand()
+					end,
+					silent = true,
+					mode = { "i", "s" },
+					desc = "Expand or jump snippet",
+				},
+				{
 					"<c-j>",
 					function()
-						if ls.expand_or_jumpable() then
-							ls.expand_or_jump()
+						if ls.jumpable(1) then
+							ls.jump(1)
 						end
 					end,
 					silent = true,

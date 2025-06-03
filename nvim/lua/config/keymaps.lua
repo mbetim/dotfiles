@@ -29,7 +29,7 @@ vim.keymap.set("n", "<leader>cL", "<cmd>LspRestart<cr>", { desc = "Restart LSP" 
 vim.keymap.set("n", "<leader>gx", function()
 	local url = vim.fn.expand("<cfile>")
 	vim.fn.jobstart({ "open", url })
-end, { remap = true })
+end, { remap = true, desc = "Open link on browser" })
 
 -- Delete current file
 vim.keymap.set("n", "<leader>fd", function()

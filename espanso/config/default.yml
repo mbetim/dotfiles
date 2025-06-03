@@ -41,3 +41,5 @@ show_icon: false
 
 key_delay: 0
 inject_delay: 0
+
+search_shortcut: ALT+SHIFT+SPACE

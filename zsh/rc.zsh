@@ -1,7 +1,7 @@
 # Set vim as default editor
 export VISUAL=nvim
 export EDITOR="$VISUAL"
-export TERM="xterm-256color"
+export TERM="xterm-ghostty"
 
 # alias
 alias g="git"
@@ -30,6 +30,9 @@ alias lzn="lazynpm"
 
 alias bpl="bit pr list"
 alias bpc="bit pr checkout"
+
+alias ghpc="gh pr checkout"
+alias ghpl="gh pr list"
 
 alias dps="docker ps"
 alias dcu="docker compose up"

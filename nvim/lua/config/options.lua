@@ -20,3 +20,15 @@ vim.o.conceallevel = 2
 vim.o.scrolloff = 8
 
 vim.g.lazyvim_picker = "snacks"
+
+-- Set to false to disable auto format
+vim.g.lazyvim_eslint_auto_format = true
+
+vim.o.tabstop = 2
+vim.o.shiftwidth = 2
+vim.o.expandtab = true
+vim.o.shiftround = true
+vim.o.smartindent = true
+
+-- Use spaces instead of tabs
+vim.o.expandtab = true

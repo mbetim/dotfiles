@@ -117,10 +117,10 @@ function d() {
     return
   fi
 
-  node_pkg_manger="npm"
+  node_pkg_manger="pnpm"
 
   if [ -f yarn.lock ]; then node_pkg_manger="yarn"
-  elif [ -f pnpm-lock.yaml ]; then node_pkg_manger="pnpm"
+  elif [ -f package-lock.json ]; then node_pkg_manger="npm"
   fi
 
   print -s  "$node_pkg_manger run $chosen_script"

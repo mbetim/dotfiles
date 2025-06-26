@@ -2,13 +2,12 @@
 meh - v : open -a Ghostty
 meh - g : open -a Zen\ Browser
 meh - s : open -a Spotify.app
-# meh - b : open -a DBeaver
-meh - d : open -a Discord
+meh - d : open -a legcord
 meh - m : open -a MongoDB\ Compass
-meh - p : open -a Apidog
-meh - e : open -a Spark\ Desktop
+meh - p : open -a Yaak
+meh - e : open -a Notion\ Mail
 meh - t : open -a Microsoft\ Teams
-meh - c : open -a Visual\ Studio\ Code
+meh - c : open -a Cursor
 meh - u : open -a Figma
 meh - i : open -a Todoist
 meh - w : open -a WhatsApp
@@ -16,7 +15,8 @@ meh - 1 : open -a 1Password
 meh - x : open -a DevBox
 meh - r : open -a Shottr
 meh - n : open -a Toggl\ Track
-# meh - o : open -a Obsidian
+meh - y : open -a Tomito
+meh - b : open -a DBeaver
 
 hyper - f : open -a Finder
 
@@ -25,8 +25,8 @@ meh - o : ~/switch-tmux-session.sh notes
 meh - h : ~/switch-tmux-session.sh configs
 meh - f : ~/switch-tmux-session.sh files
 meh - j : ~/switch-tmux-session.sh techq
-meh - k : ~/switch-tmux-session.sh synvia-forms
-meh - l : ~/switch-tmux-session.sh synvia-sites
+meh - k : ~/switch-tmux-session.sh ecrf
+meh - l : ~/switch-tmux-session.sh laudo-template
 meh - 0x29 : ~/switch-tmux-session.sh synvia-ui
 meh - 0x27 : ~/switch-tmux-session.sh synova
 

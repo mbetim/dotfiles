@@ -167,6 +167,7 @@ zstyle ':completion:*' matcher-list 'm:{a-zA-Z}={A-Za-z}'
 zstyle ':completion:*' menu select
 
 export PATH=$HOME/.local/bin:$PATH
+export PATH=$HOME/dev/bin:$PATH
 export PATH="/opt/homebrew/opt/mysql-client/bin:$PATH"
 export PATH="$HOME/go/bin:$PATH"
 export PATH="/opt/homebrew/opt/postgresql@15/libexec/bin:$PATH"

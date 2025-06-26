@@ -232,6 +232,9 @@ run = "move-node-to-workspace M"
 if.app-id = "com.hnc.Discord"
 run = "move-node-to-workspace M"
 [[on-window-detected]]
+if.app-id = "app.legcord.Legcord"
+run = "move-node-to-workspace M"
+[[on-window-detected]]
 if.app-id = "com.readdle.SparkDesktop"
 run = "move-node-to-workspace M"
 [[on-window-detected]]
@@ -263,7 +266,7 @@ if.app-id = "com.TickTick.task.mac"
 run = "move-node-to-workspace V"
 [[on-window-detected]]
 if.app-id = "com.todoist.mac.Todoist"
-run = "move-node-to-workspace V"
+run = ["layout floating" ]
 [[on-window-detected]]
 if.app-id = "com.toggl.daneel"
 run = "move-node-to-workspace V"

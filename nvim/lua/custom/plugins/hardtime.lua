@@ -8,7 +8,7 @@ return {
       ['k'] = false,
     },
     disable_keys = {
-      ['<C-n>'] = false,
+      ['<C-N>'] = false,
     },
   },
 }

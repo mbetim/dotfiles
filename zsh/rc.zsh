@@ -227,10 +227,10 @@ function zvm_after_init() {
 
 # Neovim switcher
 alias nvim-kick="NVIM_APPNAME=kickstart nvim"
-alias vk="NVIM_APPNAME=kickstart nvim"
+alias nvim-old="NVIM_APPNAME=old-nvim-lazyvim nvim"
 
 function nvims() {
-  items=("default" "kickstart")
+  items=("default" "kickstart", "old-nvim-lazyvim")
   config=$(printf "%s\n" "${items[@]}" | fzf --prompt=" Neovim Config  " --height=~50% --layout=reverse --border --exit-0)
   if [[ -z $config ]]; then
     echo "Nothing selected"

@@ -153,6 +153,7 @@ local shared_ts_snippets = {
   snippet('expd', fmt('export default {};', { i(1) })),
   snippet('expt', fmt('export type {} = {};', { i(1), i(2) })),
   snippet('clg', fmt('console.log({})', { i(0) })),
+  snippet('cle', fmt('console.error({})', { i(0) })),
   snippet(
     'expi',
     fmta(

@@ -27,6 +27,6 @@ meh - f : ~/switch-tmux-session.sh files
 meh - j : ~/switch-tmux-session.sh techq
 meh - k : ~/switch-tmux-session.sh ecrf
 meh - l : ~/switch-tmux-session.sh laudo-template
-meh - 0x29 : ~/switch-tmux-session.sh synvia-ui
-meh - 0x27 : ~/switch-tmux-session.sh synova
+meh - 0x29 : ~/switch-tmux-session.sh freevelo
+meh - 0x27 : ~/switch-tmux-session.sh synvia-ui
 

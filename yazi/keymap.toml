@@ -1,4 +1,4 @@
-[manager]
+[mgr]
 prepend_keymap = [
 { on = ["<C-c>"], run = '''
     shell '~/copyfile.sh "$0"' --confirm

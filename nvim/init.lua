@@ -343,7 +343,9 @@ vim.api.nvim_create_autocmd('TextYankPost', {
 vim.api.nvim_create_autocmd('BufWritePre', {
   pattern = { '*.ts', '*.tsx', '*.js', '*.jsx' },
   callback = function()
-    vim.cmd [[LspEslintFixAll]]
+    if vim.fn.exists ':LspEslintFixAll' ~= 0 then
+      vim.cmd [[LspEslintFixAll]]
+    end
   end,
 })
 

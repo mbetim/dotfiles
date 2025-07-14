@@ -179,6 +179,13 @@ vim.o.spelllang = 'en,pt_br,es'
 vim.o.spell = true
 vim.o.spelloptions = 'camel'
 
+vim.g.format_on_save = true
+
+vim.keymap.set('n', '<leader>tf', function()
+  vim.g.format_on_save = not vim.g.format_on_save
+  print("Format on save: " .. tostring(vim.g.format_on_save))
+end)
+
 -- [[ Basic Keymaps ]]
 --  See `:help vim.keymap.set()`
 
@@ -900,6 +907,10 @@ require('lazy').setup({
       notify_on_error = true,
       notify_on_formatters = true,
       format_on_save = function(bufnr)
+        if vim.g.format_on_save == false then
+          return nil
+        end
+
         -- Disable "format_on_save lsp_fallback" for languages that don't
         -- have a well standardized coding style. You can add additional
         -- languages here or re-enable it for the disabled ones.

@@ -190,7 +190,7 @@ vim.keymap.set('n', '<Esc>', '<cmd>nohlsearch<CR>')
 vim.keymap.set('n', 'j', 'v:count == 0 ? "gj" : "j"', { expr = true, silent = true })
 vim.keymap.set('n', 'k', 'v:count == 0 ? "gk" : "k"', { expr = true, silent = true })
 
-vim.keymap.set('n', '<C-S>', '<CMD>w<CR><ESC>', { desc = 'Save' })
+vim.keymap.set({ 'n', 'i' }, '<C-S>', '<CMD>w<CR><ESC>', { desc = 'Save' })
 
 vim.keymap.set('n', '<leader>ql', '<CMD>cnext<CR>', { desc = 'Next Quick Fix Item' })
 vim.keymap.set('n', '<leader>qh', '<CMD>cprev<CR>', { desc = 'Previous Quick Fix Item' })

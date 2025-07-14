@@ -235,5 +235,11 @@ run = "move-node-to-workspace V"
 if.app-id = "com.todoist.mac.Todoist"
 run = ["layout floating" ]
 [[on-window-detected]]
+if.app-id = "mo.com.sleeplessmind.kindaVim"
+run = ["layout floating" ]
+[[on-window-detected]]
+if.app-id = "com.dmitrynikolaev.numi"
+run = ["layout floating" ]
+[[on-window-detected]]
 if.app-id = "com.toggl.daneel"
 run = "move-node-to-workspace V"

@@ -42,7 +42,7 @@ return {
     note_id_func = function(title)
       local filename = ''
       if title ~= nil then
-        filename = title
+        filename = title:gsub('[^%w%s]', '') -- Removes all special characters except alphanumeric and spaces
       else
         for _ = 1, 4 do
           filename = filename .. string.char(math.random(65, 90))

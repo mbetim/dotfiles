@@ -118,6 +118,7 @@ vim.o.showmode = false
 --   vim.o.clipboard = 'unnamedplus'
 -- end)
 vim.keymap.set({ 'n', 'v' }, 'y', '"+y', { desc = 'Yank' })
+vim.keymap.set('n', 'Y', 'v$"+y', { desc = 'Yank' })
 
 -- Enable break indent
 vim.o.breakindent = true
@@ -183,7 +184,7 @@ vim.g.format_on_save = true
 
 vim.keymap.set('n', '<leader>tf', function()
   vim.g.format_on_save = not vim.g.format_on_save
-  print("Format on save: " .. tostring(vim.g.format_on_save))
+  print('Format on save: ' .. tostring(vim.g.format_on_save))
 end)
 
 -- [[ Basic Keymaps ]]
@@ -831,6 +832,7 @@ require('lazy').setup({
         tailwindcss = {},
 
         prettier = {},
+        prettierd = {},
         eslint_d = {},
 
         marksman = {},

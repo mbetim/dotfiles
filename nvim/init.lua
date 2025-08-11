@@ -123,6 +123,11 @@ vim.o.foldmethod = 'indent'
 vim.keymap.set({ 'n', 'v' }, 'y', '"+y', { desc = 'Yank' })
 vim.keymap.set('n', 'Y', 'v$"+y', { desc = 'Yank' })
 
+vim.keymap.set('n', '<leader><tab>l', ':tabnext<CR>', { noremap = true, silent = true, desc = 'Move to next tab' })
+vim.keymap.set('n', '<leader><tab>h', ':tabprevious<CR>', { noremap = true, silent = true, desc = 'Move to previous tab' })
+vim.keymap.set('n', '<leader><tab>d', ':tabclose<CR>', { noremap = true, silent = true, desc = 'Delete/Close current tab' })
+vim.keymap.set('n', '<leader><tab>n', ':tabnew<CR>', { noremap = true, silent = true, desc = 'New tab' })
+
 -- Enable break indent
 vim.o.breakindent = true
 

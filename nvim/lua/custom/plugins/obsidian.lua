@@ -12,6 +12,7 @@ return {
     'nvim-lua/plenary.nvim',
   },
   opts = {
+    legacy_commands = false,
     workspaces = {
       {
         name = 'personal',
@@ -54,32 +55,19 @@ return {
 
     ui = {
       enable = false,
-      checkboxes = {
-        [' '] = { char = '󰄱', hl_group = 'ObsidianTodo' },
-        ['x'] = { char = '', hl_group = 'ObsidianDone' },
-      },
     },
     attachments = {
       img_folder = 'assets',
     },
-    mappings = {
-      ['gf'] = {
-        action = function()
-          return require('obsidian').util.gf_passthrough()
-        end,
-        opts = { noremap = false, expr = true, buffer = true },
-      },
-      -- Toggle check-boxes.
-      ['<leader>ch'] = {
-        action = function()
-          return require('obsidian').util.toggle_checkbox()
-        end,
-        opts = { buffer = true },
-      },
-    },
     pickers = {
       name = 'snacks',
     },
+    checkbox = {
+      order = { ' ', 'x' },
+    },
+    disable_formatter = true,
+    statusline = { enabled = false },
+    footer = { enabled = false },
   },
   keys = {
     { '<leader>on', '<cmd>ObsidianNew<CR>', desc = 'New note' },
@@ -100,4 +88,17 @@ return {
     { '<leader>ot', '<cmd>ObsidianToday<CR>', desc = 'Today daily note' },
     { '<leader>oO', '<cmd>ObsidianOpen<CR>', desc = 'Open on Obsidian app' },
   },
+  init = function()
+    vim.api.nvim_create_autocmd('User', {
+      pattern = 'ObsidianNoteEnter',
+      callback = function(ev)
+        vim.keymap.set('n', '<leader>ch', '<cmd>Obsidian toggle_checkbox<cr>', {
+          buffer = ev.buf,
+          desc = 'Toggle checkbox',
+        })
+
+        vim.keymap.del('n', '<CR>', { buffer = ev.buf })
+      end,
+    })
+  end,
 }

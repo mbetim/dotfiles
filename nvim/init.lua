@@ -280,14 +280,14 @@ end, {
 })
 
 -- Copy current full file path to the clipboard
-vim.keymap.set('n', '<leader>fp', function()
+vim.keymap.set('n', '<leader>fP', function()
   local filepath = vim.fn.expand '%:~'
   vim.fn.setreg('+', filepath)
   print('File path copied to clipboard: ' .. filepath)
 end, { desc = 'Copy full file path to clipboard' })
 
 -- Copy current relative file path to the clipboard
-vim.keymap.set('n', '<leader>fP', function()
+vim.keymap.set('n', '<leader>fp', function()
   local filepath = vim.fn.expand '%:.'
   vim.fn.setreg('+', filepath)
   print('Relative file path copied to clipboard: ' .. filepath)

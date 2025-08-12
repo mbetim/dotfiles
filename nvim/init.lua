@@ -198,6 +198,8 @@ vim.keymap.set('n', '<leader>tf', function()
   print('Format on save: ' .. tostring(vim.g.format_on_save))
 end)
 
+vim.keymap.set('n', '<leader>ts', ':SupermavenToggle<cr>', { desc = 'Supermaven Toggle' })
+
 -- [[ Basic Keymaps ]]
 --  See `:help vim.keymap.set()`
 

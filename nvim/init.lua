@@ -1097,6 +1097,9 @@ require('lazy').setup({
         sorts = {
           function(a, b)
             local source_priority = {
+              obsidian_new = 7,
+              obsidian_tags = 6,
+              obsidian = 5,
               lsp = 4,
               lazydev = 3,
               path = 2,

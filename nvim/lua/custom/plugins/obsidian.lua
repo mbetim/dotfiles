@@ -1,7 +1,7 @@
 return {
   -- "epwalsh/obsidian.nvim",
   'obsidian-nvim/obsidian.nvim',
-  version = '*',
+  version = '3.12',
   lazy = true,
   event = {
     'BufReadPre ' .. vim.fn.expand '~' .. '/dev/obsidian/**.md',
@@ -22,6 +22,7 @@ return {
 
     completion = {
       blink = true,
+      min_chars = 2,
     },
 
     daily_notes = {
@@ -70,23 +71,23 @@ return {
     footer = { enabled = false },
   },
   keys = {
-    { '<leader>on', '<cmd>ObsidianNew<CR>', desc = 'New note' },
-    { '<leader>od', '<cmd>ObsidianDailies<CR>', desc = 'Search journal notes' },
+    { '<leader>on', '<cmd>Obsidian new<CR>', desc = 'New note' },
+    { '<leader>od', '<cmd>Obsidian dailies<CR>', desc = 'Search journal notes' },
     {
       '<leader>oe',
-      ':ObsidianExtractNote ',
+      ':Obsidian extract_note ',
       desc = 'Extract the highlighted text to a new note',
       mode = { 'v' },
     },
     {
       '<leader>ol',
-      ':ObsidianLink<CR>',
+      ':Obsidian link<CR>',
       desc = 'Turn the highlighted text into a link',
       mode = { 'v' },
     },
-    { '<leader>oT', '<cmd>ObsidianTemplate<CR>', desc = 'Templates' },
-    { '<leader>ot', '<cmd>ObsidianToday<CR>', desc = 'Today daily note' },
-    { '<leader>oO', '<cmd>ObsidianOpen<CR>', desc = 'Open on Obsidian app' },
+    { '<leader>oT', '<cmd>Obsidian template<CR>', desc = 'Templates' },
+    { '<leader>ot', '<cmd>Obsidian today<CR>', desc = 'Today daily note' },
+    { '<leader>oO', '<cmd>Obsidian open<CR>', desc = 'Open on Obsidian app' },
   },
   init = function()
     vim.api.nvim_create_autocmd('User', {

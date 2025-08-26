@@ -125,7 +125,7 @@ vim.keymap.set('n', 'Y', 'v$"+y', { desc = 'Yank' })
 
 vim.keymap.set('i', 'jk', '<ESC>', { desc = 'Escape' })
 
-vim.keymap.set('n', '<leader>nn', ':split | enew | set filetype=json<CR>', { noremap = true, silent = true, desc = 'New JSON file' })
+vim.keymap.set('n', '<leader>nn', ':vnew | set filetype=jsonc<CR>', { noremap = true, silent = true, desc = 'New JSON file' })
 vim.keymap.set('n', '<leader>nd', '<cmd>bd!<cr>', { noremap = true, silent = true, desc = 'New JSON file' })
 
 vim.keymap.set('n', '<leader><tab>l', ':tabnext<CR>', { noremap = true, silent = true, desc = 'Move to next tab' })

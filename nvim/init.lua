@@ -237,6 +237,7 @@ vim.keymap.set({ 'n', 'v' }, 'gl', '$', { desc = 'Go to the end of the line' })
 vim.keymap.set('n', '<leader>wd', '<C-W>c', { desc = 'Close window' })
 vim.keymap.set('n', '<leader>|', '<C-W>v', { desc = 'Split window right' })
 vim.keymap.set('n', '<leader>-', '<C-W>s', { desc = 'Split window below' })
+vim.keymap.set('n', '<leader>wm', '<C-W>|', { desc = 'Maximize window' })
 
 -- Restart LSP
 vim.keymap.set('n', '<leader>cL', '<cmd>LspRestart<cr>', { desc = 'Restart LSP' })

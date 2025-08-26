@@ -219,6 +219,7 @@ local shared_ts_snippets = {
   snippet('jsonfy', fmt('JSON.stringfy({})', { i(0) })),
   snippet('te', fmt('{} ? {} : {}', { i(1, 'cond'), i(2, 'true'), i(0, 'false') })),
   snippet('qrycli', t 'const queryClient = useQueryClient()'),
+  snippet('imd', fmta('import { <var> } from "<package>";', { package = i(1), var = i(0) })),
 }
 
 ls.add_snippets('javascript', shared_ts_snippets)

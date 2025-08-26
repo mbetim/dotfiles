@@ -1,6 +1,17 @@
 return {
   'stevearc/overseer.nvim',
-  opts = {},
+  opts = {
+    task_list = {
+      bindings = {
+        ['<S-u>'] = 'ScrollOutputUp',
+        ['<S-d>'] = 'ScrollOutputDown',
+        ['<S-k>'] = 'ScrollOutputUp',
+        ['<S-j>'] = 'ScrollOutputDown',
+        ['<C-j>'] = false,
+        ['<C-k>'] = false,
+      },
+    },
+  },
   keys = {
     {
       '<leader>or',

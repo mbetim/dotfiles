@@ -390,6 +390,28 @@ vim.keymap.set('n', '<leader>on', function()
   print 'Note created!'
 end, { desc = 'New note' })
 
+vim.keymap.set('n', '<leader>ot', function()
+  local current_date = os.date '%Y-%m-%d'
+  local file_path = 'journal/daily/' .. current_date .. '.md'
+
+  local file_exists = vim.fn.filereadable(file_path) == 1
+
+  vim.cmd('e ' .. file_path)
+
+  if file_exists then
+    return
+  end
+
+  vim.api.nvim_buf_set_lines(0, 0, -1, false, {
+    '# ' .. current_date,
+    '',
+    '## Logs',
+  })
+
+  vim.cmd 'w'
+  print 'Note created!'
+end, { desc = "Today's daily note" })
+
 -- [[ Basic Autocommands ]]
 --  See `:help lua-guide-autocommands`
 

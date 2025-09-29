@@ -238,6 +238,11 @@ vim.keymap.set('n', '<leader>wd', '<C-W>c', { desc = 'Close window' })
 vim.keymap.set('n', '<leader>|', '<C-W>v', { desc = 'Split window right' })
 vim.keymap.set('n', '<leader>-', '<C-W>s', { desc = 'Split window below' })
 vim.keymap.set('n', '<leader>wm', '<C-W>|', { desc = 'Maximize window' })
+vim.keymap.set('n', '<leader>we', '<C-W>=', { desc = 'Equalize window' })
+vim.keymap.set('n', '<leader>wl', '<C-W>>', { desc = 'Increase window width size' })
+vim.keymap.set('n', '<leader>wh', '<C-W><', { desc = 'Decrease window width size' })
+vim.keymap.set('n', '<leader>wk', '<C-W>+', { desc = 'Increase window height size' })
+vim.keymap.set('n', '<leader>wj', '<C-W>-', { desc = 'Decrease window height size' })
 
 -- Restart LSP
 vim.keymap.set('n', '<leader>cL', '<cmd>LspRestart<cr>', { desc = 'Restart LSP' })

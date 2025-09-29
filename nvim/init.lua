@@ -372,7 +372,15 @@ vim.keymap.set('n', '<leader>on', function()
     end
   end
 
-  vim.cmd('e ' .. filename .. '.md')
+  local file_path = filename .. '.md'
+
+  local file_exists = vim.fn.filereadable(file_path) == 1
+
+  vim.cmd('e ' .. file_path)
+
+  if file_exists then
+    return
+  end
 
   vim.api.nvim_buf_set_lines(0, 0, -1, false, {
     '# ' .. note_name,

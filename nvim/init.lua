@@ -360,6 +360,28 @@ vim.keymap.set('n', '<leader>cd', function()
   lsp_action 'source.fixAll.ts'
 end, { desc = 'Fix all dianostics' })
 
+vim.keymap.set('n', '<leader>on', function()
+  local note_name = vim.fn.input 'Note name: '
+
+  local filename = ''
+  if note_name ~= nil then
+    filename = note_name:gsub('[^%w%s]', '') -- Removes all special characters except alphanumeric and spaces
+  else
+    for _ = 1, 4 do
+      filename = filename .. string.char(math.random(65, 90))
+    end
+  end
+
+  vim.cmd('e ' .. filename .. '.md')
+
+  vim.api.nvim_buf_set_lines(0, 0, -1, false, {
+    '# ' .. note_name,
+  })
+
+  vim.cmd 'w'
+  print 'Note created!'
+end, { desc = 'New note' })
+
 -- [[ Basic Autocommands ]]
 --  See `:help lua-guide-autocommands`
 

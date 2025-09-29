@@ -1,3 +1,7 @@
+if true then
+  return {}
+end
+
 return {
   -- "epwalsh/obsidian.nvim",
   'obsidian-nvim/obsidian.nvim',
@@ -56,6 +60,10 @@ return {
 
     ui = {
       enable = false,
+      checkbox = {
+        [' '] = { char = '󰄱', hl_group = 'ObsidianTodo' },
+        ['x'] = { char = '', hl_group = 'ObsidianDone' },
+      },
     },
     attachments = {
       img_folder = 'assets',
@@ -93,10 +101,10 @@ return {
     vim.api.nvim_create_autocmd('User', {
       pattern = 'ObsidianNoteEnter',
       callback = function(ev)
-        vim.keymap.set('n', '<leader>ch', '<cmd>Obsidian toggle_checkbox<cr>', {
-          buffer = ev.buf,
-          desc = 'Toggle checkbox',
-        })
+        -- vim.keymap.set('n', '<leader>ch', '<cmd>Obsidian toggle_checkbox<cr>', {
+        --   buffer = ev.buf,
+        --   desc = 'Toggle checkbox',
+        -- })
 
         vim.keymap.del('n', '<CR>', { buffer = ev.buf })
       end,

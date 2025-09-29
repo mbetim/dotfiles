@@ -215,11 +215,11 @@ vim.keymap.set('n', 'k', 'v:count == 0 ? "gk" : "k"', { expr = true, silent = tr
 
 vim.keymap.set({ 'n', 'i' }, '<C-S>', '<CMD>w<CR><ESC>', { desc = 'Save' })
 
-vim.keymap.set('n', '<leader>ql', '<CMD>cnext<CR>', { desc = 'Next Quick Fix Item' })
-vim.keymap.set('n', '<leader>qh', '<CMD>cprev<CR>', { desc = 'Previous Quick Fix Item' })
-
 -- Diagnostic keymaps
-vim.keymap.set('n', '<leader>q', vim.diagnostic.setloclist, { desc = 'Open diagnostic [Q]uickfix list' })
+vim.keymap.set('n', '<leader>qq', vim.diagnostic.setloclist, { desc = 'Open diagnostic [Q]uickfix list', noremap = true })
+vim.keymap.set('n', '<leader>ql', '<CMD>cnext<CR>', { desc = 'Next Quick Fix Item', noremap = true })
+vim.keymap.set('n', '<leader>qh', '<CMD>cprev<CR>', { desc = 'Previous Quick Fix Item', noremap = true })
+vim.keymap.set('n', '<leader>qd', '<CMD>cclose<CR>', { desc = 'Close Quick Fix Item', noremap = true })
 
 -- Keep cursor in the middle of the screen
 vim.keymap.set('n', '<C-d>', '<C-d>zz')

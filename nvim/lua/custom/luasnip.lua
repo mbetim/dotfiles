@@ -299,5 +299,18 @@ ls.add_snippets(
       end, { 1 }),
     }),
     snippet('uscl', t "'use client';"),
+    snippet(
+      'us',
+      fmt('const [{}, {}] = useState({})', {
+        i(1),
+        f(function(args)
+          local state_name = args[1][1]
+          local setter = string.upper(string.sub(state_name, 1, 1)) .. string.sub(state_name, 2)
+
+          return 'set' .. setter
+        end, { 1 }),
+        i(2),
+      })
+    ),
   })
 )

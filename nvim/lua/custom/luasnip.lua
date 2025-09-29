@@ -314,3 +314,11 @@ ls.add_snippets(
     ),
   })
 )
+
+ls.add_snippets('sql', {
+  snippet('ins', fmt('insert into {} ({}) values ({});', { i(1, 'table'), i(2), i(3) })),
+  snippet('sel', fmt('select {} from {};', { i(2), i(1, 'table') })),
+  snippet('sela', fmt('select * from {};', { i(1, 'table') })),
+  snippet('upd', fmt('update {} set {} = {} where {};', { i(1, 'table'), i(2), i(3), i(4) })),
+  snippet('del', fmt('delete from {};', { i(1, 'table') })),
+})

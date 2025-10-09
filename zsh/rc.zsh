@@ -258,3 +258,4 @@ eval "$(zoxide init zsh)"
 . "$HOME/.atuin/bin/env"
 
 eval "$(atuin init zsh --disable-up-arrow)"
+export PATH="$HOME/.local/bin:$PATH"

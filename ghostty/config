@@ -16,6 +16,7 @@ keybind = super+k=text:\x01K
 
 # Previous window
 keybind = super+j=text:\x01J
+keybind = ctrl+tab=text:\x01J
 
 # Previous session
 keybind = super+l=text:\x01L

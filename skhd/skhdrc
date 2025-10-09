@@ -14,9 +14,10 @@ meh - w : open -a WhatsApp
 meh - 1 : open -a 1Password
 meh - x : open -a DevBox
 meh - r : open -a Shottr
-meh - n : open -a Toggl\ Track
+meh - n : open -a Numi
 meh - y : open -a Tomito
 meh - b : open -a DBeaver
+meh - a : open -a Toggl\ Track
 
 hyper - f : open -a Finder
 

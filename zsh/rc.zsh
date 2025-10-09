@@ -33,6 +33,7 @@ alias bpc="bit pr checkout"
 
 alias ghpc="gh pr checkout"
 alias ghpl="gh pr list"
+alias gvw="gh repo view -w"
 
 alias dps="docker ps"
 alias dcu="docker compose up"

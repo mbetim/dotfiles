@@ -120,14 +120,15 @@ function d() {
     return
   fi
 
-  node_pkg_manger="pnpm"
-
-  if [ -f yarn.lock ]; then node_pkg_manger="yarn"
-  elif [ -f package-lock.json ]; then node_pkg_manger="npm"
-  fi
-
-  print -s  "$node_pkg_manger run $chosen_script"
-  eval $node_pkg_manger run $chosen_script
+  # node_pkg_manger="pnpm"
+  #
+  # if [ -f yarn.lock ]; then node_pkg_manger="yarn"
+  # elif [ -f package-lock.json ]; then node_pkg_manger="npm"
+  # fi
+  #
+  # print -s  "$node_pkg_manger run $chosen_script"
+  print -s  "nr $chosen_script"
+  eval nr $chosen_script
 }
 
 # Auto suggestions

@@ -54,12 +54,12 @@ keybind = super+shift+left_bracket=text:\x01p
 keybind = super+shift+right_bracket=text:\x01n
 
 # Selection mode in tmux
-keybind = super+one=text:\x011
-keybind = super+two=text:\x012
-keybind = super+three=text:\x013
-keybind = super+four=text:\x014
-keybind = super+five=text:\x015
-keybind = super+six=text:\x016
-keybind = super+seven=text:\x017
-keybind = super+eight=text:\x018
-keybind = super+nine=text:\x019
+keybind = ctrl+one=text:\x011
+keybind = ctrl+two=text:\x012
+keybind = ctrl+three=text:\x013
+keybind = ctrl+four=text:\x014
+keybind = ctrl+five=text:\x015
+keybind = ctrl+six=text:\x016
+keybind = ctrl+seven=text:\x017
+keybind = ctrl+eight=text:\x018
+keybind = ctrl+nine=text:\x019

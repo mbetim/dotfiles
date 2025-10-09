@@ -2,7 +2,7 @@
 meh - v : open -a Ghostty
 meh - g : open -a Zen\ Browser
 meh - s : open -a Spotify.app
-meh - d : open -a legcord
+meh - d : open -a Discord
 meh - m : open -a MongoDB\ Compass
 meh - p : open -a Yaak
 meh - e : open -a Notion\ Mail

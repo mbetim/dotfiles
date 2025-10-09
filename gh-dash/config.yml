@@ -1,0 +1,110 @@
+# yaml-language-server: $schema=https://dlvhdr.github.io/gh-dash/configuration/gh-dash/schema.json
+prSections:
+  - title: My Pull Requests
+    filters: is:open author:@me
+    type: null
+  - title: Needs My Review
+    filters: is:open -author:@me draft:false user-review-requested:@me sort:created-asc
+    type: null
+  - title: Didnt Review
+    filters: is:pr is:open -reviewed-by:@me draft:false sort:created-asc
+    type: null
+  - title: All PRs
+    filters: is:pr is:open sort:created-asc
+    type: null
+issuesSections:
+  - title: My Issues
+    filters: is:open author:@me
+  - title: Assigned
+    filters: is:open assignee:@me
+  - title: Involved
+    filters: is:open involves:@me -author:@me
+repo:
+  branchesRefetchIntervalSeconds: 30
+  prsRefetchIntervalSeconds: 60
+repoPaths:
+  mbetim/*: ~/dev/*
+  synvia-dev/*: ~/dev/*
+  synvia-dev/ecrf: ~/dev/ecrf/main
+defaults:
+  preview:
+    open: true
+    width: 80
+  prsLimit: 20
+  issuesLimit: 20
+  view: prs
+  layout:
+    prs:
+      updatedAt:
+        width: 5
+      createdAt:
+        width: 5
+      repo:
+        width: 20
+      author:
+        width: 15
+      authorIcon:
+        hidden: false
+      assignees:
+        width: 20
+        hidden: true
+      base:
+        width: 15
+        hidden: true
+      lines:
+        width: 15
+    issues:
+      updatedAt:
+        width: 5
+      createdAt:
+        width: 5
+      repo:
+        width: 15
+      creator:
+        width: 10
+      creatorIcon:
+        hidden: false
+      assignees:
+        width: 20
+        hidden: true
+  refetchIntervalMinutes: 30
+keybindings:
+  universal:
+    - key: J
+      builtin: pageDown
+    - key: K
+      builtin: pageUp
+  issues: []
+  prs:
+    - key: v
+      command: tmux new-window -c {{.RepoPath}} 'nvim -c ":echo \"Opening PR {{.PrNumber}}\" | Octo pr edit {{.PrNumber}}"'
+    - key: a
+      command: create-todoist-task-to-review {{.PrNumber}} {{.RepoName}}
+    - key: O
+      command: tmux new-window -c {{.RepoPath}} 'nvim -c ":echo \"Opening PR {{.PrNumber}}\" | Octo pr edit {{.PrNumber}}"'
+  branches: []
+theme:
+  ui:
+    sectionsShowCount: true
+    table:
+      showSeparator: true
+      compact: false
+  colors:
+    text:
+      primary: "#E2E1ED"
+      secondary: "#666CA6"
+      inverted: "#242347"
+      faint: "#B0B3BF"
+      warning: "#E0AF68"
+      success: "#3DF294"
+    background:
+      selected: "#1B1B33"
+    border:
+      primary: "#383B5B"
+      secondary: "#39386B"
+      faint: "#2B2B40"
+pager:
+  diff: ""
+confirmQuit: false
+showAuthorIcons: true
+smartFilteringAtLaunch: true

@@ -361,7 +361,13 @@ vim.keymap.set('n', '<leader>cd', function()
 end, { desc = 'Fix all dianostics' })
 
 vim.keymap.set('n', '<leader>on', function()
-  local note_name = vim.fn.input 'Note name: '
+  local raw_note_name = vim.fn.input 'Note name: '
+  local note_name = raw_note_name:match '^%s*(.-)%s*$'
+
+  if note_name == '' then
+    print 'A note name is required!'
+    return
+  end
 
   local filename = ''
   if note_name ~= nil then

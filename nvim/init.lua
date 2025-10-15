@@ -418,6 +418,8 @@ vim.keymap.set('n', '<leader>ot', function()
   print 'Note created!'
 end, { desc = "Today's daily note" })
 
+vim.keymap.set('n', '<leader>oi', '<cmd>e index.md<CR>', { desc = 'Open index note', silent = true })
+
 -- [[ Basic Autocommands ]]
 --  See `:help lua-guide-autocommands`
 

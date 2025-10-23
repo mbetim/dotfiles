@@ -80,7 +80,6 @@ return {
   keys = function()
     local Snacks = require 'snacks'
     return {
-      -- Top Pickers & Explorer
       {
         '<leader><space>',
         function()
@@ -88,13 +87,6 @@ return {
         end,
         desc = 'Smart Find Files',
       },
-      -- {
-      --   '<leader>,',
-      --   function()
-      --     Snacks.picker.buffers()
-      --   end,
-      --   desc = 'Buffers',
-      -- },
       {
         '<leader>/',
         function()
@@ -118,25 +110,11 @@ return {
       },
       -- find
       {
-        '<leader>fc',
-        function()
-          Snacks.picker.files { cwd = vim.fn.stdpath 'config' }
-        end,
-        desc = 'Find Config File',
-      },
-      {
         '<leader>ff',
         function()
           Snacks.picker.files()
         end,
         desc = 'Find Files',
-      },
-      {
-        '<leader>fg',
-        function()
-          Snacks.picker.git_files()
-        end,
-        desc = 'Find Git Files',
       },
       {
         '<leader>fr',
@@ -146,27 +124,20 @@ return {
         desc = 'Recent',
       },
       -- git
-      -- {
-      --   '<leader>gb',
-      --   function()
-      --     Snacks.picker.git_branches()
-      --   end,
-      --   desc = 'Git Branches',
-      -- },
-      -- {
-      --   '<leader>gl',
-      --   function()
-      --     Snacks.picker.git_log()
-      --   end,
-      --   desc = 'Git Log',
-      -- },
-      -- {
-      --   '<leader>gL',
-      --   function()
-      --     Snacks.picker.git_log_line()
-      --   end,
-      --   desc = 'Git Log Line',
-      -- },
+      {
+        '<leader>gl',
+        function()
+          Snacks.picker.git_log_file()
+        end,
+        desc = 'Git Log File',
+      },
+      {
+        '<leader>gL',
+        function()
+          Snacks.picker.git_log_line()
+        end,
+        desc = 'Git Log Line',
+      },
       {
         '<leader>fs',
         function()
@@ -174,34 +145,13 @@ return {
         end,
         desc = 'Find Git Status',
       },
-      -- {
-      --   '<leader>gS',
-      --   function()
-      --     Snacks.picker.git_stash()
-      --   end,
-      --   desc = 'Git Stash',
-      -- },
-      -- {
-      --   '<leader>gd',
-      --   function()
-      --     Snacks.picker.git_diff()
-      --   end,
-      --   desc = 'Git Diff (Hunks)',
-      -- },
-      -- {
-      --   '<leader>gf',
-      --   function()
-      --     Snacks.picker.git_log_file()
-      --   end,
-      --   desc = 'Git Log File',
-      -- },
       -- Grep
       {
         '<leader>sb',
         function()
-          Snacks.picker.lines()
+          Snacks.picker.buffers()
         end,
-        desc = 'Buffer Lines',
+        desc = 'Buffer',
       },
       {
         '<leader>sB',
@@ -209,13 +159,6 @@ return {
           Snacks.picker.grep_buffers()
         end,
         desc = 'Grep Open Buffers',
-      },
-      {
-        '<leader>sg',
-        function()
-          Snacks.picker.grep()
-        end,
-        desc = 'Grep',
       },
       {
         '<leader>sw',
@@ -227,13 +170,6 @@ return {
       },
       -- search
       {
-        '<leader>s"',
-        function()
-          Snacks.picker.registers()
-        end,
-        desc = 'Registers',
-      },
-      {
         '<leader>s/',
         function()
           Snacks.picker.search_history()
@@ -241,21 +177,7 @@ return {
         desc = 'Search History',
       },
       {
-        '<leader>sa',
-        function()
-          Snacks.picker.autocmds()
-        end,
-        desc = 'Autocmds',
-      },
-      {
         '<leader>sc',
-        function()
-          Snacks.picker.command_history()
-        end,
-        desc = 'Command History',
-      },
-      {
-        '<leader>sC',
         function()
           Snacks.picker.commands()
         end,
@@ -282,13 +204,13 @@ return {
         end,
         desc = 'Help Pages',
       },
-      {
-        '<leader>sH',
-        function()
-          Snacks.picker.highlights()
-        end,
-        desc = 'Highlights',
-      },
+      -- {
+      --   '<leader>sH',
+      --   function()
+      --     Snacks.picker.highlights()
+      --   end,
+      --   desc = 'Highlights',
+      -- },
       {
         '<leader>si',
         function()
@@ -323,20 +245,6 @@ return {
           Snacks.picker.marks()
         end,
         desc = 'Marks',
-      },
-      {
-        '<leader>sM',
-        function()
-          Snacks.picker.man()
-        end,
-        desc = 'Man Pages',
-      },
-      {
-        '<leader>sp',
-        function()
-          Snacks.picker.lazy()
-        end,
-        desc = 'Search for Plugin Spec',
       },
       {
         '<leader>sq',

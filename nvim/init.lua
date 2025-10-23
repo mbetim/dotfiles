@@ -915,6 +915,7 @@ require('lazy').setup({
         prettier = {},
         prettierd = {},
         eslint_d = {},
+        biome = {},
 
         marksman = {},
 

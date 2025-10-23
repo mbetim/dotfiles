@@ -4,15 +4,12 @@ return {
   priority = 1000,
   ---@type snacks.Config
   opts = {
+    bigfile = { enabled = true },
     scroll = { enabled = false },
     lazygit = { enabled = true },
     bufdelete = { enabled = true },
     indent = { enabled = true },
-    image = {
-      doc = {
-        inline = false,
-      },
-    },
+    image = { enabled = false, doc = { inline = false } },
     picker = {
       hidden = true,
       matcher = {

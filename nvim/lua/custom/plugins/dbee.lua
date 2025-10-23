@@ -9,6 +9,7 @@ return {
   },
   {
     'kndndrj/nvim-dbee',
+    ft = 'sql',
     dependencies = {
       'MunifTanjim/nui.nvim',
     },

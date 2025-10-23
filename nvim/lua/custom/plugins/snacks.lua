@@ -18,6 +18,9 @@ return {
       formatters = {
         file = {
           filename_first = true,
+          ---@type "left"|"center"|"right"
+          truncate = 'left',
+          min_width = 50, -- minimum length of the truncated path
         },
       },
       debug = {

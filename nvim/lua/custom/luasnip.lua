@@ -77,6 +77,17 @@ ls.add_snippets('lua', {
 ls.add_snippets('markdown', {
   snippet('ch', fmt('- [ ] {}', { i(0) })),
   snippet('lk', fmt('[{}]({})', { i(1), i(2) })),
+  snippet(
+    'cb',
+    fmta(
+      [[
+  ```<lang>
+  <code>
+  ```
+  ]],
+      { lang = i(1), code = i(0) }
+    )
+  ),
 })
 
 local funcTypeChoiceNode = function(index)

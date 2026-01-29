@@ -1,0 +1,16 @@
+#!/usr/bin/env bash
+
+cd "$(tmux run "echo #{page_start_path}")" || exit
+url=$(git remote get-url origin)
+
+if [[ $url == *"github.com"* ]]; then
+  if [[ $url == git@* ]]; then
+    url="${url#git@}"
+    url="${url/://}"
+    url="https://$url"
+  fi
+
+  open "$url"
+else
+  echo "Repository not hosted on github"
+fi

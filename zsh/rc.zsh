@@ -131,6 +131,19 @@ function d() {
   eval nr $chosen_script
 }
 
+function p() {
+  local root=$(git rev-parse --show-toplevel 2>/dev/null) || return 1
+  
+  local dest=$( \
+    (cd "$root" && fd -t f "^package\.json$" --exclude node_modules -x echo {//}) \
+    | fzf --height 20% --layout=reverse --preview "bat --color=always --style=numbers $root/{}/package.json" \
+  )
+  
+  if [[ -n "$dest" ]]; then
+    cd "$root/$dest"
+  fi
+}
+
 # Auto suggestions
 source $(brew --prefix)/share/zsh-autosuggestions/zsh-autosuggestions.zsh
 bindkey '^ ' autosuggest-accept

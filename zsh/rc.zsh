@@ -219,6 +219,10 @@ export PATH="$BUN_INSTALL/bin:$PATH"
 # bun completions
 [ -s "/Users/matheus.betim/.bun/_bun" ] && source "/Users/matheus.betim/.bun/_bun"
 
+# NI
+export NI_DEFAULT_AGENT="pnpm" # default "prompt"
+export NI_GLOBAL_AGENT="pnpm"
+
 # Android studio
 export ANDROID_HOME=$HOME/Library/Android/sdk
 export PATH=$PATH:$ANDROID_HOME/emulator

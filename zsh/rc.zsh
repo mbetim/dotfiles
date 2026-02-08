@@ -9,6 +9,7 @@ alias ga="git add"
 alias gb="git branch"
 alias gcb='git checkout -b'
 alias gpl="git pull"
+alias gplo="git pull origin"
 alias gco='git checkout'
 alias gcm='git checkout $(git symbolic-ref refs/remotes/origin/HEAD | sed "s@^refs/remotes/origin/@@")'
 alias gcd="git checkout develop"
@@ -63,6 +64,18 @@ alias nd='terminal-notifier -title "Task finished" -message "Done with task! Exi
 alias oo='cd ~/dev/obsidian/flat && nvim'
 
 alias cdt='cd ../..'
+
+function ..() {
+  cd ../..
+}
+
+function ...() {
+  cd ../../..
+}
+
+function ....() {
+  cd ../../../..
+}
 
 function yy() {
 	local tmp="$(mktemp -t "yazi-cwd.XXXXXX")" cwd
@@ -120,13 +133,6 @@ function d() {
     return
   fi
 
-  # node_pkg_manger="pnpm"
-  #
-  # if [ -f yarn.lock ]; then node_pkg_manger="yarn"
-  # elif [ -f package-lock.json ]; then node_pkg_manger="npm"
-  # fi
-  #
-  # print -s  "$node_pkg_manger run $chosen_script"
   print -s  "nr $chosen_script"
   eval nr $chosen_script
 }

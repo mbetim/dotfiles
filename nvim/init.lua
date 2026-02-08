@@ -932,7 +932,7 @@ require('lazy').setup({
 
         tailwindcss = {},
 
-        prettier = {},
+        -- prettier = {},
         prettierd = {},
         eslint_d = {},
         biome = {},
@@ -953,6 +953,10 @@ require('lazy').setup({
             },
           },
         },
+
+        terraform = {},
+        tflint = {},
+        hclfmt = {},
       }
 
       -- Ensure the servers and tools above are installed
@@ -971,8 +975,6 @@ require('lazy').setup({
       local ensure_installed = vim.tbl_keys(servers or {})
       vim.list_extend(ensure_installed, {
         'stylua', -- Used to format Lua code
-        'markdownlint-cli2',
-        'markdown-toc',
       })
       require('mason-tool-installer').setup { ensure_installed = ensure_installed }
 

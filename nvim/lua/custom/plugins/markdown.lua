@@ -10,14 +10,23 @@ return {
       sign = false,
       width = 'block',
       right_pad = 1,
+      border = 'thick',
     },
     heading = {
-      sign = false,
+      sign = true,
       icons = {},
     },
     checkbox = {
       enabled = false,
     },
+    completions = {
+      lsp = {
+        enabled = true,
+      },
+    },
   },
   ft = { 'markdown', 'norg', 'rmd', 'org', 'codecompanion' },
+  keys = {
+    { '<leader>tm', '<cmd>RenderMarkdown toggle<cr>', desc = 'Toggle Markdown' },
+  },
 }

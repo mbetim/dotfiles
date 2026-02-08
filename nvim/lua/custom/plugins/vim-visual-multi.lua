@@ -1,6 +1,6 @@
 return {
   'mg979/vim-visual-multi',
-  event = 'VeryLazy',
+  event = { 'BufReadPre', 'BufNewFile' },
   init = function()
     vim.g.VM_maps = {
       ['Goto Prev'] = '[n',
@@ -8,5 +8,7 @@ return {
       ['Select Cursor Down'] = '<M-Down>',
       ['Select Cursor Up'] = '<M-Up>',
     }
+    vim.keymap.set('n', '<C-n>', '<Plug>(VM-Find-Under)')
   end,
+  lazy = false,
 }

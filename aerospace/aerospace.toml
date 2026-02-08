@@ -207,6 +207,9 @@ run = "move-node-to-workspace M"
 [[on-window-detected]]
 if.app-id = "com.kishanbagaria.jack"
 run = "move-node-to-workspace M"
+[[on-window-detected]]
+if.app-id = "com.tinyspeck.slackmacgap"
+run = "move-node-to-workspace M"
 
 # Notes?
 [[on-window-detected]]
@@ -250,4 +253,7 @@ if.app-id = "com.dmitrynikolaev.numi"
 run = ["layout floating" ]
 [[on-window-detected]]
 if.app-id = "com.raycast.macos"
+run = ["layout floating" ]
+[[on-window-detected]]
+if.app-id = "com.apple.iphonesimulator"
 run = ["layout floating" ]

@@ -13,24 +13,24 @@ return {
         desc = 'Buffer Manager',
       },
       {
-        'L',
+        '<leader>bl',
         function()
           require('buffer_manager.ui').nav_next()
         end,
         desc = 'Next buffer',
       },
       {
-        'H',
+        '<leader>bh',
         function()
           require('buffer_manager.ui').nav_prev()
         end,
-        desc = 'Next buffer',
+        desc = 'Previous buffer',
       },
     }
 
     for i = 1, 9 do
       table.insert(keymaps, {
-        string.format('<M-%d>', i),
+        string.format('<leader>b%d', i),
         function()
           require('buffer_manager.ui').nav_file(i)
         end,

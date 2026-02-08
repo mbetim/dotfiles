@@ -8,6 +8,10 @@ return {
       settings = {
         save_on_toggle = true,
         sync_on_ui_close = true,
+        -- Use tab-local cwd for harpoon key, enabling per-tab project lists
+        key = function()
+          return vim.fn.getcwd(-1, 0)
+        end,
       },
     }
 

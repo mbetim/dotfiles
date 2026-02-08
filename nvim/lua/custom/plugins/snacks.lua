@@ -85,7 +85,7 @@ return {
         function()
           Snacks.picker.files()
         end,
-        desc = 'Smart Find Files',
+        desc = 'Find Files',
       },
       {
         '<leader>/',
@@ -338,6 +338,110 @@ return {
           Snacks.bufdelete()
         end,
         desc = 'Delete Buffer',
+      },
+      {
+        '<leader>sp',
+        function()
+          local root = vim.fs.root(0, '.git') or vim.fn.getcwd()
+          local fdcommand = io.popen('fd -t f "^package\\.json$" --exclude node_modules "' .. root .. '" 2>/dev/null')
+
+          if not fdcommand then
+            vim.notify('Failed to run fd', vim.log.levels.ERROR)
+            return
+          end
+
+          local result = fdcommand:read '*a'
+          fdcommand:close()
+
+          local items = {}
+          for line in result:gmatch '[^\n]+' do
+            local dir = vim.fn.fnamemodify(line, ':h')
+            local relative = string.gsub(dir, '^' .. vim.pesc(root) .. '/', '')
+
+            -- Skip root directory if it matches
+            if dir ~= root then
+              table.insert(items, { text = relative, file = dir })
+            end
+          end
+
+          -- Also add root if it has package.json
+          if vim.fn.filereadable(root .. '/package.json') == 1 then
+            table.insert(items, 1, { text = '(root)', file = root })
+          end
+
+          if #items == 0 then
+            vim.notify('No projects found', vim.log.levels.WARN)
+            return
+          end
+
+          -- Helper function to switch project and reinitialize harpoon
+          local function switch_project(picker, item, callback)
+            picker:close()
+            -- Use tcd (tab-local cd) to allow per-tab project directories
+            vim.cmd('tcd ' .. vim.fn.fnameescape(item.file))
+            vim.notify('Switched to: ' .. item.text, vim.log.levels.INFO)
+
+            -- Reinitialize Harpoon's data layer to load from the correct file
+            vim.schedule(function()
+              local ok, harpoon = pcall(require, 'harpoon')
+              if ok then
+                local Data = require 'harpoon.data'
+                harpoon.data = Data.Data:new(harpoon.config)
+                harpoon.lists = {} -- Clear cached lists to force reload
+              end
+
+              -- Execute callback after harpoon is reinitialized
+              if callback then
+                vim.defer_fn(callback, 50)
+              end
+            end)
+          end
+
+          Snacks.picker {
+            title = 'Switch Project (<CR> Harpoon, <C-f> Files, <C-s> Session)',
+            items = items,
+            format = function(item)
+              return { { item.text } }
+            end,
+            win = {
+              input = {
+                keys = {
+                  ['<C-f>'] = { 'confirm_files', mode = { 'i', 'n' } },
+                  ['<C-s>'] = { 'confirm_session', mode = { 'i', 'n' } },
+                },
+              },
+            },
+            actions = {
+              confirm_files = function(picker, item)
+                switch_project(picker, item, function()
+                  Snacks.picker.files()
+                end)
+              end,
+              confirm_session = function(picker, item)
+                switch_project(picker, item, function()
+                  local persistence_ok, persistence = pcall(require, 'persistence')
+                  if persistence_ok then
+                    persistence.load()
+                  else
+                    vim.notify('persistence.nvim not available', vim.log.levels.WARN)
+                  end
+                end)
+              end,
+            },
+            confirm = function(picker, item)
+              switch_project(picker, item, function()
+                local harpoon_ok, harpoon = pcall(require, 'harpoon')
+                if harpoon_ok then
+                  harpoon.ui:toggle_quick_menu(harpoon:list())
+                else
+                  -- Fallback to files if harpoon not available
+                  Snacks.picker.files()
+                end
+              end)
+            end,
+          }
+        end,
+        desc = 'Switch Project',
       },
     }
   end,

@@ -1158,14 +1158,13 @@ require('lazy').setup({
       },
 
       sources = {
-        default = { 'supermaven', 'lsp', 'lazydev', 'path', 'snippets' },
+        default = { 'lsp', 'lazydev', 'path', 'snippets' },
         per_filetype = {
           sql = { 'dbee', 'buffer' },
         },
         providers = {
           lazydev = { module = 'lazydev.integrations.blink', score_offset = 100 },
           dbee = { name = 'cmp-dbee', module = 'blink.compat.source' },
-          supermaven = { name = 'supermaven', module = 'blink-cmp-supermaven', async = true },
         },
       },
 
@@ -1183,7 +1182,6 @@ require('lazy').setup({
         sorts = {
           function(a, b)
             local source_priority = {
-              supermaven = 8,
               obsidian_new = 7,
               obsidian_tags = 6,
               obsidian = 5,

@@ -123,7 +123,7 @@ vim.o.foldmethod = 'indent'
 vim.keymap.set({ 'n', 'v' }, 'y', '"+y', { desc = 'Yank' })
 vim.keymap.set('n', 'Y', 'v$"+y', { desc = 'Yank' })
 
-vim.keymap.set('i', 'jk', '<ESC>', { desc = 'Escape' })
+vim.keymap.set('i', 'jj', '<ESC>', { desc = 'Escape' })
 
 vim.keymap.set('n', '<leader>nn', ':vnew | set filetype=jsonc<CR>', { noremap = true, silent = true, desc = 'New JSON file' })
 vim.keymap.set('n', '<leader>nd', '<cmd>bd!<cr>', { noremap = true, silent = true, desc = 'New JSON file' })
@@ -195,13 +195,6 @@ vim.o.spelloptions = 'camel'
 
 vim.g.format_on_save = true
 
-vim.keymap.set('n', '<leader>tf', function()
-  vim.g.format_on_save = not vim.g.format_on_save
-  print('Format on save: ' .. tostring(vim.g.format_on_save))
-end)
-
-vim.keymap.set('n', '<leader>ts', ':SupermavenToggle<cr>', { desc = 'Supermaven Toggle' })
-
 -- [[ Basic Keymaps ]]
 --  See `:help vim.keymap.set()`
 
@@ -213,10 +206,15 @@ vim.keymap.set('n', '<Esc>', '<cmd>nohlsearch<CR>')
 vim.keymap.set('n', 'j', 'v:count == 0 ? "gj" : "j"', { expr = true, silent = true })
 vim.keymap.set('n', 'k', 'v:count == 0 ? "gk" : "k"', { expr = true, silent = true })
 
+-- Save
 vim.keymap.set({ 'n', 'i' }, '<C-S>', '<CMD>w<CR><ESC>', { desc = 'Save' })
 
+vim.keymap.set('n', '<leader>tf', function()
+  vim.g.format_on_save = not vim.g.format_on_save
+  print('Format on save: ' .. tostring(vim.g.format_on_save))
+end)
+
 -- Diagnostic keymaps
-vim.keymap.set('n', '<leader>qq', vim.diagnostic.setloclist, { desc = 'Open diagnostic [Q]uickfix list', noremap = true })
 vim.keymap.set('n', '<leader>ql', '<CMD>cnext<CR>', { desc = 'Next Quick Fix Item', noremap = true })
 vim.keymap.set('n', '<leader>qh', '<CMD>cprev<CR>', { desc = 'Previous Quick Fix Item', noremap = true })
 vim.keymap.set('n', '<leader>qd', '<CMD>cclose<CR>', { desc = 'Close Quick Fix Item', noremap = true })
@@ -230,8 +228,10 @@ vim.keymap.set('n', '<leader>j', '<cmd>e #<cr>', { desc = 'Switch to Other Buffe
 
 -- use gh to move to the beginning of the line
 vim.keymap.set({ 'n', 'v' }, 'gh', '^', { desc = 'Go to the beginning of the line' })
+vim.keymap.set({ 'n', 'v' }, 'H', '^', { desc = 'Go to the beginning of the line' })
 -- use gl to move to the end of the line
 vim.keymap.set({ 'n', 'v' }, 'gl', '$', { desc = 'Go to the end of the line' })
+vim.keymap.set({ 'n', 'v' }, 'L', '$', { desc = 'Go to the end of the line' })
 
 -- Window manipulation
 vim.keymap.set('n', '<leader>wd', '<C-W>c', { desc = 'Close window' })
@@ -246,6 +246,11 @@ vim.keymap.set('n', '<leader>wj', '<C-W>-', { desc = 'Decrease window height siz
 
 -- Restart LSP
 vim.keymap.set('n', '<leader>cL', '<cmd>LspRestart<cr>', { desc = 'Restart LSP' })
+
+-- Open LSP definition in new window
+vim.keymap.set('n', '<leader>vgd', '<cmd>vsplit<CR>:lua vim.lsp.buf.definition()<CR>', { desc = 'Open LSP definition in new window' })
+vim.keymap.set('n', '<leader>hgd', '<cmd>split<CR>:lua vim.lsp.buf.definition()<CR>', { desc = 'Open LSP definition in new window' })
+
 vim.keymap.set('n', '<leader>gx', function()
   local url = vim.fn.expand '<cfile>'
   vim.fn.jobstart { 'open', url }
@@ -1088,7 +1093,7 @@ require('lazy').setup({
               desc = 'Jump to next snippet',
             },
             {
-              '<c-k>',
+              '<c-e>',
               function()
                 if ls.jumpable(-1) then
                   ls.jump(-1)
@@ -1294,13 +1299,13 @@ require('lazy').setup({
       -- - sr)'  - [S]urround [R]eplace [)] [']
       require('mini.surround').setup {
         mappings = {
-          add = 'gsa', -- Add surrounding in Normal and Visual modes
-          delete = 'gsd', -- Delete surrounding
-          find = 'gsf', -- Find surrounding (to the right)
-          find_left = 'gsF', -- Find surrounding (to the left)
-          highlight = 'gsh', -- Highlight surrounding
-          replace = 'gsr', -- Replace surrounding
-          update_n_lines = 'gsn', -- Update `n_lines`
+          add = 'sa', -- Add surrounding in Normal and Visual modes
+          delete = 'sd', -- Delete surrounding
+          find = 'sf', -- Find surrounding (to the right)
+          find_left = 'sF', -- Find surrounding (to the left)
+          highlight = 'sh', -- Highlight surrounding
+          replace = 'sr', -- Replace surrounding
+          -- update_n_lines = 'sn', -- Update `n_lines`
         },
       }
 

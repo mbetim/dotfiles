@@ -42,6 +42,18 @@ ls.add_snippets('all', {
   snippet(
     'curtime',
     f(function()
+      return os.date '%H:%M'
+    end)
+  ),
+  snippet(
+    'curdate',
+    f(function()
+      return os.date '%Y-%m-%d'
+    end)
+  ),
+  snippet(
+    'curdatetime',
+    f(function()
       return os.date '%Y-%m-%d %H:%M'
     end)
   ),
@@ -88,6 +100,10 @@ ls.add_snippets('markdown', {
       { lang = i(1), code = i(0) }
     )
   ),
+  snippet('bl', fmt('**{}**', { i(1) })),
+  snippet('h1', fmt('# {}', { i(0) })),
+  snippet('h2', fmt('## {}', { i(0) })),
+  snippet('h3', fmt('### {}', { i(0) })),
 })
 
 local funcTypeChoiceNode = function(index)
@@ -223,7 +239,7 @@ local shared_ts_snippets = {
       }
     )
   ),
-  snippet('a', fmt('await {}', { i(0) })),
+  snippet('aw', fmt('await {}', { i(0) })),
   snippet('ca', fmt('const {} = await {}', { i(1), i(0) })),
   snippet('rn', t 'return null'),
   snippet('iof', fmt('{} instanceof {}', { i(1), i(0) })),
@@ -231,6 +247,7 @@ local shared_ts_snippets = {
   snippet('te', fmt('{} ? {} : {}', { i(1, 'cond'), i(2, 'true'), i(0, 'false') })),
   snippet('qrycli', t 'const queryClient = useQueryClient()'),
   snippet('imd', fmta('import { <var> } from "<package>";', { package = i(1), var = i(0) })),
+  snippet('ima', fmta('import * as <var> from "<package>";', { package = i(1), var = i(0) })),
 }
 
 ls.add_snippets('javascript', shared_ts_snippets)
@@ -295,21 +312,21 @@ ls.add_snippets(
         }
       )
     ),
-    snippet('jx', {
-      -- Component name
-      t '<',
-      i(1, 'elementName'),
-      t '>',
-      -- New line and indentation
-      t { '', '\t' },
-      -- Cursor position for content
-      i(0),
-      -- New line and closing tag
-      f(function(args)
-        return { '', '</' .. args[1][1] .. '>' }
-      end, { 1 }),
-    }),
+    snippet('jc', fmt('<{} />', { i(1, 'ComponentName') })),
+    snippet(
+      'jx',
+      fmt(
+        [[
+        <{}>
+          {}
+        </{}>
+        ]],
+        { i(1, 'ComponentName'), i(0), rep(1) }
+      )
+    ),
     snippet('uscl', t "'use client';"),
+    snippet('cn', fmt('className="{}"', { i(1) })),
+    snippet('concon', t 'control={control}'),
     snippet(
       'us',
       fmt('const [{}, {}] = useState({})', {
@@ -322,6 +339,18 @@ ls.add_snippets(
         end, { 1 }),
         i(2),
       })
+    ),
+    snippet('stl', fmta('style={styles.<var>}', { var = i(1) })),
+    snippet(
+      'stylesheet',
+      fmt(
+        [[
+        const styles = StyleSheet.create({{
+          {}
+        }});
+        ]],
+        { i(0) }
+      )
     ),
   })
 )

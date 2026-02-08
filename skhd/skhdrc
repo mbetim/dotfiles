@@ -1,12 +1,12 @@
 # Open applications
 meh - v : open -a Ghostty
 meh - g : open -a Zen\ Browser
-meh - s : open -a Spotify.app
+meh - l : open -a Linear
+meh - s : open -a Slack
 meh - d : open -a Discord
-meh - m : open -a MongoDB\ Compass
+meh - m : open -a Spotify
 meh - p : open -a Yaak
-meh - e : open -a Notion\ Mail
-meh - t : open -a Microsoft\ Teams
+meh - t : open -a Google\ Meet
 meh - c : open -a Cursor
 meh - u : open -a Figma
 meh - i : open -a Todoist
@@ -14,20 +14,22 @@ meh - w : open -a WhatsApp
 meh - 1 : open -a 1Password
 meh - x : open -a DevBox
 meh - r : open -a Shottr
-meh - n : open -a Numi
+meh - n : open -a Notion.app
+hyper - n : open -a Numi
 meh - y : open -a Tomito
 meh - b : open -a DBeaver
+hyper - b : open -a TablePlus
 meh - a : open -a Toggl\ Track
-
+meh - e : open -a Simulator
+hyper - o : open -a Kitty
+meh - o : open -a Obsidian
 hyper - f : open -a Finder
 
 # Tmux sessions
-meh - o : ~/switch-tmux-session.sh notes
 meh - h : ~/switch-tmux-session.sh configs
 meh - f : ~/switch-tmux-session.sh files
-meh - j : ~/switch-tmux-session.sh ecrf
-meh - k : ~/switch-tmux-session.sh laudo-template
-meh - l : ~/switch-tmux-session.sh freevelo
+meh - j : ~/switch-tmux-session.sh mvst
+meh - k : ~/switch-tmux-session.sh treina-mais
 meh - 0x29 : ~/switch-tmux-session.sh synvia-ui
 meh - 0x27 : ~/switch-tmux-session.sh temp
 

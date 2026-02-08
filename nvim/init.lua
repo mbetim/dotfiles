@@ -450,6 +450,19 @@ vim.api.nvim_create_autocmd('BufWritePre', {
   end,
 })
 
+-- Disable auto commenting on new lines with `o`
+vim.api.nvim_create_autocmd('FileType', {
+  group = vim.api.nvim_create_augroup('no_auto_comment', {}),
+  callback = function()
+    vim.opt_local.formatoptions:remove 'o'
+  end,
+})
+
+-- Auto resize splits when changing the terminal's window size
+vim.api.nvim_create_autocmd('VimResized', {
+  command = 'wincmd =',
+})
+
 -- [[ Install `lazy.nvim` plugin manager ]]
 --    See `:help lazy.nvim.txt` or https://github.com/folke/lazy.nvim for more info
 local lazypath = vim.fn.stdpath 'data' .. '/lazy/lazy.nvim'

@@ -1110,7 +1110,7 @@ require('lazy').setup({
               desc = 'Jump to next snippet',
             },
             {
-              '<c-e>',
+              '<c-k>',
               function()
                 if ls.jumpable(-1) then
                   ls.jump(-1)
@@ -1142,6 +1142,7 @@ require('lazy').setup({
         preset = 'default',
         ['<Tab>'] = false,
         ['<S-Tab>'] = false,
+        ['<C-k>'] = { 'snippet_backward', 'fallback' },
       },
 
       appearance = {

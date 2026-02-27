@@ -1,0 +1,75 @@
+;; defsrc is still necessary
+(defcfg
+  process-unmapped-keys yes
+  macos-dev-names-include (
+    "Apple Internal Keyboard / Trackpad"
+  )
+
+)
+
+(defsrc
+  f1   f2   f3   f4   f5   f6   f7   f8   f9   f10   f11   f12
+  caps g h j k l
+  fn rmet ralt
+)
+
+(defvar
+  tap-time 250
+  hold-time 180
+)
+
+(defalias
+  go_up (multi met sft [)
+  go_back (multi met [)
+  go_forward (multi met ])
+  go_down (multi met sft ])
+  g (tap-hold $tap-time $hold-time g (layer-toggle browser))
+)
+
+(defalias
+  meh (multi ctl alt sft)
+  hyper (multi ctl alt sft met)
+
+  esc (tap-hold $tap-time $hold-time esc (layer-toggle nav))
+
+  a (tap-hold $tap-time $hold-time a lsft)
+  s (tap-hold $tap-time $hold-time s lctl)
+  d (tap-hold $tap-time $hold-time d lalt)
+  f (tap-hold $tap-time $hold-time f lmet)
+
+  j (tap-hold $tap-time $hold-time j rmet)
+  k (tap-hold $tap-time $hold-time k lalt)
+  l (tap-hold $tap-time $hold-time l rctl)
+  ; (tap-hold $tap-time $hold-time ; rsft)
+
+  fnl (tap-hold 200 200 f17 fn)
+  lalt (tap-hold $tap-time $hold-time f15 (layer-toggle nav))
+  lmet (tap-hold $tap-time $hold-time bspc @meh)
+  rmet (tap-hold $tap-time $hold-time f15 @meh)
+  ralt (tap-hold $tap-time $hold-time f18 @hyper)
+)
+
+(deflayer base
+  brdn  brup  _    _    _    _   prev  pp  next  mute  vold  volu
+  @esc @g _ _ _ _
+  @fnl @rmet @ralt
+)
+
+(deflayer browser
+  _  _  _    _    _    _   _  _  _  _  _  _
+  _ _ @go_back @go_down @go_up @go_forward
+  _ _ _
+)
+
+(deflayer nav
+  _  _  _    _    _    _   _  _  _  _  _  _
+  _ _ left down up right
+  _ _ _
+)
+
+(deflayer fn
+  f1   f2   f3   f4   f5   f6   f7   f8   f9   f10   f11   f12
+  _ _ _ _ _ _ 
+  fn _ _
+)
+

@@ -45,7 +45,7 @@ keybind = super+e=text:\x01-
 keybind = ctrl+m=text:\x01m
 
 # Rename current tmux window
-keybind = super+comma=text:\x01,
+keybind = ctrl+comma=text:\x01,
 
 # Enter tmux command mode
 keybind = super+;=text:\x01:

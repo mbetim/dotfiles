@@ -157,6 +157,7 @@ function p() {
 # Auto suggestions
 source $(brew --prefix)/share/zsh-autosuggestions/zsh-autosuggestions.zsh
 bindkey '^ ' autosuggest-accept
+bindkey '^y' autosuggest-accept
 bindkey '^w' vi-forward-word # accept the word
 
 # Syntax highlight

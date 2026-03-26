@@ -26,6 +26,10 @@ alias gwa='git worktree add'
 alias gwp='git worktree prune'
 alias lg="lazygit"
 
+alias wts="wt switch"
+
+alias oc="opencode"
+
 alias ld="lazydocker"
 alias lzn="lazynpm"
 

@@ -57,6 +57,10 @@ keybind = super+o=text:\x01[
 keybind = super+shift+left_bracket=text:\x01p
 keybind = super+shift+right_bracket=text:\x01n
 
+# Move between windows (ctrl+n and ctrl+p)
+keybind = super+shift+ctrl+left_bracket=text:\x01P
+keybind = super+shift+ctrl+right_bracket=text:\x01N
+
 # Selection mode in tmux
 keybind = ctrl+one=text:\x011
 keybind = ctrl+two=text:\x012

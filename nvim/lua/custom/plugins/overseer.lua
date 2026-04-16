@@ -1,5 +1,11 @@
+if true then
+  return {}
+end
+
 return {
   'stevearc/overseer.nvim',
+  ---@module 'overseer'
+  ---@type overseer.SetupOpts
   opts = {
     task_list = {
       bindings = {

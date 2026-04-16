@@ -47,6 +47,12 @@ keybind = ctrl+m=text:\x01m
 # Rename current tmux window
 keybind = ctrl+comma=text:\x01,
 
+# Rename current tmux session
+keybind = ctrl+shift+comma=text:\x01$
+
+# Swap pane (visual picker)
+keybind = super+shift+s=text:\x01\x13
+
 # Enter tmux command mode
 keybind = super+;=text:\x01:
 

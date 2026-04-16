@@ -1,0 +1,38 @@
+#!/usr/bin/env bash
+
+# Tmux worktree switcher/creator
+# Opens an fzf picker for git worktrees, delegates to `wt switch` which
+# triggers Worktrunk hooks for tmux session management.
+
+# ── Guard: must be in a git repo ──
+git rev-parse --git-dir >/dev/null 2>&1 || { echo "Not a git repository"; exit 1; }
+
+# ── Build fzf list from `wt list --format json` ──
+CREATE_LABEL="+ Create new worktree"
+
+entries=$(wt list --format json 2>&1 \
+  | sed 's/\x1b\[[0-9;]*m//g' \
+  | jq -r '.[]
+    | select(.kind == "worktree")
+    | select(.path | contains(".bare") | not)
+    | .branch + "  ·  " + (.path | split("/") | last)')
+
+selection=$(printf "%s\n%s" "$CREATE_LABEL" "$entries" \
+  | sed '/^$/d' \
+  | fzf --prompt="Worktree > " \
+        --header="Select or create a worktree")
+
+[ -z "$selection" ] && exit 0
+
+# ── Handle selection ──
+if [ "$selection" = "$CREATE_LABEL" ]; then
+  printf "Branch name: "
+  read -r branch_name
+  [ -z "$branch_name" ] && exit 0
+
+  wt switch --create "$branch_name" --no-cd -y
+else
+  branch=$(echo "$selection" | sed 's/  ·  .*//')
+
+  wt switch "$branch" --no-cd -y
+fi

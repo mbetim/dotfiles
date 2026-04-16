@@ -1,0 +1,29 @@
+#!/usr/bin/env bash
+
+# Tmux PR worktree switcher
+# Lists open GitHub PRs via `gh`, picks one with fzf, then switches to it
+# via `wt switch pr:{num}` which triggers Worktrunk hooks for tmux session management.
+
+# ── Guard: must be in a git repo ──
+git rev-parse --git-dir >/dev/null 2>&1 || { echo "Not a git repository"; exit 1; }
+
+# ── Fetch open PRs ──
+entries=$(gh pr list --json number,title,author,headRefName \
+  --jq '.[] | "#\(.number)  \(.title)  (\(.author.login))  ·  \(.headRefName)"')
+
+if [ -z "$entries" ]; then
+  echo "No open PRs found"
+  read -r
+  exit 0
+fi
+
+selection=$(echo "$entries" \
+  | fzf --prompt="PR > " \
+        --header="Select a PR to checkout as worktree")
+
+[ -z "$selection" ] && exit 0
+
+# ── Extract PR number and switch ──
+pr_number=$(echo "$selection" | sed 's/^#\([0-9]*\).*/\1/')
+
+wt switch "pr:${pr_number}" --no-cd -y

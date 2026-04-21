@@ -378,20 +378,30 @@ return {
           -- Helper function to switch project and reinitialize harpoon
           local function switch_project(picker, item, callback)
             picker:close()
+
+            -- Sync harpoon BEFORE changing directory so current project's data is saved to disk
+            local ok, harpoon = pcall(require, 'harpoon')
+            if ok then
+              harpoon:sync()
+            end
+
             -- Use tcd (tab-local cd) to allow per-tab project directories
             vim.cmd('tcd ' .. vim.fn.fnameescape(item.file))
             vim.notify('Switched to: ' .. item.text, vim.log.levels.INFO)
 
-            -- Reinitialize Harpoon's data layer to load from the correct file
             vim.schedule(function()
-              local ok, harpoon = pcall(require, 'harpoon')
               if ok then
+                -- Read new project's data and merge into existing data object
+                -- so all tabs' project data coexists in memory
                 local Data = require 'harpoon.data'
-                harpoon.data = Data.Data:new(harpoon.config)
-                harpoon.lists = {} -- Clear cached lists to force reload
+                local new_data = Data.Data:new(harpoon.config)
+                for k, v in pairs(new_data._data) do
+                  harpoon.data._data[k] = v
+                end
+                -- Clear cached lists so they get re-decoded from the merged data
+                harpoon.lists = {}
               end
 
-              -- Execute callback after harpoon is reinitialized
               if callback then
                 vim.defer_fn(callback, 50)
               end
@@ -399,7 +409,7 @@ return {
           end
 
           Snacks.picker {
-            title = 'Switch Project (<CR> Harpoon, <C-f> Files, <C-s> Session)',
+            title = 'Switch Project (<CR> Mini.Files, <C-h> Harpoon, <C-f> Files, <C-s> Session)',
             items = items,
             format = function(item)
               return { { item.text } }
@@ -407,12 +417,23 @@ return {
             win = {
               input = {
                 keys = {
+                  ['<C-h>'] = { 'confirm_harpoon', mode = { 'i', 'n' } },
                   ['<C-f>'] = { 'confirm_files', mode = { 'i', 'n' } },
                   ['<C-s>'] = { 'confirm_session', mode = { 'i', 'n' } },
                 },
               },
             },
             actions = {
+              confirm_harpoon = function(picker, item)
+                switch_project(picker, item, function()
+                  local harpoon_ok, harpoon = pcall(require, 'harpoon')
+                  if harpoon_ok then
+                    harpoon.ui:toggle_quick_menu(harpoon:list())
+                  else
+                    Snacks.picker.files()
+                  end
+                end)
+              end,
               confirm_files = function(picker, item)
                 switch_project(picker, item, function()
                   Snacks.picker.files()
@@ -431,11 +452,11 @@ return {
             },
             confirm = function(picker, item)
               switch_project(picker, item, function()
-                local harpoon_ok, harpoon = pcall(require, 'harpoon')
-                if harpoon_ok then
-                  harpoon.ui:toggle_quick_menu(harpoon:list())
+                local mini_ok, MiniFiles = pcall(require, 'mini.files')
+                if mini_ok then
+                  MiniFiles.open(item.file)
                 else
-                  -- Fallback to files if harpoon not available
+                  -- Fallback to files if mini.files not available
                   Snacks.picker.files()
                 end
               end)

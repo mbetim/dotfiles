@@ -334,6 +334,13 @@ return {
         desc = 'Delete Buffer',
       },
       {
+        '<leader>sa',
+        function()
+          Snacks.picker.pickers()
+        end,
+        desc = 'All Pickers',
+      },
+      {
         '<leader>sp',
         function()
           local root = vim.fs.root(0, '.git') or vim.fn.getcwd()

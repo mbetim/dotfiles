@@ -251,6 +251,7 @@ function zvm_after_init() {
 
   # Bindings for 
   bindkey '^ ' autosuggest-accept
+  bindkey '^y' autosuggest-accept
   bindkey '^w' vi-forward-word # accept the word
 }
 

@@ -211,6 +211,9 @@ vim.keymap.set('n', 'k', 'v:count == 0 ? "gk" : "k"', { expr = true, silent = tr
 -- Save
 vim.keymap.set({ 'n', 'i' }, '<C-S>', '<CMD>w<CR><ESC>', { desc = 'Save' })
 
+-- Refresh buffer
+vim.keymap.set('n', '<leader>rr', '<CMD>e %<CR>', { desc = 'Refresh buffer' })
+
 vim.keymap.set('n', '<leader>tf', function()
   vim.g.format_on_save = not vim.g.format_on_save
   print('Format on save: ' .. tostring(vim.g.format_on_save))

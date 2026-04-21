@@ -45,12 +45,6 @@ return {
       preset = {
         keys = {
           { icon = ' ', key = 'f', desc = 'Find File', action = ':lua Snacks.picker.files()' },
-          {
-            icon = ' ',
-            key = 'r',
-            desc = 'Recent Files',
-            action = ":lua Snacks.dashboard.pick('oldfiles')",
-          },
           { icon = ' ', key = 's', desc = 'Restore Session', section = 'session' },
           {
             icon = '󰒲 ',

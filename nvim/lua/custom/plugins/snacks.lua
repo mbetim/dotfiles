@@ -37,6 +37,11 @@ return {
             ['L'] = { 'preview_scroll_right', mode = { 'n' } },
             ['M'] = { 'toggle_hidden', mode = { 'n' } },
             ['d'] = { 'bufdelete', mode = { 'n' } },
+
+            ['<c-h>'] = { 'toggle_hidden', mode = { 'i', 'n' } },
+            ['<c-i>'] = { 'toggle_ignored', mode = { 'i', 'n' } },
+            ['<c-w>m'] = { 'toggle_maximize', mode = { 'i', 'n' } },
+            ['<c-w><c-w>'] = { 'cycle_win', mode = { 'i', 'n' } },
           },
         },
       },

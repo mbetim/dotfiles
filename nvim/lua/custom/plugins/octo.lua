@@ -15,6 +15,11 @@ return {
       desc = 'List GitHub PullRequests',
     },
     {
+      '<leader>or',
+      '<CMD>Octo review<CR>',
+      desc = 'Review PR on current branch',
+    },
+    {
       '<leader>ogn',
       '<CMD>Octo notification list<CR>',
       desc = 'List GitHub Notifications',

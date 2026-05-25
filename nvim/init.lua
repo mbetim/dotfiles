@@ -181,12 +181,12 @@ vim.o.scrolloff = 10
 -- See `:help 'confirm'`
 vim.o.confirm = true
 
--- -- Indent settings
--- vim.o.tabstop = 2
--- vim.o.shiftwidth = 2
--- vim.o.expandtab = true
--- vim.o.shiftround = true
--- vim.o.smartindent = true
+-- Indent settings
+vim.o.tabstop = 2
+vim.o.shiftwidth = 2
+vim.o.expandtab = true
+vim.o.shiftround = true
+vim.o.smartindent = true
 
 -- Spell
 vim.o.spelllang = 'en,pt_br,es'

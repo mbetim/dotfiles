@@ -125,8 +125,6 @@ vim.o.grepprg = 'rg --vimgrep --smart-case'
 vim.keymap.set({ 'n', 'v' }, 'y', '"+y', { desc = 'Yank' })
 vim.keymap.set('n', 'Y', 'v$"+y', { desc = 'Yank' })
 
-vim.keymap.set('i', 'jj', '<ESC>', { desc = 'Escape' })
-
 vim.keymap.set('n', '<leader>nn', ':vnew | set filetype=jsonc<CR>', { noremap = true, silent = true, desc = 'New JSON file' })
 vim.keymap.set('n', '<leader>nd', '<cmd>bd!<cr>', { noremap = true, silent = true, desc = 'New JSON file' })
 

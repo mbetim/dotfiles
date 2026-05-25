@@ -321,7 +321,16 @@ ls.add_snippets(
           {}
         </{}>
         ]],
-        { i(1, 'ComponentName'), i(0), rep(1) }
+        {
+          i(1, 'ComponentName'),
+          i(0),
+          f(function(args)
+            -- args[1][1] gets the current string value of the first insert node (i(1))
+            local text = args[1][1]
+            -- string.match grabs everything from the start of the string up to the first space
+            return string.match(text, '^([^%s]+)') or text
+          end, { 1 }),
+        }
       )
     ),
     snippet('uscl', t "'use client';"),

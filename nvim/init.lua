@@ -349,6 +349,28 @@ vim.keymap.set('n', '<leader>fp', function()
   print('Relative file path copied to clipboard: ' .. filepath)
 end, { desc = 'Copy relative file path to clipboard' })
 
+-- Copy a file reference with the selected line range (@path/to/file:L1-2) to the clipboard
+vim.keymap.set('v', '<leader>fp', function()
+  local filepath = vim.fn.expand '%:.'
+
+  -- Visual selection line range (linewise, characters ignored)
+  local start_line = vim.fn.line 'v'
+  local end_line = vim.fn.line '.'
+  if start_line > end_line then
+    start_line, end_line = end_line, start_line
+  end
+
+  local ref
+  if start_line == end_line then
+    ref = string.format('@%s:L%d', filepath, start_line)
+  else
+    ref = string.format('@%s:L%d-%d', filepath, start_line, end_line)
+  end
+
+  vim.fn.setreg('+', ref)
+  print('Copied to clipboard: ' .. ref)
+end, { desc = 'Copy file reference with line range to clipboard' })
+
 -- Exit terminal mode in the builtin terminal with a shortcut that is a bit easier
 -- for people to discover. Otherwise, you normally need to press <C-\><C-n>, which
 -- is not what someone will guess without a bit more experience.

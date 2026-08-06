@@ -201,6 +201,9 @@ vim.o.spelllang = 'en,pt_br,es'
 vim.o.spell = true
 vim.o.spelloptions = 'camel'
 
+-- Uses a single line across splits
+vim.o.laststatus = 3
+
 vim.g.format_on_save = true
 
 -- [[ Basic Keymaps ]]

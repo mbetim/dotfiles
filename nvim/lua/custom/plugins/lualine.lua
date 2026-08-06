@@ -4,26 +4,37 @@ return {
   opts = {
     options = { section_separators = '', component_separators = '' },
     sections = {
-      lualine_b = { { 'filename', path = 1 }, 'diagnostics' },
-      lualine_c = { 'branch', 'diff' },
-      lualine_y = {
+      lualine_a = {
         {
-          function()
-            local buffers = vim.fn.getbufinfo { buflisted = 1 }
-            local current_buf = vim.api.nvim_get_current_buf()
-            local current_index = 1
-
-            for i, buf in ipairs(buffers) do
-              if buf.bufnr == current_buf then
-                current_index = i
-                break
-              end
-            end
-
-            return string.format('%d/%d', current_index, #buffers)
+          'mode',
+          fmt = function(str)
+            return str:sub(1, 1)
           end,
-          icon = '󰓩 ',
         },
+      },
+      lualine_b = { { 'filename', path = 1 } },
+      lualine_c = { 'diagnostics' },
+      lualine_x = { 'diff' },
+      lualine_y = {
+        'fileformat',
+        'filetype',
+        -- {
+        --   function()
+        --     local buffers = vim.fn.getbufinfo { buflisted = 1 }
+        --     local current_buf = vim.api.nvim_get_current_buf()
+        --     local current_index = 1
+        --
+        --     for i, buf in ipairs(buffers) do
+        --       if buf.bufnr == current_buf then
+        --         current_index = i
+        --         break
+        --       end
+        --     end
+        --
+        --     return string.format('%d/%d', current_index, #buffers)
+        --   end,
+        --   icon = '󰓩 ',
+        -- },
       },
     },
   },

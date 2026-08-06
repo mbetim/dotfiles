@@ -147,33 +147,12 @@ local shared_ts_snippets = {
       [[
         try {
           <try>
-        } catch (<err_name>) {
-          <err>
-        }<finish>
+        } catch (err) {
+          
+        }
         ]],
       {
         try = i(0),
-        err_name = i(1, 'err'),
-        err = c(2, {
-          t '',
-          f(function(args)
-            return string.format('console.error(%s);', args[1][1])
-          end, { 1 }),
-        }),
-        finish = c(3, {
-          t '',
-          sn(
-            nil,
-            fmta(
-              [[
-                 finally {
-                  <finally>
-                }
-                ]],
-              { finally = i(1) }
-            )
-          ),
-        }),
       }
     )
   ),

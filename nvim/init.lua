@@ -126,7 +126,9 @@ vim.keymap.set({ 'n', 'v' }, 'y', '"+y', { desc = 'Yank' })
 vim.keymap.set('n', 'Y', 'v$"+y', { desc = 'Yank' })
 
 vim.keymap.set('n', '<leader>nn', ':vnew | set filetype=jsonc<CR>', { noremap = true, silent = true, desc = 'New JSON file' })
-vim.keymap.set('n', '<leader>nd', '<cmd>bd!<cr>', { noremap = true, silent = true, desc = 'New JSON file' })
+vim.keymap.set('n', '<leader>nd', function()
+  Snacks.bufdelete()
+end, { noremap = true, silent = true, desc = 'Close current file' })
 
 vim.keymap.set('n', '<leader><tab>l', ':tabnext<CR>', { noremap = true, silent = true, desc = 'Move to next tab' })
 vim.keymap.set('n', '<leader><tab>h', ':tabprevious<CR>', { noremap = true, silent = true, desc = 'Move to previous tab' })

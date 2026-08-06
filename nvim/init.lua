@@ -272,6 +272,7 @@ vim.keymap.set('n', '<leader>j', '<cmd>e #<cr>', { desc = 'Switch to Other Buffe
 
 -- use gh to move to the beginning of the line
 vim.keymap.set({ 'n', 'v' }, 'gh', '^', { desc = 'Go to the beginning of the line' })
+vim.keymap.set({ 'n', 'v' }, '0', '^', { desc = 'Go to the beginning of the line' })
 vim.keymap.set({ 'n', 'v' }, 'H', '^', { desc = 'Go to the beginning of the line' })
 -- use gl to move to the end of the line
 vim.keymap.set({ 'n', 'v' }, 'gl', '$', { desc = 'Go to the end of the line' })

@@ -153,6 +153,13 @@ return {
         desc = 'Buffer',
       },
       {
+        '<leader>,',
+        function()
+          Snacks.picker.buffers()
+        end,
+        desc = 'Buffer',
+      },
+      {
         '<leader>sB',
         function()
           Snacks.picker.grep_buffers()

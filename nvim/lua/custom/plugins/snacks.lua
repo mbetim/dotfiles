@@ -414,7 +414,7 @@ return {
           end
 
           Snacks.picker {
-            title = 'Switch Project (<CR> Mini.Files, <C-h> Harpoon, <C-f> Files, <C-s> Session)',
+            title = 'Switch Project (<CR> Explorer, <C-h> Harpoon, <C-f> Files, <C-s> Session)',
             items = items,
             format = function(item)
               return { { item.text } }
@@ -457,13 +457,7 @@ return {
             },
             confirm = function(picker, item)
               switch_project(picker, item, function()
-                local mini_ok, MiniFiles = pcall(require, 'mini.files')
-                if mini_ok then
-                  MiniFiles.open(item.file)
-                else
-                  -- Fallback to files if mini.files not available
-                  Snacks.picker.files()
-                end
+                vim.cmd('e ' .. item.file)
               end)
             end,
           }

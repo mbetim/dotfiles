@@ -6,7 +6,7 @@ return {
   opts = {
     bigfile = { enabled = true },
     scroll = { enabled = false },
-    lazygit = { enabled = true },
+    lazygit = { enabled = false },
     bufdelete = { enabled = true },
     indent = { enabled = true },
     image = { enabled = false, doc = { inline = false } },
@@ -330,13 +330,6 @@ return {
           Snacks.picker.lsp_workspace_symbols()
         end,
         desc = 'LSP Workspace Symbols',
-      },
-      {
-        '<leader>gg',
-        function()
-          Snacks.lazygit()
-        end,
-        desc = 'Lazygit',
       },
       {
         '<leader>bd',

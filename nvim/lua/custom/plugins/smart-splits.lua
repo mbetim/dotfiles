@@ -1,16 +1,8 @@
 return {
   'mrjones2014/smart-splits.nvim',
   lazy = false,
+  build = './kitty/install-kittens.bash',
   opts = {
-    multiplexer_integration = (function()
-      local term = vim.env.TERM_PROGRAM
-      if term == 'WezTerm' then
-        return 'wezterm'
-      elseif term == 'kitty' then
-        return 'kitty'
-      end
-      return nil
-    end)(),
     disable_multiplexer_nav_when_zoomed = true,
   },
   keys = {

@@ -1,4 +1,5 @@
 # super + shift + comma to reload configs
+font-size = 14
 theme = tokyonight
 window-decoration = false
 mouse-hide-while-typing = true

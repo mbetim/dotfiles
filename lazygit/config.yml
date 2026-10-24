@@ -30,9 +30,9 @@ os:
   editPreset: nvim
 git:
   overrideGpg: true
-  pagers:
+  diffRenderers:
     - colorArg: always
-      pager: delta --dark --paging=never --24-bit-color=never
+      command: delta --dark --paging=never --24-bit-color=never
   localBranchSortOrder: recency
 customCommands:
   - key: "<c-y>"

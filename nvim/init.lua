@@ -1264,29 +1264,7 @@ require('lazy').setup({
       --
       -- See :h blink-cmp-config-fuzzy for more information
       fuzzy = {
-        implementation = 'lua',
-        sorts = {
-          function(a, b)
-            local source_priority = {
-              obsidian_new = 7,
-              obsidian_tags = 6,
-              obsidian = 5,
-              lsp = 4,
-              lazydev = 3,
-              path = 2,
-              snippets = 1,
-            }
-
-            local a_priority = source_priority[a.source_id]
-            local b_priority = source_priority[b.source_id]
-            if a_priority ~= b_priority then
-              return a_priority > b_priority
-            end
-          end,
-          -- defaults
-          'score',
-          'sort_text',
-        },
+        implementation = 'prefer_rust_with_warning',
       },
 
       signature = {

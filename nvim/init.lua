@@ -1349,35 +1349,6 @@ require('lazy').setup({
           enabled = false,
           prefix = 'R',
         },
-      }
-
-      local files = require 'mini.files'
-      files.setup {
-        mappings = {
-          go_in = 'l',
-          -- This opens the file, but quits out of mini.files (default L)
-          go_in_plus = '<CR>',
-          -- go_out: shows you all the items to the right
-          go_out = 'H',
-          -- go_out_plus: when you go out, it shows you only 1 item to the right
-          go_out_plus = 'h',
-          -- Default <BS>
-          reset = ',',
-          show_help = 'g?',
-          synchronize = 's',
-          trim_left = '<',
-          trim_right = '>',
-        },
-        windows = {
-          preview = true,
-          width_focus = 40,
-          width_preview = 60,
-        },
-        options = {
-          -- Whether to delete permanently or move into module-specific trash
-          permanent_delete = false,
-          -- Whether to use for editing directories
-          use_as_default_explorer = true,
         },
       }
     end,

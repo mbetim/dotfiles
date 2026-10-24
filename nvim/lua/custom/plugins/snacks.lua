@@ -113,13 +113,6 @@ return {
       },
       -- find
       {
-        '<leader>ff',
-        function()
-          Snacks.picker.files()
-        end,
-        desc = 'Find Files',
-      },
-      {
         '<leader>fr',
         function()
           Snacks.picker.recent()
@@ -226,13 +219,6 @@ return {
         end,
         desc = 'Help Pages',
       },
-      -- {
-      --   '<leader>sH',
-      --   function()
-      --     Snacks.picker.highlights()
-      --   end,
-      --   desc = 'Highlights',
-      -- },
       {
         '<leader>si',
         function()
@@ -288,13 +274,6 @@ return {
           Snacks.picker.undo()
         end,
         desc = 'Undo History',
-      },
-      {
-        '<leader>uC',
-        function()
-          Snacks.picker.colorschemes()
-        end,
-        desc = 'Colorschemes',
       },
       -- LSP
       {

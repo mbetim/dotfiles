@@ -8,7 +8,10 @@ return {
     scroll = { enabled = false },
     lazygit = { enabled = false },
     bufdelete = { enabled = true },
-    indent = { enabled = true },
+    indent = {
+      enabled = true,
+      scope = { underline = true },
+    },
     image = { enabled = false, doc = { inline = false } },
     picker = {
       hidden = true,

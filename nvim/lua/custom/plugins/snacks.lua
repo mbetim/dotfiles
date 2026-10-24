@@ -50,6 +50,7 @@ return {
       },
     },
     dashboard = {
+      enabled = false,
       preset = {
         keys = {
           { icon = ' ', key = 'f', desc = 'Find File', action = ':lua Snacks.picker.files()' },
@@ -85,7 +86,7 @@ return {
       {
         '<leader><space>',
         function()
-          Snacks.picker.files()
+          Snacks.picker.smart { filter = { cwd = true } }
         end,
         desc = 'Find Files',
       },

@@ -323,7 +323,7 @@ vim.keymap.set('n', '<leader>wj', '<C-W>-', { desc = 'Decrease window height siz
 vim.keymap.set('n', '<leader>cL', '<cmd>LspRestart<cr>', { desc = 'Restart LSP' })
 
 -- Open LSP definition in new window
-vim.keymap.set('n', '<leader>vgd', '<cmd>vsplit<CR>:lua vim.lsp.buf.definition()<CR>', { desc = 'Open LSP definition in new window' })
+vim.keymap.set('n', '<leader>vgd', '<cmd>vsplit<CR>:lua vim.lsp.buf.definition()<CR>', { desc = 'Open LSP definition in new window', silent = true })
 vim.keymap.set('n', '<leader>hgd', '<cmd>split<CR>:lua vim.lsp.buf.definition()<CR>', { desc = 'Open LSP definition in new window' })
 
 vim.keymap.set('n', '<leader>gx', function()

@@ -38,3 +38,6 @@ customCommands:
   - key: "<c-y>"
     context: "files"
     command: "git diff --staged | pbcopy"
+  - key: "I"
+    context: "files"
+    command: "git diff --staged | pbcopy | sleep 0.5 && open raycast://extensions/raycast/ai/write-git-commit-message"

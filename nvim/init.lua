@@ -115,16 +115,6 @@ vim.o.foldmethod = 'indent'
 
 vim.o.grepprg = 'rg --vimgrep --smart-case'
 
--- Sync clipboard between OS and Neovim.
---  Schedule the setting after `UiEnter` because it can increase startup-time.
---  Remove this option if you want your OS clipboard to remain independent.
---  See `:help 'clipboard'`
--- vim.schedule(function()
---   vim.o.clipboard = 'unnamedplus'
--- end)
-vim.keymap.set({ 'n', 'v' }, 'y', '"+y', { desc = 'Yank' })
-vim.keymap.set('n', 'Y', 'v$"+y', { desc = 'Yank' })
-
 vim.keymap.set('n', '<leader>nn', ':vnew | set filetype=jsonc<CR>', { noremap = true, silent = true, desc = 'New JSON file' })
 vim.keymap.set('n', '<leader>nd', function()
   Snacks.bufdelete()
@@ -485,6 +475,19 @@ vim.keymap.set('n', '<leader>oi', '<cmd>e index.md<CR>', { desc = 'Open index no
 
 -- [[ Basic Autocommands ]]
 --  See `:help lua-guide-autocommands`
+
+-- Sends yanks to system clipboard
+-- Doesn't send (d)eletes/(c)hanges
+vim.api.nvim_create_autocmd('TextYankPost', {
+  desc = 'Copy explicit yanks to the system clipboard',
+  group = vim.api.nvim_create_augroup('yank-to-clipboard', { clear = true }),
+  callback = function()
+    local ev = vim.v.event
+    if ev.operator == 'y' and (ev.regname == '' or ev.regname == '"') then
+      vim.fn.setreg('+', ev.regcontents, ev.regtype)
+    end
+  end,
+})
 
 -- Highlight when yanking (copying) text
 --  Try it with `yap` in normal mode

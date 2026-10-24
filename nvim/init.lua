@@ -384,16 +384,27 @@ vim.keymap.set('n', '<leader>fP', function()
   print('File path copied to clipboard: ' .. filepath)
 end, { desc = 'Copy full file path to clipboard' })
 
+-- Path of the current file relative to the git root, so the reference stays valid
+-- after <leader>p switches the tab-local cwd into a sub-project (see snacks.lua).
+local function repo_relative_path()
+  local file = vim.fn.expand '%:p'
+  local root = file ~= '' and vim.fs.root(file, '.git')
+
+  return root and vim.fs.relpath(root, file) or vim.fn.expand '%:.'
+end
+
 -- Copy current relative file path to the clipboard
-vim.keymap.set('n', '<leader>fp', function()
-  local filepath = vim.fn.expand '%:.'
-  vim.fn.setreg('+', filepath)
-  print('Relative file path copied to clipboard: ' .. filepath)
+vim.keymap.set('n', '<leader>cp', function()
+  local filepath = repo_relative_path()
+  local ref = string.format('@%s', filepath)
+
+  vim.fn.setreg('+', ref)
+  print('Relative file path copied to clipboard: ' .. ref)
 end, { desc = 'Copy relative file path to clipboard' })
 
 -- Copy a file reference with the selected line range (@path/to/file:L1-2) to the clipboard
-vim.keymap.set('v', '<leader>fp', function()
-  local filepath = vim.fn.expand '%:.'
+vim.keymap.set('v', '<leader>cp', function()
+  local filepath = repo_relative_path()
 
   -- Visual selection line range (linewise, characters ignored)
   local start_line = vim.fn.line 'v'

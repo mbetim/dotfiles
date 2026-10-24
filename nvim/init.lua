@@ -1380,22 +1380,6 @@ require('lazy').setup({
           use_as_default_explorer = true,
         },
       }
-
-      vim.keymap.set('n', '<leader>e', function()
-        files.open(vim.api.nvim_buf_get_name(0), true)
-      end, { desc = 'Open mini.files (current directoy)' })
-
-      vim.keymap.set('n', '<leader>E', function()
-        files.open(vim.uv.cwd(), true)
-      end, { desc = 'Open mini.files (cwd)' })
-
-      vim.api.nvim_create_autocmd('User', {
-        pattern = 'MiniFilesActionRename',
-        callback = function(event)
-          local Snacks = require 'snacks'
-          Snacks.rename.on_rename_file(event.data.from, event.data.to)
-        end,
-      })
     end,
   },
   { -- Highlight, edit, and navigate code

@@ -355,7 +355,7 @@ vim.keymap.set('n', '<leader>fd', function()
             { 'File delete from disk', 'Normal' },
             { current_file, 'Normal' },
           }, false, {})
-          vim.cmd 'bd!'
+          Snacks.bufdelete()
         else
           vim.api.nvim_echo({
             { 'Failed to delete file', 'ErrorMsg' },

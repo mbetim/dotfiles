@@ -941,21 +941,8 @@ require('lazy').setup({
       --  See `:help lsp-config` for information about keys and how to configure
       ---@type table<string, vim.lsp.Config>
       local servers = {
-        -- clangd = {},
-        -- gopls = {},
-        -- pyright = {},
-        -- rust_analyzer = {},
-        -- ... etc. See `:help lspconfig-all` for a list of all the pre-configured LSPs
-        --
-        -- Some languages (like typescript) have entire language plugins that can be useful:
-        --    https://github.com/pmizio/typescript-tools.nvim
-        --
-        -- But for many setups, the LSP (`ts_ls`) will work just fine
-        -- ts_ls = {},
-        --
         vtsls = {
           settings = {
-            complete_function_calls = true,
             vtsls = {
               enableMoveToFileCodeAction = true,
               autoUseWorkspaceTsdk = true,
@@ -963,11 +950,19 @@ require('lazy').setup({
                 maxInlayHintLength = 30,
                 completion = {
                   enableServerSideFuzzyMatch = true,
+                  entriesLimit = 200,
                 },
               },
             },
             typescript = {
               updateImportsOnFileMove = { enabled = 'always' },
+              preferGoToSourceDefinition = true,
+              -- tsserver = {
+              --   maxTsServerMemory = 8192,
+              -- },
+              preferences = {
+                preferTypeOnlyAutoImports = true,
+              },
               suggest = {
                 completeFunctionCalls = true,
               },
@@ -977,7 +972,21 @@ require('lazy').setup({
                 parameterNames = { enabled = 'literals' },
                 parameterTypes = { enabled = true },
                 propertyDeclarationTypes = { enabled = true },
-                variableTypes = { enabled = false },
+              },
+            },
+            -- NOTE: a separate namespace, *not* a fallback to `typescript` above.
+            -- Without this, none of the settings apply to .js/.jsx/.mjs files.
+            javascript = {
+              updateImportsOnFileMove = { enabled = 'always' },
+              preferGoToSourceDefinition = true,
+              suggest = {
+                completeFunctionCalls = true,
+              },
+              inlayHints = {
+                functionLikeReturnTypes = { enabled = true },
+                parameterNames = { enabled = 'literals' },
+                parameterTypes = { enabled = true },
+                propertyDeclarationTypes = { enabled = true },
               },
             },
           },

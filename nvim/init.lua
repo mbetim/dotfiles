@@ -1244,7 +1244,7 @@ require('lazy').setup({
       },
 
       sources = {
-        default = { 'lsp', 'lazydev', 'path', 'snippets' },
+        default = { 'lsp', 'lazydev', 'path', 'buffer' },
         per_filetype = {
           sql = { 'dbee', 'buffer' },
         },

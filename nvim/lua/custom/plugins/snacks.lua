@@ -362,7 +362,7 @@ return {
         desc = 'All Pickers',
       },
       {
-        '<leader>sp',
+        '<leader>p',
         function()
           local root = vim.fs.root(0, '.git') or vim.fn.getcwd()
           local fdcommand = io.popen('fd -t f "^package\\.json$" --exclude node_modules "' .. root .. '" 2>/dev/null')
@@ -396,6 +396,18 @@ return {
             return
           end
 
+          -- Find a tab whose tab-local cwd already points at the given directory
+          local function find_project_tab(dir)
+            local target = vim.fn.fnamemodify(dir, ':p'):gsub('/$', '')
+            for _, tab in ipairs(vim.api.nvim_list_tabpages()) do
+              local tabnr = vim.api.nvim_tabpage_get_number(tab)
+              local cwd = vim.fn.fnamemodify(vim.fn.getcwd(-1, tabnr), ':p'):gsub('/$', '')
+              if cwd == target then
+                return tabnr
+              end
+            end
+          end
+
           -- Helper function to switch project and reinitialize harpoon
           local function switch_project(picker, item, callback)
             picker:close()
@@ -406,8 +418,17 @@ return {
               harpoon:sync()
             end
 
-            -- Use tcd (tab-local cd) to allow per-tab project directories
-            vim.cmd('tcd ' .. vim.fn.fnameescape(item.file))
+            local existing = find_project_tab(item.file)
+            if existing then
+              -- Project is already open: jump to its tab, it already has the right tcd
+              vim.cmd(existing .. 'tabnext')
+            else
+              -- Open the project in its own tab with a tab-local cd
+              vim.cmd 'tabnew'
+              vim.cmd('tcd ' .. vim.fn.fnameescape(item.file))
+            end
+            -- Name the tab so the tabline shows the project instead of the buffer
+            vim.t.project_name = item.text == '(root)' and vim.fn.fnamemodify(item.file, ':t') or item.text
             vim.notify('Switched to: ' .. item.text, vim.log.levels.INFO)
 
             vim.schedule(function()
@@ -430,7 +451,7 @@ return {
           end
 
           Snacks.picker {
-            title = 'Switch Project (<CR> Explorer, <C-h> Harpoon, <C-f> Files, <C-s> Session)',
+            title = 'Switch Project in Tab (<CR> Switch, <C-e> Explorer, <C-h> Harpoon, <C-f> Files)',
             items = items,
             format = function(item)
               return { { item.text } }
@@ -438,13 +459,18 @@ return {
             win = {
               input = {
                 keys = {
+                  ['<C-e>'] = { 'confirm_explorer', mode = { 'i', 'n' } },
                   ['<C-h>'] = { 'confirm_harpoon', mode = { 'i', 'n' } },
                   ['<C-f>'] = { 'confirm_files', mode = { 'i', 'n' } },
-                  ['<C-s>'] = { 'confirm_session', mode = { 'i', 'n' } },
                 },
               },
             },
             actions = {
+              confirm_explorer = function(picker, item)
+                switch_project(picker, item, function()
+                  vim.cmd('e ' .. vim.fn.fnameescape(item.file))
+                end)
+              end,
               confirm_harpoon = function(picker, item)
                 switch_project(picker, item, function()
                   local harpoon_ok, harpoon = pcall(require, 'harpoon')
@@ -457,24 +483,13 @@ return {
               end,
               confirm_files = function(picker, item)
                 switch_project(picker, item, function()
-                  Snacks.picker.files()
-                end)
-              end,
-              confirm_session = function(picker, item)
-                switch_project(picker, item, function()
-                  local persistence_ok, persistence = pcall(require, 'persistence')
-                  if persistence_ok then
-                    persistence.load()
-                  else
-                    vim.notify('persistence.nvim not available', vim.log.levels.WARN)
-                  end
+                  Snacks.picker.smart { filter = { cwd = true } }
                 end)
               end,
             },
             confirm = function(picker, item)
-              switch_project(picker, item, function()
-                vim.cmd('e ' .. item.file)
-              end)
+              -- Just move to the project's tab; no buffer/picker follow-up
+              switch_project(picker, item)
             end,
           }
         end,

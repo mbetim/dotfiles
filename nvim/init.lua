@@ -1323,15 +1323,21 @@ require('lazy').setup({
         -- Code from the LazyVim distro
         custom_textobjects = {
           o = ai.gen_spec.treesitter { -- code block
-            a = { '@block.outer', '@conditional.outer', '@loop.outer' },
-            i = { '@block.inner', '@conditional.inner', '@loop.inner' },
+            a = { '@conditional.outer', '@loop.outer', '@block.outer' },
+            i = { '@conditional.inner', '@loop.inner', '@block.inner' },
           },
+          k = ai.gen_spec.treesitter { a = '@conditional.outer', i = '@conditional.inner' }, -- conditional (if/else/ternary)
           f = ai.gen_spec.treesitter { a = '@function.outer', i = '@function.inner' }, -- function
           c = ai.gen_spec.treesitter { a = '@class.outer', i = '@class.inner' }, -- class
-          t = { '<([%p%w]-)%f[^<%w][^<>]->.-</%1>', '^<.->().*()</[^/]->$' }, -- tags
           d = { '%f[%d]%d+' }, -- digits
-          e = { -- Word with case
-            { '%u[%l%d]+%f[^%l%d]', '%f[%S][%l%d]+%f[^%l%d]', '%f[%P][%l%d]+%f[^%l%d]', '^[%l%d]+%f[^%l%d]' },
+          e = { -- Word with case (camelCase, snake_case, SCREAMING_SNAKE_CASE)
+            {
+              '%u[%l%d]+%f[^%l%d]',
+              '%f[%w][%u%d]+%f[^%w]', -- all-caps run, e.g. a SCREAMING_SNAKE segment
+              '%f[%S][%l%d]+%f[^%l%d]',
+              '%f[%P][%l%d]+%f[^%l%d]',
+              '^[%l%d]+%f[^%l%d]',
+            },
             '^().*()$',
           },
           u = ai.gen_spec.function_call(), -- u for "Usage"
@@ -1371,13 +1377,19 @@ require('lazy').setup({
         },
       }
 
-      require('mini.splitjoin').setup()
+      require('mini.splitjoin').setup {
+        mappings = {
+          toggle = 'gs',
+        },
+      }
       require('mini.pairs').setup()
       require('mini.operators').setup {
         replace = {
-          enabled = false,
+          enabled = true,
           prefix = 'R',
         },
+        sort = {
+          prefix = 'gS',
         },
       }
     end,

@@ -144,6 +144,18 @@ return {
       {
         '<leader>fs',
         function()
+          -- Scope the status to the project of the current tab (set by <leader>p via tcd),
+          -- falling back to the whole repo when the tab cwd is the git root itself.
+          local cwd = vim.fn.getcwd()
+          local root = vim.fs.root(cwd, '.git')
+          local cmd_args = (root and vim.fs.normalize(root) ~= vim.fs.normalize(cwd)) and { '--', cwd } or nil
+          Snacks.picker.git_status { cmd_args = cmd_args }
+        end,
+        desc = 'Find Git Status (project)',
+      },
+      {
+        '<leader>fS',
+        function()
           Snacks.picker.git_status()
         end,
         desc = 'Find Git Status',

@@ -987,20 +987,15 @@ require('lazy').setup({
           settings = {
             workingDirectories = { mode = 'auto' },
             format = true,
-            format_on_save = true,
           },
         },
 
         tailwindcss = {},
 
-        -- prettier = {},
-        prettierd = {},
-        eslint_d = {},
         biome = {},
 
         marksman = {},
 
-        stylua = {},
         lua_ls = {
           on_init = function(client)
             if client.workspace_folders then
@@ -1030,10 +1025,6 @@ require('lazy').setup({
             Lua = {},
           },
         },
-
-        terraform = {},
-        tflint = {},
-        hclfmt = {},
       }
 
       -- Ensure the servers and tools above are installed
@@ -1051,7 +1042,13 @@ require('lazy').setup({
       -- for you, so that they are available from within Neovim.
       local ensure_installed = vim.tbl_keys(servers or {})
       vim.list_extend(ensure_installed, {
-        -- You can add other tools here that you want Mason to install
+        -- Formatters and linters should be defined here, not i the list above
+        'prettierd',
+        'eslint_d',
+        'stylua',
+        'terraform',
+        'tflint',
+        'hclfmt',
       })
       require('mason-tool-installer').setup { ensure_installed = ensure_installed }
 
@@ -1107,6 +1104,8 @@ require('lazy').setup({
         javascriptreact = { 'prettierd', 'prettier', stop_after_first = true },
         typescript = { 'prettierd', 'prettier', stop_after_first = true },
         typescriptreact = { 'prettierd', 'prettier', stop_after_first = true },
+        json = { 'prettierd', 'prettier', stop_after_first = true },
+        jsonc = { 'prettierd', 'prettier', stop_after_first = true },
       },
     },
   },

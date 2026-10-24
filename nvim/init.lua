@@ -261,6 +261,42 @@ vim.keymap.set('n', '<leader>qd', '<CMD>cclose<CR>', { desc = 'Close Quick Fix I
 vim.keymap.set('n', '<C-d>', '<C-d>zz')
 vim.keymap.set('n', '<C-u>', '<C-u>zz')
 
+-- Duplicate line(s) and comment the original above as reference
+local function duplicate_and_comment(visual)
+  local first, last
+  if visual then
+    -- leave visual mode so the '< / '> marks are set
+    vim.cmd 'normal! \27'
+    first = vim.fn.line "'<"
+    last = vim.fn.line "'>"
+  else
+    first = vim.fn.line '.'
+    last = first
+  end
+
+  local count = last - first + 1
+  local lines = vim.api.nvim_buf_get_lines(0, first - 1, last, false)
+
+  -- insert the copy right below the original block
+  vim.api.nvim_buf_set_lines(0, last, last, false, lines)
+
+  -- comment the original block (gcc takes a count for line-wise commenting)
+  vim.api.nvim_win_set_cursor(0, { first, 0 })
+  vim.cmd('normal ' .. count .. 'gcc')
+
+  -- land on the first line of the duplicate
+  vim.api.nvim_win_set_cursor(0, { first + count, 0 })
+  vim.cmd 'normal! ^'
+end
+
+vim.keymap.set('n', 'gcm', function()
+  duplicate_and_comment(false)
+end, { desc = 'Duplicate line, comment original above as reference' })
+
+vim.keymap.set('x', 'gcm', function()
+  duplicate_and_comment(true)
+end, { desc = 'Duplicate selection, comment original above as reference' })
+
 -- Switch back to the previous buffer
 vim.keymap.set('n', '<leader>j', '<cmd>e #<cr>', { desc = 'Switch to Other Buffer' })
 

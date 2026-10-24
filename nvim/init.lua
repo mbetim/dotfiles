@@ -122,6 +122,10 @@ end, { noremap = true, silent = true, desc = 'Close current file' })
 
 vim.keymap.set('n', '<leader><tab>l', ':tabnext<CR>', { noremap = true, silent = true, desc = 'Move to next tab' })
 vim.keymap.set('n', '<leader><tab>h', ':tabprevious<CR>', { noremap = true, silent = true, desc = 'Move to previous tab' })
+vim.keymap.set('n', ']<tab>', ':tabnext<CR>', { noremap = true, silent = true, desc = 'Move to next tab' })
+vim.keymap.set('n', '[<tab>', ':tabprevious<CR>', { noremap = true, silent = true, desc = 'Move to previous tab' })
+vim.keymap.set('n', '<tab>l', ':tabnext<CR>', { noremap = true, silent = true, desc = 'Move to next tab' })
+vim.keymap.set('n', '<tab>h', ':tabprevious<CR>', { noremap = true, silent = true, desc = 'Move to previous tab' })
 vim.keymap.set('n', '<leader><tab>d', ':tabclose<CR>', { noremap = true, silent = true, desc = 'Delete/Close current tab' })
 vim.keymap.set('n', '<leader><tab>n', ':tabnew<CR>', { noremap = true, silent = true, desc = 'New tab' })
 

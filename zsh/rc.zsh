@@ -118,17 +118,6 @@ function copyfile() {
     "$(realpath $@)"
 }
 
-# Alias to switch user on git
-function gu() {
-  if [[ $1 == "personal" ]]; then
-    git config user.email "mbetim47@gmail.com" "${@:2}"
-  fi
-
-  if [[ $1 == "synvia" ]]; then
-    git config user.email "matheus.betim@synvia.com" "${@:2}"
-  fi
-}
-
 function d() {
   if [ ! -f package.json ]; then
     echo "No package.json found"
@@ -213,16 +202,6 @@ case ":$PATH:" in
   *) export PATH="$PNPM_HOME:$PATH" ;;
 esac
 # pnpm end
-
-# TODO: try to move gcp cli to a different place
-# The next line updates PATH for the Google Cloud SDK.
-if [ -f '/Users/matheus.betim/Downloads/google-cloud-sdk/path.zsh.inc' ]; then . '/Users/matheus.betim/Downloads/google-cloud-sdk/path.zsh.inc'; fi
-
-# The next line enables shell command completion for gcloud.
-if [ -f '/Users/matheus.betim/Downloads/google-cloud-sdk/completion.zsh.inc' ]; then . '/Users/matheus.betim/Downloads/google-cloud-sdk/completion.zsh.inc'; fi
-
-# bit completions
-source ~/.config/bit/bit-completion.zsh
 
 # bun
 export BUN_INSTALL="$HOME/.bun"

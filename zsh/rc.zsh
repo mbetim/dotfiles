@@ -265,7 +265,8 @@ fi
 
 eval "$(starship init zsh)"
 eval "$(zoxide init zsh)"
-
+eval "$(workmux completions zsh)"
+eval "$(command wt config shell init zsh)"
 
 . "$HOME/.atuin/bin/env"
 

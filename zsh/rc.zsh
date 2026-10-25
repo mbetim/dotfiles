@@ -254,9 +254,14 @@ function nvims() {
 
 bindkey -s ^a "nvims\n"
 
-# SDK
-export SDKMAN_DIR="$HOME/.sdkman"
-[[ -s "$HOME/.sdkman/bin/sdkman-init.sh" ]] && source "$HOME/.sdkman/bin/sdkman-init.sh"
+
+
+_android_jbr="/Applications/Android Studio.app/Contents/jbr/Contents/Home"
+if [[ -d $_android_jbr ]]; then
+  export JAVA_HOME=$_android_jbr
+  path=("$JAVA_HOME/bin" $path)
+fi
+
 
 eval "$(starship init zsh)"
 eval "$(zoxide init zsh)"

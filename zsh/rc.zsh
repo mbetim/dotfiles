@@ -1,7 +1,14 @@
 # Set vim as default editor
 export VISUAL=nvim
 export EDITOR="$VISUAL"
-export TERM="xterm-ghostty"
+
+if [ "$TERM_PROGRAM" = "ghostty" ] || [ -n "$GHOSTTY_RESOURCES_DIR" ]; then
+  export TERM="xterm-ghostty"
+fi
+
+if [ "$TERM_PROGRAM" = "rex" ]; then
+  export TERM="xterm-rex"
+fi
 
 # alias
 alias g="git"

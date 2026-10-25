@@ -173,7 +173,10 @@ _fnm_use
 fpath=("$HOME/Library/Caches/eas-cli/autocomplete/functions/zsh"(N/) $fpath)
 
 # Enable tab with case insensitive
-autoload -Uz +X compinit && compinit
+autoload -Uz +X compinit
+_zcompdump_stale=(${ZDOTDIR:-$HOME}/.zcompdump(N.mh+24))
+if (( $#_zcompdump_stale )); then compinit; else compinit -C; fi
+unset _zcompdump_stale
 zstyle ':completion:*' matcher-list 'm:{a-zA-Z}={A-Za-z}'
 zstyle ':completion:*' menu select
 

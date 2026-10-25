@@ -32,16 +32,11 @@ alias gwl='git worktree list'
 alias gwa='git worktree add'
 alias gwp='git worktree prune'
 alias lg="lazygit"
+alias ld="lazydocker"
 
-alias wts="wt switch"
+alias wts="wt switch --no-cd"
 
 alias oc="opencode"
-
-alias ld="lazydocker"
-alias lzn="lazynpm"
-
-alias bpl="bit pr list"
-alias bpc="bit pr checkout"
 
 alias ghpc="gh pr checkout"
 alias ghpl="gh pr list"
@@ -52,7 +47,8 @@ alias dcu="docker compose up"
 alias dcd="docker compose down"
 
 alias vim="nvim"
-alias v="nvim"
+alias v="$HOME/.local/opt/nvim-nightly/bin/nvim"
+alias vstable="nvim"
 alias vs="nvim -c \"lua require('persistence').load()\""
 alias db="nvim +DBUI"
 
@@ -67,14 +63,17 @@ alias rm="trash"
 alias tn="tmux new -s"
 alias ta="tmux a -t"
 
-alias nvmu="nvm use"
-alias nvml="nvm use --lts"
+alias nvmu="fnm use --install-if-missing"
+alias nvml="fnm use --install-if-missing lts-latest"
 
 alias nd='terminal-notifier -title "Task finished" -message "Done with task! Exit status: $?"'
 
 alias oo='cd ~/dev/obsidian/flat && nvim'
 
 alias cdt='cd ../..'
+alias pn=pnpm
+
+alias wm=workmux
 
 function ..() {
   cd ../..
@@ -96,8 +95,6 @@ function yy() {
 	fi
 	rm -f -- "$tmp"
 }
-
-alias pn=pnpm
 
 function take() {
   mkdir -p $1

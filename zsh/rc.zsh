@@ -147,6 +147,10 @@ function p() {
   fi
 }
 
+ccm() {
+  command claude "$@"
+}
+
 # Auto suggestions
 : ${HOMEBREW_PREFIX:=/opt/homebrew}
 source $HOMEBREW_PREFIX/share/zsh-autosuggestions/zsh-autosuggestions.zsh

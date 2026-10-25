@@ -177,7 +177,7 @@ export PATH=$HOME/.local/bin:$PATH
 export PATH=$HOME/dev/bin:$PATH
 export PATH="/opt/homebrew/opt/mysql-client/bin:$PATH"
 export PATH="$HOME/go/bin:$PATH"
-export PATH="/opt/homebrew/opt/postgresql@15/libexec/bin:$PATH"
+export PATH="/opt/homebrew/opt/postgresql@18/bin:$PATH"
 
 # Settings for fzf
 export FZF_DEFAULT_COMMAND='fd --type f --strip-cwd-prefix --hidden --exclude .git --exclude Library --exclude node_modules'
